@@ -10,8 +10,6 @@ import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
 
-import { TextFields } from "@mui/icons-material";
-
 import { useNavigate } from "react-router-dom";
 
 
@@ -61,7 +59,7 @@ const Login = () => {
   };
 
   return (
-    <section className="vh-100" style={{ backgroundColor: '#508bfc' }}>
+    <section className="vh-100" style={styles.container}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -127,5 +125,13 @@ const Login = () => {
     </section>
   );
 };
+
+const styles = {
+  container : {
+    background : 'linear-gradient(to right, #508bfc63, #508bfc63), url(https://youmatter.world/app/uploads/sites/2/2019/01/sun-solar-energy-green-clean-renewable.jpg)',
+    backgroundSize : 'cover',
+    backgroundPosition : 'center'
+  }
+}
 
 export default Login;
