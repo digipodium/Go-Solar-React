@@ -12,7 +12,6 @@ import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";
 
-
 const Login = () => {
   const url = app_config.backend_url;
 
@@ -44,7 +43,7 @@ const Login = () => {
             return;
           } else {
             sessionStorage.setItem("user", JSON.stringify(data));
-            navigate("/main/home");
+            navigate("/user/chat");
             return;
           }
         });
@@ -65,41 +64,59 @@ const Login = () => {
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div
               className="card shadow-2-strong"
-              style={{ borderRadius: '1rem' }}
+              style={{ borderRadius: "1rem" }}
             >
               <div className="card-body p-5 text-center">
                 <h3 className="mb-5">Login Form</h3>
 
-                <div className="form-outline mb-4">
-                
-                  <TextField className="w-100" id="outlined-basic" label="Email" variant="outlined" maxwidth />
-                </div>
-                <div className="form-outline mb-4">
-                
-                  <TextField className="w-100" id="outlined-basic" label="Password" variant="outlined" maxwidth />
-                </div>
+                <Formik initialValues={loginForm} onSubmit={loginSubmit}>
+                  {({ values, handleChange, handleSubmit }) => (
+                    <form onSubmit={handleSubmit}>
+                      <div className="form-outline mb-4">
+                        <TextField
+                          className="w-100"
+                          id="email"
+                          value={values.email}
+                          onChange={handleChange}
+                          label="Email"
+                          variant="outlined"
+                          maxwidth
+                        />
+                      </div>
+                      <div className="form-outline mb-4">
+                        <TextField
+                          className="w-100"
+                          id="password"
+                          value={values.password}
+                          onChange={handleChange}
+                          label="Password"
+                          variant="outlined"
+                          maxwidth
+                        />
+                      </div>
 
+                      <div className="form-check d-flex justify-content-start mb-4">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="form1Example3"
+                        />
+                        <label className="form-check-label" for="form1Example3">
+                          {" "}
+                          Remember password{" "}
+                        </label>
+                      </div>
 
-                <div className="form-check d-flex justify-content-start mb-4">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="form1Example3"
-                  />
-                  <label className="form-check-label" for="form1Example3">
-                    {" "}
-                    Remember password{" "}
-                  </label>
-                </div>
-
-                <button
-                  className="btn btn-primary btn-lg btn-block"
-                  type="submit"
-                >
-                  Login
-                </button>
-
+                      <button
+                        className="btn btn-primary btn-lg btn-block"
+                        type="submit"
+                      >
+                        Login
+                      </button>
+                    </form>
+                  )}
+                </Formik>
                 <hr className="my-4" />
 
                 <button
@@ -111,7 +128,7 @@ const Login = () => {
                 </button>
                 <button
                   className="btn btn-lg btn-block btn-primary mb-2"
-                  style={{backgroundCcolor: '#3b5998'}}
+                  style={{ backgroundCcolor: "#3b5998" }}
                   type="submit"
                 >
                   <i className="fab fa-facebook-f me-2"></i>Sign in with
@@ -127,11 +144,12 @@ const Login = () => {
 };
 
 const styles = {
-  container : {
-    background : 'linear-gradient(to right, #508bfc63, #508bfc63), url(https://youmatter.world/app/uploads/sites/2/2019/01/sun-solar-energy-green-clean-renewable.jpg)',
-    backgroundSize : 'cover',
-    backgroundPosition : 'center'
-  }
-}
+  container: {
+    background:
+      "linear-gradient(to right, #508bfc63, #508bfc63), url(https://youmatter.world/app/uploads/sites/2/2019/01/sun-solar-energy-green-clean-renewable.jpg)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  },
+};
 
 export default Login;
