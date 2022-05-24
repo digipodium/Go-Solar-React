@@ -10,6 +10,8 @@ const AddEquipment = () => {
     price: Number,
   };
 
+  const userSubmit =()=>{}
+
   return (
     <div>
       <h1>Add Equipment</h1>

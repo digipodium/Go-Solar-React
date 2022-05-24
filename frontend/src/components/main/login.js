@@ -9,7 +9,11 @@ import {
 import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
+
+import { TextFields } from "@mui/icons-material";
+
 import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
   const url = app_config.backend_url;
@@ -57,56 +61,70 @@ const Login = () => {
   };
 
   return (
-    <Container
-      maxWidth="xs"
-      sx={{ height: "90vh", display: "flex", alignItems: "center" }}
-    >
-      <Card className="w-100">
-        <CardMedia
-          component="img"
-          image="https://wallpaperaccess.com/full/3533193.png"
-          height={200}
-        ></CardMedia>
-        <p className="text-center mt-5 mb-5 h3">Signin Here</p>
-        <CardContent>
-          <Formik initialValues={loginForm} onSubmit={loginSubmit}>
-            {({ values, handleChange, handleSubmit }) => (
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  error
-                  className="w-100 mb-4"
-                  label="Email"
-                  variant="filled"
-                  helperText="Invalid Email ID"
-                  id="email"
-                  value={values.email}
-                  onChange={handleChange}
-                />
-                <TextField
-                  className="w-100 mb-4"
-                  label="Password"
-                  variant="filled"
-                  type="password"
-                  helperText="Enter correct password"
-                  id="password"
-                  value={values.password}
-                  onChange={handleChange}
-                />
+    <section className="vh-100" style={{ backgroundColor: '#508bfc' }}>
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div
+              className="card shadow-2-strong"
+              style={{ borderRadius: '1rem' }}
+            >
+              <div className="card-body p-5 text-center">
+                <h3 className="mb-5">Login Form</h3>
 
-                <Button
+                <div className="form-outline mb-4">
+                
+                  <TextField className="w-100" id="outlined-basic" label="Email" variant="outlined" maxwidth />
+                </div>
+                <div className="form-outline mb-4">
+                
+                  <TextField className="w-100" id="outlined-basic" label="Password" variant="outlined" maxwidth />
+                </div>
+
+
+                <div className="form-check d-flex justify-content-start mb-4">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="form1Example3"
+                  />
+                  <label className="form-check-label" for="form1Example3">
+                    {" "}
+                    Remember password{" "}
+                  </label>
+                </div>
+
+                <button
+                  className="btn btn-primary btn-lg btn-block"
                   type="submit"
-                  variant="contained"
-                  className="w-100"
-                  color="error"
                 >
-                  Submit
-                </Button>
-              </form>
-            )}
-          </Formik>
-        </CardContent>
-      </Card>
-    </Container>
+                  Login
+                </button>
+
+                <hr className="my-4" />
+
+                <button
+                  class="btn btn-lg btn-block btn-primary"
+                  style={{ backgroundColor: "#dd4b39" }}
+                  type="submit"
+                >
+                  <i className="fab fa-google me-2"></i> Sign in with google
+                </button>
+                <button
+                  className="btn btn-lg btn-block btn-primary mb-2"
+                  style={{backgroundCcolor: '#3b5998'}}
+                  type="submit"
+                >
+                  <i className="fab fa-facebook-f me-2"></i>Sign in with
+                  facebook
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
