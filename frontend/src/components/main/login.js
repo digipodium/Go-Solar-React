@@ -105,6 +105,8 @@ const Login = () => {
                         <label className="form-check-label" for="form1Example3">
                           {" "}
                           Remember password{" "}
+                         
+                          <a href="/main/resetpassword"><u>Forget password</u></a>
                         </label>
                       </div>
 
@@ -114,6 +116,9 @@ const Login = () => {
                       >
                         Login
                       </button>
+                      OR
+                      <br></br>
+                      <a href="/main/signup"><u>sign up</u></a> 
                     </form>
                   )}
                 </Formik>
@@ -146,7 +151,7 @@ const Login = () => {
 const styles = {
   container: {
     background:
-      "linear-gradient(to right, #508bfc63, #508bfc63), url(https://youmatter.world/app/uploads/sites/2/2019/01/sun-solar-energy-green-clean-renewable.jpg)",
+      " url(https://youmatter.world/app/uploads/sites/2/2019/01/sun-solar-energy-green-clean-renewable.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
   },

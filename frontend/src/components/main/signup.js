@@ -95,6 +95,8 @@ const Signup = () => {
                           />
                         </div>
                       </div>
+                      
+                      <div className="col-md-6">
                       <TextField
                         className="mt-3"
                         label="Username"
@@ -104,6 +106,7 @@ const Signup = () => {
                         value={values.username}
                         onChange={handleChange}
                       />
+                      </div>
                       <TextField
                         className="mt-3"
                         label="Age"
@@ -169,6 +172,7 @@ const Signup = () => {
                           <i className="fab fa-github"></i>
                         </button>
                       </div>
+                      <a href="/main/resetpassword"><u>Foregt password ?</u></a>
                     </form>
                   )}
                 </Formik>

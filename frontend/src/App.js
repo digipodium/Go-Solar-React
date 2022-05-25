@@ -22,6 +22,9 @@ import UserChat from "./components/user/chat";
 import AdminProfile from "./components/admin/profile";
 import AddEquipment from "./components/seller/addEquipment";
 import ManageEquipment from "./components/seller/manageEquipment";
+import Resetpassword from "./components/main/resetPassword";
+import Expertsignup from "./components/main/expertsignup ";
+import Equipmentdetails from "./components/admin/equipmentdetails";
 
 function App() {
   return (
@@ -56,10 +59,15 @@ function App() {
           <Route element={<Expertlogin />} path="expertlogin" />
           <Route element={<Sellersignup />} path="sellersignup" />
           <Route element={<Sellerlogin />} path="sellerlogin" />
+          <Route element={<Resetpassword/>} path="resetpassword" />
+          <Route element={<Expertsignup/>} path="expertsignup" />
+          <Route element={<Equipmentdetails/>} path="equipmentdetails" />
         </Route>
         <Route element={<Seller />} path="seller">
           <Route element={<AddEquipment />} path="addequipment" />
           <Route element={<ManageEquipment />} path="manageequipment" />
+         
+
         </Route>
 
         <Route element={<Expert />} path="expert">

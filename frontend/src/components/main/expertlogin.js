@@ -43,8 +43,9 @@ const Expertlogin = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div className="row align-item-center h-100">
+    <div className="container" style={styles.container}>
+    <div >
+      <div className="row align-items-center justify-content-center h-100">
         <div className="col-md-4">
           <div className="card">
             <div className="card-header">
@@ -55,11 +56,11 @@ const Expertlogin = () => {
                 {({ values, handleChange, handleSubmit }) => (
                   <form onSubmit={handleSubmit}>
                     <TextField
-                      error
+                      // error
                       className="w-100 mb-4"
                       label="Email"
                       variant="filled"
-                      helperText="Invalid Email ID"
+                      // helperText="Invalid Email ID"
                       id="email"
                       value={values.email}
                       onChange={handleChange}
@@ -73,7 +74,7 @@ const Expertlogin = () => {
                       id="password"
                       value={values.password}
                       onChange={handleChange}
-                    />
+                    /> <a href="/main/resetpassword"><u>Forget password ?</u> <br></br></a><a href="/main/expertsignup"><u>signup</u></a>
 
                     <Button
                       type="submit"
@@ -99,6 +100,7 @@ const Expertlogin = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
