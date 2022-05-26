@@ -94,7 +94,6 @@ const Login = () => {
                           maxwidth
                         />
                       </div>
-
                       <div className="form-check d-flex justify-content-start mb-4">
                         <input
                           className="form-check-input"
@@ -105,11 +104,11 @@ const Login = () => {
                         <label className="form-check-label" for="form1Example3">
                           {" "}
                           Remember password{" "}
-                         
-                          <a href="/main/resetpassword"><u>Forget password</u></a>
+                          <a href="/main/resetpassword">
+                            <u>Forget password</u>
+                          </a>
                         </label>
                       </div>
-
                       <button
                         className="btn btn-primary btn-lg btn-block"
                         type="submit"
@@ -118,7 +117,9 @@ const Login = () => {
                       </button>
                       OR
                       <br></br>
-                      <a href="/main/signup"><u>sign up</u></a> 
+                      <a href="/main/signup">
+                        <u>sign up</u>
+                      </a>
                     </form>
                   )}
                 </Formik>
