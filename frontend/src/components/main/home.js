@@ -8,6 +8,11 @@ const Home = () => {
   return (
     <div>
       <div>
+      <div class="main-layout">
+      {/* <!-- loader  --> */}
+      {/* <div class="loader_bg">
+         <div class="loader"> <img src={url + "/images/loading.gif"} alt="#" /></div>
+         </div> */}
         <header>
           {/* <!-- header inner --> */}
           <div class="header">
@@ -17,7 +22,7 @@ const Home = () => {
                   <div class="full">
                     <div class="center-desk">
                       <div class="logo">
-                        <a href="index.html">
+                        <a href="/main/home">
                           <img src={url + "/images/logo3.png"} alt="#" />
                         </a>
                       </div>
@@ -358,7 +363,7 @@ const Home = () => {
                         <figure>
                           <img src="images/product1.png" alt="#" />
                         </figure>
-                        <h3>Computer</h3>
+                        <h3>Panels</h3>
                       </div>
                     </div>
                     <div class="col-md-4 margin_bottom1">
@@ -366,7 +371,7 @@ const Home = () => {
                         <figure>
                           <img src="images/product2.png" alt="#" />
                         </figure>
-                        <h3>Laptop</h3>
+                        <h3>Lights</h3>
                       </div>
                     </div>
                     <div class="col-md-4 margin_bottom1">
@@ -374,7 +379,7 @@ const Home = () => {
                         <figure>
                           <img src="images/product3.png" alt="#" />
                         </figure>
-                        <h3>Tablet</h3>
+                        <h3>Torch</h3>
                       </div>
                     </div>
                     <div class="col-md-4 margin_bottom1">
@@ -382,7 +387,7 @@ const Home = () => {
                         <figure>
                           <img src="images/product4.png" alt="#" />
                         </figure>
-                        <h3>Speakers</h3>
+                        <h3>Decoratives Items</h3>
                       </div>
                     </div>
                     <div class="col-md-4 margin_bottom1">
@@ -602,8 +607,12 @@ const Home = () => {
             </div>
           </div>
         </div>
+      
       </div>
+      </div>
+      
     </div>
+    
   );
 };
 export default Home;
