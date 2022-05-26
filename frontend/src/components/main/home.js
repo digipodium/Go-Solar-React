@@ -496,20 +496,11 @@ const Home = () => {
                           <div class="col-md-9 offset-md-3">
                             <div class="test_box">
                               <i>
-                                <img src="images/cos.png" alt="#" />
+                                <img src="https://tse1.mm.bing.net/th?id=OIP.avSasd3jjmU5_Lno5xmxrgHaJ4&pid=Api&P=0&w=116&h=155" alt="#" />
                               </i>
                               <h4>Sandy Miller</h4>
                               <p>
-                                ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi
-                                ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident,
-                                sunt in culpa qui officia deserunt mollit anim
-                                id
+                               
                               </p>
                             </div>
                           </div>
