@@ -7,7 +7,11 @@ import User from "./components/user";
 import Main from "./components/main";
 import Seller from "./components/seller";
 import Header from "./components/main/header";
+//import NewLogin from "./components/main/newlogin";
+//import NewSignup from "./components/main/newsignup";
 import Signup from "./components/main/signup";
+import Ordering from "./components/main/ordering";
+import BrowseEquipment from "./components/main/browseEquipment";
 import Chat from "./components/user/chat";
 import AddExpert from "./components/admin/addexpert";
 import Expertlogin from "./components/main/expertlogin";
@@ -20,7 +24,7 @@ import AdminAuthorisor from "./components/adminAuth";
 import Authorisor from "./components/authenticator";
 import UserChat from "./components/user/chat";
 import AdminProfile from "./components/admin/profile";
-import AddEquipment from "./components/seller/addEquipment";
+ import AddEquipment from "./components/seller/addEquipment";
 import ManageEquipment from "./components/seller/manageEquipment";
 
 function App() {
@@ -52,7 +56,11 @@ function App() {
         <Route element={<Main />} path="main">
           <Route element={<Signup />} path="signup" />
           <Route element={<Login />} path="login" />
+          {/* <Route element={<NewLogin />} path="newlogin" /> */}
+          {/* <Route element={<NewSignup />} path="newsignup" /> */}
+          <Route element={<BrowseEquipment />} path="browseEquipment" />
           <Route element={<Home />} path="home" />
+          <Route element={<Ordering/>} path="ordering" />
           <Route element={<Expertlogin />} path="expertlogin" />
           <Route element={<Sellersignup />} path="sellersignup" />
           <Route element={<Sellerlogin />} path="sellerlogin" />
