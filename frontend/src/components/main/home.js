@@ -1,15 +1,16 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const home = () => {
   return (
     <div>
       <div>
         {/* <!-- loader  --> */}
-        <div class="loader_bg">
+        {/* <div class="loader_bg">
           <div class="loader">
             <img src="frontend\public\assets\images\loading.gif" alt="#" />
           </div>
-        </div>
+        </div> */}
         {/* <!-- end loader -->
     <!-- header --> */}
         <header>
@@ -82,9 +83,14 @@ const home = () => {
                           </a>
                         </li>
                         <li class="nav-item d_none">
-                          <a class="nav-link" href="#">
+                          <Link class="nav-link" to="/main/login">
                             Login
-                          </a>
+                          </Link>
+                        </li>
+                        <li class="nav-item d_none">
+                          <Link class="nav-link" to="/main/login">
+                            Seller Login
+                          </Link>
                         </li>
                       </ul>
                     </div>
