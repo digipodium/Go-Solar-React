@@ -233,3 +233,4 @@ const EquipmentDetail = () => {
 };
 
 export default EquipmentDetail;
+

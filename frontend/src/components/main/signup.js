@@ -52,57 +52,136 @@ const Signup = () => {
   });
 
   return (
-    <div>
-      <Container>
-        <h1>Signup</h1>
+    <section className="">
+      <div
+        className="px-4 py-5 px-md-5 text-center text-lg-start"
+        style={{ backgroundColor: "hsl(0, 0%, 96%)" }}
+      />
+      <div className="container">
+        <div className="row gx-lg-5 align-items-center">
+          <div className="col-lg-6 mb-5 mb-lg-0">
+            <h1 className="my-5 display-3 fw-bold ls-tight">
+              <span className="text-primary">Signup Form</span>
+            </h1>
+          </div>
 
-        <Formik initialValues={userForm} onSubmit={userSubmit}>
-          {({ values, handleSubmit, handleChange, errors }) => (
-            <form onSubmit={handleSubmit}>
-              <TextField
-                className="mt-3"
-                label="Email Address"
-                variant="outlined"
-                id="email"
-                value={values.email}
-                onChange={handleChange}
-              />
-              <TextField
-                className="mt-3"
-                label="Password"
-                type="password"
-                variant="outlined"
-                id="password"
-                value={values.password}
-                onChange={handleChange}
-              />
-              <TextField
-                className="mt-3"
-                label="Username"
-                type="text"
-                variant="outlined"
-                id="username"
-                value={values.username}
-                onChange={handleChange}
-              />
-              <TextField
-                className="mt-3"
-                label="Age"
-                type="number"
-                variant="outlined"
-                id="age"
-                value={values.age}
-                onChange={handleChange}
-              />
+          <div className="col-lg-6 mb-5 mb-lg-0">
+            <div className="card">
+              <div className="card-body py-5 px-md-5">
+                
+                <Formik initialValues={userForm} onSubmit={userSubmit}>
+                  {({ values, handleSubmit, handleChange, errors }) => (
+                    <form onSubmit={handleSubmit}>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <TextField
+                            className="mt-3"
+                            label="Email Address"
+                            variant="outlined"
+                            id="email"
+                            value={values.email}
+                            onChange={handleChange}
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <TextField
+                            className="mt-3"
+                            label="Password"
+                            type="password"
+                            variant="outlined"
+                            id="password"
+                            value={values.password}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="col-md-6">
+                      <TextField
+                        className="mt-3"
+                        label="Username"
+                        type="text"
+                        variant="outlined"
+                        id="username"
+                        value={values.username}
+                        onChange={handleChange}
+                      />
+                      </div>
+                      <TextField
+                        className="mt-3"
+                        label="Age"
+                        type="number"
+                        variant="outlined"
+                        id="age"
+                        value={values.age}
+                        onChange={handleChange}
+                      />
 
-              <Button type="submit" className="mt-3" variant="contained">
-                Submit
-              </Button>
-            </form>
-          )}
-        </Formik>
-      </Container>
-    </div>
+                      
+
+                      <div className="form-check d-flex justify-content-center mb-4">
+                        <input
+                          className="form-check-input me-2"
+                          type="checkbox"
+                          value=""
+                          id="form2Example33"
+                          checked
+                        />
+                        <label
+                          className="form-check-label"
+                          for="form2Example33"
+                        >
+                          Subscribe to our newsletter
+                        </label>
+                      </div>
+
+                      <button
+                        type="submit"
+                        className="btn btn-primary btn-block mb-4"
+                      >
+                        Sign up
+                      </button>
+
+                      <div className="text-center">
+                        <p>or sign up with:</p>
+                        <button
+                          type="button"
+                          className="btn btn-link btn-floating mx-1"
+                        >
+                          <i className="fab fa-facebook-f"></i>
+                        </button>
+
+                        <button
+                          type="button"
+                          className="btn btn-link btn-floating mx-1"
+                        >
+                          <i className="fab fa-google"></i>
+                        </button>
+
+                        <button
+                          type="button"
+                          className="btn btn-link btn-floating mx-1"
+                        >
+                          <i className="fab fa-twitter"></i>
+                        </button>
+
+                        <button
+                          type="button"
+                          className="btn btn-link btn-floating mx-1"
+                        >
+                          <i className="fab fa-github"></i>
+                        </button>
+                      </div>
+                      <a href="/main/resetpassword"><u>Foregt password ?</u></a>
+                    </form>
+                  )}
+                </Formik>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 export default Signup;

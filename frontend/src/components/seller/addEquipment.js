@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import Swal from "sweetalert2";
 import app_config from "../../config";
+import { NavLink, useNavigate } from "react-router-dom";
 
 
 const AddEquipment = () => {
@@ -26,7 +27,7 @@ const AddEquipment = () => {
       body: JSON.stringify(values),
     };
 
-    fetch(url + "equipment/add", reqOp)
+    fetch(url + "/equipment/add", reqOp)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -88,10 +89,12 @@ const AddEquipment = () => {
                   // helperText={errors.email}
                   // error={Boolean(errors.email)}
                 />
-
-                <Button type="submit" className="mt-3" variant="contained">
-                  Submit
-                </Button>
+<div class="d-flex justify-content-end pt-3">
+               
+               <button type="submit" class="btn btn-success btn-lg ms-2"
+                    >Submit
+                    <NavLink to="../main/browseEquipment"></NavLink></button>
+               </div>
               </form>
             )}
           </Formik>
