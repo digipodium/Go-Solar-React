@@ -69,7 +69,7 @@ const Header = () => {
   const logout = () => {
     setAnchorElUser(null);
     sessionStorage.removeItem("user");
-    navigate("/login");
+    navigate("./login");
   };
 
   const userMenu = [

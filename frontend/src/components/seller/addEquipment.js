@@ -1,23 +1,55 @@
 import { Formik } from "formik";
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
+import Swal from "sweetalert2";
+import app_config from "../../config";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 const AddEquipment = () => {
+  const url = app_config.api_url;
+
   const equipmentForm = {
     title: "",
     description: "",
-    features: [],
-    price: Number,
+    image: "",
+    features: "",
+    price: "",
+    createdAt: "",
+  };
+  const userSubmit = (values) => {
+    console.log(values);
+
+
+    const reqOp = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    };
+
+    fetch(url + "/equipment/add", reqOp)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        if (data.message == "success") {
+          Swal.fire({
+            icon: "success",
+            title: "Added Successfully!!",
+          });
+        }
+      });
   };
 
-  const userSubmit =()=>{}
+
+  
 
   return (
     <div>
-      <h1>Add Equipment</h1>
+      {/* <h1>Add Equipment</h1> */}
       <div className="card">
         <div className="card-header">
-          <h3 className="mb-0">Add New Expert</h3>
+          <h3 className="mb-0">Add Equipment</h3>
         </div>
         <div className="card-body">
           <Formik
@@ -29,70 +61,40 @@ const AddEquipment = () => {
               <form onSubmit={handleSubmit}>
                 <TextField
                   className="mt-3 w-100"
-                  label="Full Name"
+                  label="Title"
                   variant="outlined"
-                  id="name"
-                  value={values.name}
+                  id="title"
+                  value={values.title}
                   onChange={handleChange}
                   // helperText={errors.email}
                   // error={Boolean(errors.email)}
                 />
                 <TextField
                   className="mt-3 w-100"
-                  label="Qualification"
+                  label="Description"
                   variant="outlined"
-                  id="qualification"
-                  value={values.qualification}
+                  id="description"
+                  value={values.description}
                   onChange={handleChange}
                   // helperText={errors.email}
                   // error={Boolean(errors.email)}
                 />
-                <TextField
+  <TextField
                   className="mt-3 w-100"
-                  label="Overall Experience"
+                  label="Features"
                   variant="outlined"
-                  id="experience"
-                  value={values.experience}
+                  id="features"
+                  value={values.features}
                   onChange={handleChange}
                   // helperText={errors.email}
                   // error={Boolean(errors.email)}
                 />
-                <TextField
-                  className="mt-3 w-100"
-                  label="Main Area of Expertise"
-                  variant="outlined"
-                  id="mainareaofexperience"
-                  value={values.mainareaofexperience}
-                  onChange={handleChange}
-                  // helperText={errors.email}
-                  // error={Boolean(errors.email)}
-                />
-                <TextField
-                  className="mt-3 w-100"
-                  label="Email Address"
-                  type="email"
-                  variant="outlined"
-                  id="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  // helperText={errors.password}
-                  // error={Boolean(errors.password)}
-                />
-                <TextField
-                  className="mt-3 w-100"
-                  label="Password"
-                  type="password"
-                  variant="outlined"
-                  id="password"
-                  value={values.password}
-                  onChange={handleChange}
-                  // helperText={errors.password}
-                  // error={Boolean(errors.password)}
-                />
-
-                <Button type="submit" className="mt-3" variant="contained">
-                  Submit
-                </Button>
+<div class="d-flex justify-content-end pt-3">
+               
+               <button type="submit" class="btn btn-success btn-lg ms-2"
+                    >Submit
+                    <NavLink to="../main/browseEquipment"></NavLink></button>
+               </div>
               </form>
             )}
           </Formik>

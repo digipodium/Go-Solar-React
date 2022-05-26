@@ -1,6 +1,7 @@
 const express = require("express");
 const UserRouter = require("./routers/UserRouter");
 const equipmentRouter = require("./routers/equipmentRouter");
+const addequipmentRouter = require("./routers/addequipmentRouter");
 const chatRouter = require("./routers/chatRouter");
 const sellerRouter = require("./routers/sellerRouter");
 const expertRouter = require("./routers/expertRouter");
@@ -15,36 +16,36 @@ const { Server } = require("socket.io");
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: {
-    origin: ["http://localhost:3000"],
-  },
+    cors: {
+        origin: ["http://localhost:3000"],
+    },
 });
 const connectedExperts = {};
 
 io.on("connection", (socket) => {
-  console.log("client connected ");
-  socket.on("addexpert", (id) => {
-    connectedExperts[id] = socket.id;
-    console.log(connectedExperts);
-  });
-
-  socket.on("checkexpert", (id) => {
-    socket.emit("checkexpertfromserver", {
-      status: "online",
-      socketId: connectedExperts[id],
+    console.log("client connected ");
+    socket.on("addexpert", (id) => {
+        connectedExperts[id] = socket.id;
+        console.log(connectedExperts);
     });
-  });
 
-  socket.on("sendstudent", (data) => {
-    // console.log(data);
-    data.sent = false;
-    socket.broadcast.emit("recmsg", data);
-  });
-  socket.on("sendmsg", (data) => {
-    console.log(data);
-    data.sent = false;
-    socket.to(data.socketId).emit("recmsg", data);
-  });
+    socket.on("checkexpert", (id) => {
+        socket.emit("checkexpertfromserver", {
+            status: "online",
+            socketId: connectedExperts[id],
+        });
+    });
+
+    socket.on("sendstudent", (data) => {
+        // console.log(data);
+        data.sent = false;
+        socket.broadcast.emit("recmsg", data);
+    });
+    socket.on("sendmsg", (data) => {
+        console.log(data);
+        data.sent = false;
+        socket.to(data.socketId).emit("recmsg", data);
+    });
 });
 
 // for reading json data
@@ -54,6 +55,7 @@ app.use(express.json());
 app.use(cors({ origin: ["http://localhost:3000"] }));
 
 app.use("/user", UserRouter);
+app.use("/equip", addequipmentRouter);
 // app.use("/product" , ProductRouter);
 app.use("/chat", chatRouter);
 
@@ -63,16 +65,16 @@ app.use("/seller", sellerRouter);
 
 app.use("/expert", expertRouter);
 app.get("/", (req, res) => {
-  res.send("you have got a response");
+    res.send("you have got a response");
 });
 
 app.get("/home", (req, res) => {
-  res.send("you have reached home");
+    res.send("you have reached home");
 });
 
 app.get("*", (req, res) => {
-  res.send("404");
+    res.send("404");
 });
 httpServer.listen(port, () => {
-  console.log("server started on 5000");
+    console.log("server started on 5000");
 });

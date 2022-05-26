@@ -1,12 +1,11 @@
 const mongoose = require('../connection');
+const Schema = mongoose.Schema;
 
-const schema = new mongoose.Schema({
-    // email : String,
-    // password : String,
-    // username : String,
-    // age : Number,
-    createdAt : { type : Date , default : new Date()}
-});
-
- const model = mongoose.model("users", schema);
- module.exports = model;
+const schema = new Schema({
+    title: String,
+    description: String,
+    features: String,
+    createdAt: Date,
+})
+const model = mongoose.model('addequip', schema);
+module.exports = model;

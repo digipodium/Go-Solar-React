@@ -13,18 +13,18 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const url = app_config.backend_url;
+  const url = app_config.api_url;
 
   const loginForm = {
     email: "",
-    passworsd: "",
+    password: "",
   };
   const navigate = useNavigate();
 
   const loginSubmit = (formdata) => {
     console.log(formdata);
 
-    fetch(url + "/user/authenticate", {
+    fetch(url + "/seller/authenticate", {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: { "Content-Type": "application/json" },
@@ -37,15 +37,9 @@ const Login = () => {
         });
 
         res.json().then((data) => {
-          if (data.isAdmin) {
-            sessionStorage.setItem("admin", JSON.stringify(data));
-            navigate("/admin/addexpert");
+          sessionStorage.setItem("seller", JSON.stringify(data));
+            navigate("/seller/addequipment");
             return;
-          } else {
-            sessionStorage.setItem("user", JSON.stringify(data));
-            navigate("/user/chat");
-            return;
-          }
         });
       } else if (res.status === 400) {
         Swal.fire({
