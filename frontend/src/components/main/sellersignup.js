@@ -39,7 +39,7 @@ const Sellersignup = () => {
     console.log(formdata);
 
     // asynchronous function returns promise
-    fetch(url + "/user/add", {
+    fetch(url + "/seller/add", {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: { "Content-Type": "application/json" },
@@ -54,6 +54,7 @@ const Sellersignup = () => {
           icon: "success",
           title: "Registered Successfully!!",
         });
+        navigate("/main/sellerlogin");
       });
   };
 

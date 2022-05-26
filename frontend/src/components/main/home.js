@@ -88,7 +88,7 @@ const home = () => {
                           </Link>
                         </li>
                         <li class="nav-item d_none">
-                          <Link class="nav-link" to="/main/login">
+                          <Link class="nav-link" to="/main/sellerlogin">
                             Seller Login
                           </Link>
                         </li>
