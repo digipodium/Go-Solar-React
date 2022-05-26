@@ -1,7 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import app_config from "../../config";
 
 const Home = () => {
+  const url = app_config.backend_url;
+
   return (
     <div>
       <div>
@@ -15,10 +18,7 @@ const Home = () => {
                     <div class="center-desk">
                       <div class="logo">
                         <a href="index.html">
-                          <img
-                            src="frontend\public\assets\images/logo3.png"
-                            alt="#"
-                          />
+                          <img src={url + "/images/logo3.png"} alt="#" />
                         </a>
                       </div>
                     </div>

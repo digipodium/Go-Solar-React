@@ -82,9 +82,9 @@ function App() {
         <Route element={<User />} path="user">
           <Route element={<UserChat />} path="chat/:expertid" />
         </Route>
+        <Route element={<Home />} path="home" />
 
-        <Route element={<Navigate to="/main/home" />} path="/"></Route>
-        <Route element={<Home />} path="main/home" />
+        <Route element={<Navigate to="/home" />} path="/"></Route>
       </Routes>
     </BrowserRouter>
   );
