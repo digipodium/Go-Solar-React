@@ -143,36 +143,31 @@ const Signup = () => {
                       </button>
 
                       <div className="text-center">
-                        <p>or sign up with:</p>
+                       
                         <button
                           type="button"
                           className="btn btn-link btn-floating mx-1"
                         >
-                          <i className="fab fa-facebook-f"></i>
+                          <a href="https://www.fb.com" target="_blank"><i className="fab fa-facebook-f"></i></a>
+                          
+                        </button>
+                        
+                        <button
+                          type="button"
+                          className="btn btn-link btn-floating mx-1"
+                        >
+                         <a href="https://www.google.com" target="_blank"><i className="fab fa-google"></i></a>
                         </button>
 
+                        
                         <button
                           type="button"
                           className="btn btn-link btn-floating mx-1"
                         >
-                          <i className="fab fa-google"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-twitter"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-github"></i>
+                          <a href="https://www.github.com" target="_blank"><i className="fab fa-github"></i></a>
                         </button>
                       </div>
-                      <a href="/main/resetpassword"><u>Foregt password ?</u></a>
+                     
                     </form>
                   )}
                 </Formik>

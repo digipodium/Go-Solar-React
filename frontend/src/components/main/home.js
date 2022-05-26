@@ -356,7 +356,7 @@ const Home = () => {
                     <div class="col-md-4 margin_bottom1">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product1.png" alt="#" />
+                          <img src="https://tse3.mm.bing.net/th?id=OIP.PT6yxfYGYV8g3V8u611-wgHaHa&pid=Api&P=0&w=169&h=169" alt="#" />
                         </figure>
                         <h3>Computer</h3>
                       </div>
@@ -364,7 +364,7 @@ const Home = () => {
                     <div class="col-md-4 margin_bottom1">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product2.png" alt="#" />
+                          <img src="https://tse3.mm.bing.net/th?id=OIP.UllGVJXYtR1BX_d0edPrUQHaHa&pid=Api&P=0&w=165&h=165" alt="#" />
                         </figure>
                         <h3>Laptop</h3>
                       </div>
@@ -372,7 +372,7 @@ const Home = () => {
                     <div class="col-md-4 margin_bottom1">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product3.png" alt="#" />
+                          <img src="https://tse1.mm.bing.net/th?id=OIP.ALFd7ASTiZ-KX5VvlPsd0QHaHa&pid=Api&P=0&w=167&h=167" alt="#" />
                         </figure>
                         <h3>Tablet</h3>
                       </div>
@@ -380,7 +380,7 @@ const Home = () => {
                     <div class="col-md-4 margin_bottom1">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product4.png" alt="#" />
+                          <img src="https://tse2.mm.bing.net/th?id=OIP.qzNPj9H2N-2mkJzpKFl8uwHaGi&pid=Api&P=0&w=186&h=164" alt="#" />
                         </figure>
                         <h3>Speakers</h3>
                       </div>
@@ -388,7 +388,7 @@ const Home = () => {
                     <div class="col-md-4 margin_bottom1">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product5.png" alt="#" />
+                          <img src="https://tse1.mm.bing.net/th?id=OIP.6bIxeJBx-ioY6V_MmZYhEwHaHa&pid=Api&P=0&w=167&h=167" alt="#" />
                         </figure>
                         <h3>internet</h3>
                       </div>
@@ -396,7 +396,7 @@ const Home = () => {
                     <div class="col-md-4 margin_bottom1">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product6.png" alt="#" />
+                          <img src="https://tse1.mm.bing.net/th?id=OIP.UVlk_Xl2YKvmYhgKhtZrlgHaHa&pid=Api&P=0&w=181&h=181" alt="#" />
                         </figure>
                         <h3>Hardisk</h3>
                       </div>
@@ -404,7 +404,7 @@ const Home = () => {
                     <div class="col-md-4">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product7.png" alt="#" />
+                          <img src="https://tse1.mm.bing.net/th?id=OIP.unZq9kUWHeSHeXdr-pT4ygHaHa&pid=Api&P=0&w=178&h=178" alt="#" />
                         </figure>
                         <h3>Rams</h3>
                       </div>
@@ -412,7 +412,7 @@ const Home = () => {
                     <div class="col-md-4">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product8.png" alt="#" />
+                          <img src="https://tse3.mm.bing.net/th?id=OIP.Z6C6iHOW3uZdOXdmQlvG5wHaHa&pid=Api&P=0&w=169&h=169" alt="#" />
                         </figure>
                         <h3>Bettery</h3>
                       </div>
@@ -420,7 +420,7 @@ const Home = () => {
                     <div class="col-md-4">
                       <div class="product_box">
                         <figure>
-                          <img src="images/product9.png" alt="#" />
+                          <img src="https://tse3.mm.bing.net/th?id=OIP.DW9ffLdY94CHpQfx5ppf8gHaHa&pid=Api&P=0&w=169&h=169" alt="#" />
                         </figure>
                         <h3>Drive</h3>
                       </div>
