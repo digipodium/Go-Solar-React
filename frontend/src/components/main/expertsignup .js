@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import app_config from "../../config";
 import Swal from "sweetalert2";
 
-const expertignup = () => {
+const Signup = () => {
   const url = app_config.backend_url;
 
   // for using formik
@@ -95,6 +95,8 @@ const expertignup = () => {
                           />
                         </div>
                       </div>
+                      
+                      <div className="col-md-6">
                       <TextField
                         className="mt-3"
                         label="Username"
@@ -104,6 +106,7 @@ const expertignup = () => {
                         value={values.username}
                         onChange={handleChange}
                       />
+                      </div>
                       <TextField
                         className="mt-3"
                         label="Age"
@@ -140,36 +143,31 @@ const expertignup = () => {
                       </button>
 
                       <div className="text-center">
-                        <p>or sign up with:</p>
+                       
                         <button
                           type="button"
                           className="btn btn-link btn-floating mx-1"
                         >
-                          <i className="fab fa-facebook-f"></i>
+                          <a href="https://www.fb.com" target="_blank"><i className="fab fa-facebook-f"></i></a>
+                          
+                        </button>
+                        
+                        <button
+                          type="button"
+                          className="btn btn-link btn-floating mx-1"
+                        >
+                         <a href="https://www.google.com" target="_blank"><i className="fab fa-google"></i></a>
                         </button>
 
+                        
                         <button
                           type="button"
                           className="btn btn-link btn-floating mx-1"
                         >
-                          <i className="fab fa-google"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-twitter"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-github"></i>
+                          <a href="https://www.github.com" target="_blank"><i className="fab fa-github"></i></a>
                         </button>
                       </div>
-                      <a href="/main/resetpassword"><u>Foregt password ?</u></a>
+                     
                     </form>
                   )}
                 </Formik>
@@ -181,4 +179,4 @@ const expertignup = () => {
     </section>
   );
 };
-export default expertignup;
+export default Signup;
