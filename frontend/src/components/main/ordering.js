@@ -3,19 +3,19 @@ import { useEffect, useState } from "react";
 const Product = () => {
 
 
-    const img1 = "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8drqaam5vu.jpeg?q=70";
-    const img2 = "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8dbzv8vh7t.jpeg?q=70";
-    const img3 = "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/a/f/p/apple-iphone-12-dummyapplefsn-original-imafwg8dg79fv4gf.jpeg?q=70";
-    const img4 = "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8dfrjcn9hc.jpeg?q=70";
+    const img1 = "https://cdn.shopify.com/s/files/1/2980/5140/products/frontback_1_130x.jpg?v=1632235013"
+    const img2 = "https://cdn.shopify.com/s/files/1/2980/5140/products/dimension_350f10ce-e361-4861-b132-6e968b3ad9de_130x.jpg?v=1632235034";
+    const img3 = "https://cdn.shopify.com/s/files/1/2980/5140/products/2percent_36e37c0d-54d3-4c1d-96f1-eb2716114121_130x.jpg?v=1632235058";
+    const img4 = "https://cdn.shopify.com/s/files/1/2980/5140/products/15_1bb5c6ee-8425-4300-8dc0-f92e1af730c6_600x.jpg?v=1634056657";
 
     const [mainImg, setMainImg] = useState(img1);
 
     const productData = {
-        name: 'APPLE iPhone 12 (Red, 128 GB)',
-        ratings: 5903,
-        reviews: 476,
-        price: 82900,
-        imgurl: 'https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8dbzv8vh7t.jpeg?q=70'
+        // name: 'APPLE iPhone 12 (Red, 128 GB)',
+        // ratings: 5903,
+        // reviews: 476,
+        // price: 82900,
+        imgurl: 'https://cdn.shopify.com/s/files/1/2980/5140/products/frontback_1_130x.jpg?v=1632235013'
     }
 
     useEffect(() => {
@@ -48,16 +48,16 @@ const Product = () => {
                         </div>
                         <div className="row mt-3 mb-3">
                             <div className="col">
-                                <img onClick={e => setMainImg(img1)} src={img1} style={{ height: '4rem' }} />
+                                <img onClick={e => setMainImg(img1)} src={img1} style={{ height: '7rem' }} />
                             </div>
                             <div className="col">
-                                <img onClick={e => setMainImg(img2)} src={img2} style={{ height: '4rem' }} />
+                                <img onClick={e => setMainImg(img2)} src={img2} style={{ height: '7rem' }} />
                             </div>
                             <div className="col">
-                                <img onClick={e => setMainImg(img3)} src={img3} style={{ height: '4rem' }} />
+                                <img onClick={e => setMainImg(img3)} src={img3} style={{ height: '7rem' }} />
                             </div>
                             <div className="col">
-                                <img onClick={e => setMainImg(img4)} src={img4} style={{ height: '4rem' }} />
+                                <img onClick={e => setMainImg(img4)} src={img4} style={{ height: '7rem' }} />
                             </div>
                         </div>
                         <div className="row mt-3">

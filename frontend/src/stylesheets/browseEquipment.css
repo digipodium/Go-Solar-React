@@ -108,11 +108,12 @@
     transform: none!important;
 }
 
-.ground {
+
+/* .ground {
     background-color: rgb(219, 198, 159);
     padding: 60px;
     margin-top: -30px;
-}
+} */
 
 .searchEvent {
     padding: 10px;
