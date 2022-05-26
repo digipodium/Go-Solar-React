@@ -15,6 +15,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+//import "../../stylesheets/sellersignup.css"
 
 const Sellersignup = () => {
   const signupStyles = {
@@ -22,7 +23,7 @@ const Sellersignup = () => {
     height: "100%",
   };
 
-  const url = app_config.backend_url;
+  const url = app_config.api_url;
 
   //   1. Create the form object
 
@@ -39,7 +40,7 @@ const Sellersignup = () => {
     console.log(formdata);
 
     // asynchronous function returns promise
-    fetch(url + "/user/add", {
+    fetch(url + "/seller/add", {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: { "Content-Type": "application/json" },
@@ -58,6 +59,7 @@ const Sellersignup = () => {
   };
 
   return (
+    <div>
     <div className="signup-bg" style={styles.container}>
       <div className="row g-0 align-items-center h-100">
         <div className="col-lg-3 col-md-4 col-sm-8 col-xs-10 col-11 mx-auto">
@@ -67,8 +69,8 @@ const Sellersignup = () => {
                 {({ values, handleSubmit, handleChange }) => {
                   return (
                     <form onSubmit={handleSubmit}>
-                      <p className="text-center text-muted my-1">Othelo</p>
-                      <h3 className="text-center mb-4">Create New Account</h3>
+                      <p className="text-center text-muted my-1">Go-Solar</p>
+                      <h3 className="text-center mb-4">Create Seller Account</h3>
                       <div>
                         <TextField
                           label="Name"
@@ -128,7 +130,7 @@ const Sellersignup = () => {
                       >
                         Signup
                       </Button>
-                      <Link to="/main/signin">Login Now</Link>
+                      <Link to="/main/sellerlogin">Login Now</Link>
                     </form>
                   );
                 }}
@@ -138,14 +140,15 @@ const Sellersignup = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
 const styles = {
   container: {
     background:
-      "linear-gradient(to right, #0000009b, #000000ad), url(http://localhost:5000/images/signup_back.jpg)",
-    height: "100vh",
+      "linear-gradient(to right, #0000009b, #000000ad), url(https://cdn.shopify.com/s/files/1/2980/5140/files/desktop_banner_-_3_5a730f81-fb4f-4a4f-9910-727963303dfa_1600x.png?v=1627145304)",
+    height: "74vh",
   },
 };
 
