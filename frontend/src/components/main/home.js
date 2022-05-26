@@ -22,7 +22,7 @@ const Home = () => {
                   <div class="full">
                     <div class="center-desk">
                       <div class="logo">
-                        <a href="/main/home">
+                        <a href="/home">
                           <img src={url + "/images/logo3.png"} alt="#" />
                         </a>
                       </div>
@@ -45,40 +45,40 @@ const Home = () => {
                     <div class="collapse navbar-collapse" id="navbarsExample04">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" href="index.html">
+                          <a class="nav-link" href="/home">
                             Home
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="about.html">
+                        {/* <li class="nav-item">
+                          <a class="nav-link" href="#">
                             About
                           </a>
-                        </li>
+                        </li> */}
                         <li class="nav-item">
                           <a class="nav-link" href="computer.html">
-                            Computer
+                            Panels
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="laptop.html">
-                            Laptop
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="product.html">
                             Products
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="contact.html">
-                            Contact Us
+                        {/* <li class="nav-item">
+                          <a class="nav-link" href="product.html">
+                            Products
                           </a>
+                        </li> */}
+                       <li class="nav-item d_none">
+                          <Link class="nav-link" to="/main/contactus">
+                            contactus
+                          </Link>
                         </li>
-                        <li class="nav-item d_none">
+                        {/* <li class="nav-item d_none">
                           <a class="nav-link" href="#">
                             <i class="fa fa-search" aria-hidden="true"></i>
                           </a>
-                        </li>
+                        </li> */}
                         <li class="nav-item d_none">
                           <Link class="nav-link" to="/main/login">
                             Login
@@ -363,7 +363,7 @@ const Home = () => {
                         <figure>
                           <img src="https://tse3.mm.bing.net/th?id=OIP.PT6yxfYGYV8g3V8u611-wgHaHa&pid=Api&P=0&w=169&h=169" alt="#" />
                         </figure>
-                        <h3>Panels</h3>
+                        <h3>LIGHTS</h3>
                       </div>
                     </div>
                     <div class="col-md-4 margin_bottom1">
@@ -371,7 +371,7 @@ const Home = () => {
                         <figure>
                           <img src="https://tse3.mm.bing.net/th?id=OIP.UllGVJXYtR1BX_d0edPrUQHaHa&pid=Api&P=0&w=165&h=165" alt="#" />
                         </figure>
-                        <h3>Lights</h3>
+                        <h3>SENSOR LIGHTS</h3>
                       </div>
                     </div>
                     <div class="col-md-4 margin_bottom1">
@@ -379,7 +379,7 @@ const Home = () => {
                         <figure>
                           <img src="https://tse1.mm.bing.net/th?id=OIP.ALFd7ASTiZ-KX5VvlPsd0QHaHa&pid=Api&P=0&w=167&h=167" alt="#" />
                         </figure>
-                        <h3>Torch</h3>
+                        <h3>LED LIGHTS</h3>
                       </div>
                     </div>
                     <div class="col-md-4 margin_bottom1">
@@ -501,20 +501,14 @@ const Home = () => {
                           <div class="col-md-9 offset-md-3">
                             <div class="test_box">
                               <i>
-                                <img src="images/cos.png" alt="#" />
+                                <img src="https://i.pinimg.com/originals/63/f7/e9/63f7e99d2bdb21c005ce2debca4c3a9e.jpg" style={{height: '100px'}} alt="#" />
                               </i>
-                              <h4>Sandy Miller</h4>
+                              <h4>Neha Dixit</h4>
                               <p>
-                                ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi
-                                ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident,
-                                sunt in culpa qui officia deserunt mollit anim
-                                id
+                               This was my first expireance with this site and it was awesome!
+                               The imlementetion team's behaviour was good, experts response time was fine.
+
+                               
                               </p>
                             </div>
                           </div>
@@ -529,20 +523,11 @@ const Home = () => {
                           <div class="col-md-9 offset-md-3">
                             <div class="test_box">
                               <i>
-                                <img src="images/cos.png" alt="#" />
+                                <img src="https://1.bp.blogspot.com/-56qaqnSjSUs/XmDjV_YRBJI/AAAAAAAAPO0/QEKgs_qAvN8rIMgHvWoVq3sKc_v_A11gwCLcBGAsYHQ/s1600/Cute%2BGirl%2BDP%2BImages%2B%252818%2529.jpg"  style={{height: '100px'}}  alt="#" />
                               </i>
-                              <h4>Sandy Miller</h4>
+                              <h4>Suman Chauhan</h4>
                               <p>
-                                ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi
-                                ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident,
-                                sunt in culpa qui officia deserunt mollit anim
-                                id
+                                Delivery service is awesome!!
                               </p>
                             </div>
                           </div>
@@ -557,20 +542,11 @@ const Home = () => {
                           <div class="col-md-9 offset-md-3">
                             <div class="test_box">
                               <i>
-                                <img src="images/cos.png" alt="#" />
+                                <img src="https://www.whatsappimages.in/wp-content/uploads/2022/01/Free-Girl-DP-Wallpaper-Pics-Download.jpg" style={{height: '100px'}}  alt="#" />
                               </i>
-                              <h4>Sandy Miller</h4>
+                              <h4>Angel Priya</h4>
                               <p>
-                                ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi
-                                ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident,
-                                sunt in culpa qui officia deserunt mollit anim
-                                id
+                               Admin service is very good!!
                               </p>
                             </div>
                           </div>
