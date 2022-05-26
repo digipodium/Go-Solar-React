@@ -54,7 +54,6 @@ function App() {
         <Route element={<Main />} path="main">
           <Route element={<Signup />} path="signup" />
           <Route element={<Login />} path="login" />
-          <Route element={<Home />} path="home" />
           <Route element={<Expertlogin />} path="expertlogin" />
           <Route element={<Sellersignup />} path="sellersignup" />
           <Route element={<Sellerlogin />} path="sellerlogin" />
@@ -76,6 +75,7 @@ function App() {
         </Route>
 
         <Route element={<Navigate to="/main/home" />} path="/"></Route>
+        <Route element={<Home />} path="main/home" />
       </Routes>
     </BrowserRouter>
   );
