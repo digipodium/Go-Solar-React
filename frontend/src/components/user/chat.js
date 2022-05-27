@@ -61,24 +61,31 @@ const ExpertChat = () => {
       </div>
     ));
   };
-
+  
   return (
-    <div style={{ paddingTop: "2rem" }}>
-      <div className="container-fluid">
+    <div>
+      <div className="container-fluid pt-5">
         <div className="row">
           <div className="col-md-3">
             <div className="card">
               <div className="card-body">
-                <p className="text-muted">Loggedin as</p>
-                <h3>{currentExpert.name}</h3>
-                <h3>{currentExpert.name}</h3>
-                <h3>{currentExpert.name}</h3>
-                <h3>{currentExpert.name}</h3>
+                <div className="row">
+                  <div className="col-6">
+                    <Typography variant="h4">
+                      Expert Name : {expert.fullname}
+                    </Typography>
+                  </div>
+                  <div className="col-6">
+                    <Typography variant="h4">
+                      Status : {expertOnline ? "Online" : "Offline"}
+                    </Typography>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-md-9">
-            <div className="card">
+            <div className="card ">
               <div className="card-body">
                 <div className="msg-area">{displayMessages()}</div>
                 <div className="input-group">
@@ -89,8 +96,8 @@ const ExpertChat = () => {
                     value={text}
                   />
                   <div className="input-group-append">
-                    <button className="btn btn-success" onClick={sendMessage}>
-                      <i class="fa fa-paper-plane" aria-hidden="true"></i>{" "}
+                    <button className="btn btn-success " onClick={sendMessage}>
+                      <i class="fa fa-paper-plane" aria-hidden="true"></i>
                     </button>
                   </div>
                 </div>

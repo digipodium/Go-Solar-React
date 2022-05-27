@@ -7,7 +7,7 @@ const ExpertChat = () => {
   // backend url
   const url = app_config.backend_url;
 
-  const [curentExpert, setCurentExpert] = useState(
+  const [currentExpert, setCurrentExpert] = useState(
     JSON.parse(sessionStorage.getItem("expert"))
   );
 
@@ -19,7 +19,7 @@ const ExpertChat = () => {
   const [text, setText] = useState("");
 
   const online = () => {
-    socket.emit("addexpert", curentExpert._id);
+    socket.emit("addexpert", currentExpert._id);
   };
 
   useEffect(() => {
@@ -63,23 +63,37 @@ const ExpertChat = () => {
   };
 
   return (
-    <div>
-      <h1>CHat Component</h1>
-      <div className="container">
-        <div className="card">
-          <div className="card-body">
-            <div className="msg-area">{displayMessages()}</div>
-            <div className="input-group">
-              <input
-                className="form-control"
-                placeholder="Type Your Message Here...."
-                onChange={(e) => setText(e.target.value)}
-                value={text}
-              />
-              <div className="input-group-append">
-                <button className="btn btn-success" onClick={sendMessage}>
-                  <i class="fa fa-paper-plane" aria-hidden="true"></i>{" "}
-                </button>
+    <div style={{ paddingTop: "2rem" }}>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-3">
+            <div className="card">
+              <div className="card-body">
+                <p className="text-muted">Loggedin as</p>
+                <h3>{currentExpert.name}</h3>
+                <h3>{currentExpert.name}</h3>
+                <h3>{currentExpert.name}</h3>
+                <h3>{currentExpert.name}</h3>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-9">
+            <div className="card">
+              <div className="card-body">
+                <div className="msg-area">{displayMessages()}</div>
+                <div className="input-group">
+                  <input
+                    className="form-control"
+                    placeholder="Type Your Message Here...."
+                    onChange={(e) => setText(e.target.value)}
+                    value={text}
+                  />
+                  <div className="input-group-append">
+                    <button className="btn btn-success" onClick={sendMessage}>
+                      <i class="fa fa-paper-plane" aria-hidden="true"></i>{" "}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

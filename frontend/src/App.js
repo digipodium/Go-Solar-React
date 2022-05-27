@@ -70,8 +70,12 @@ function App() {
           <Route element={<Sellerlogin />} path="sellerlogin" />
           <Route element={<Resetpassword />} path="resetpassword" />
           <Route element={<Expertsignup />} path="expertsignup" />
+
+          <Route element={<Contactus/>} path="contactus" />
+
           <Route element={<Contactus/>} path="/main/contactus" />
-         {/* E */}
+
+          {/* <Route element={<Equipmentdetails />} path="equipmentdetails" /> */}
         </Route>
         <Route element={<Seller />} path="seller">
           <Route element={<AddEquipment />} path="addequipment" />

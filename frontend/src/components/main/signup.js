@@ -95,7 +95,7 @@ const Signup = () => {
                           />
                         </div>
                       </div>
-                      
+                      <div className="row">
                       <div className="col-md-6">
                       <TextField
                         className="mt-3"
@@ -107,6 +107,7 @@ const Signup = () => {
                         onChange={handleChange}
                       />
                       </div>
+                      <div className="col-md-6">
                       <TextField
                         className="mt-3"
                         label="Age"
@@ -116,6 +117,9 @@ const Signup = () => {
                         value={values.age}
                         onChange={handleChange}
                       />
+                      </div>
+                      </div>
+                      
 
                       
 
