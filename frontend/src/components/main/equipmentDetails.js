@@ -229,6 +229,10 @@ const EquipmentDetail = () => {
         <div className="row">{displayData()}</div>
       </div>
     </div>
+    
+ 
+
+
   );
 };
 

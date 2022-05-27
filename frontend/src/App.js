@@ -29,6 +29,7 @@ import ManageEquipment from "./components/seller/manageEquipment";
 import Resetpassword from "./components/main/resetPassword";
 import Expertsignup from "./components/main/expertsignup ";
 import Contactus from "./components/main/contactus";
+import EquipmentDetail from "./components/main/equipmentDetails";
 
 function App() {
   return (
@@ -70,7 +71,7 @@ function App() {
           <Route element={<Resetpassword />} path="resetpassword" />
           <Route element={<Expertsignup />} path="expertsignup" />
           <Route element={<Contactus/>} path="/main/contactus" />
-          {/* <Route element={<Equipmentdetails />} path="equipmentdetails" /> */}
+         {/* E */}
         </Route>
         <Route element={<Seller />} path="seller">
           <Route element={<AddEquipment />} path="addequipment" />

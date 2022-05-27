@@ -7,8 +7,10 @@ const Home = () => {
 
   return (
     <div>
-      <div>
-      <div class="main-layout">
+      
+      <div class="main-layout" style={{
+       
+      }} >
       {/* <!-- loader  --> */}
       {/* <div class="loader_bg">
          <div class="loader"> <img src={url + "/images/loading.gif"} alt="#" /></div>
@@ -71,7 +73,7 @@ const Home = () => {
                         </li> */}
                        <li class="nav-item d_none">
                           <Link class="nav-link" to="/main/contactus">
-                            contactus
+                            Contact Us
                           </Link>
                         </li>
                         {/* <li class="nav-item d_none">
@@ -120,9 +122,9 @@ const Home = () => {
                             It's time to create a more safe, secure and green
                             world with solar pannels. We provide india's most
                             trusted solar panels and solar products with easy
-                            implementation{" "}
+                            implementation
                           </p>
-                          <a href="#">BROWSE </a>{" "}
+                          <a href="#">BROWSE </a>
                           <a href="contact.html">Contact </a>
                         </div>
                       </div>
@@ -448,7 +450,7 @@ const Home = () => {
             <div class="row">
               <div class="col-md-6">
                 <div class="titlepage">
-                  <p>Every Computer and laptop</p>
+                  <p>EVERY PANELS AND SOLAR PRODUCTS</p>
                   <h2>Up to 40% off !</h2>
                   <a class="read_more" href="#">
                     Shop Now
@@ -458,7 +460,7 @@ const Home = () => {
               <div class="col-md-6">
                 <div class="laptop_box">
                   <figure>
-                    <img src="images/pc.png" alt="#" />
+                    <img src="https://media.istockphoto.com/photos/solar-panels-with-sunset-and-blue-sky-background-clean-power-energy-picture-id1247794854?k=20&m=1247794854&s=612x612&w=0&h=Wprl9G-Ie_kl0yoOCItAKgA-JrxbhG5NXCvfAIANwlM=" alt="#" />
                   </figure>
                 </div>
               </div>
@@ -585,7 +587,7 @@ const Home = () => {
         </div>
       
       </div>
-      </div>
+     
       
     </div>
     

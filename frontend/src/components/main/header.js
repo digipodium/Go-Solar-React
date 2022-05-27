@@ -36,7 +36,7 @@ const pages = [
 const guestUser = [
   {
     name: "Home",
-    link: "/home",
+    link: "/main/home",
     icon: <Home />,
   },
   {

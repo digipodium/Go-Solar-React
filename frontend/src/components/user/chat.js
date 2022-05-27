@@ -1,18 +1,15 @@
-import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { io } from "socket.io-client";
 import app_config from "../../config";
 import "./chat.css";
 
-const UserChat = () => {
+const ExpertChat = () => {
   // backend url
   const url = app_config.backend_url;
-  const { expertid } = useParams();
 
-  const [expertOnline, setExpertOnline] = useState(false);
-  const [expertSocketId, setExpertSocketId] = useState("");
-  const [expert, setExpert] = useState({});
+  const [currentExpert, setCurrentExpert] = useState(
+    JSON.parse(sessionStorage.getItem("expert"))
+  );
 
   const [msgList, setMsgList] = useState([]);
 
@@ -21,47 +18,30 @@ const UserChat = () => {
 
   const [text, setText] = useState("");
 
-  const checkExpertisOnline = () => {
-    socket.emit("checkexpert", expertid);
-  };
-
-  const fetchExpertData = () => {
-    fetch(url + "/expert/getbyid/" + expertid).then((res) => {
-      if (res.status === 200) {
-        res.json().then((data) => {
-          setExpert(data);
-          console.log(data);
-        });
-      }
-    });
+  const online = () => {
+    socket.emit("addexpert", currentExpert._id);
   };
 
   useEffect(() => {
     //   connect with the backend
-    fetchExpertData();
     socket.connect();
-    checkExpertisOnline();
+    online();
   }, []);
 
   socket.on("recmsg", (data) => {
     // console.log(data);
 
     // to add newly recieved message on screen
+    console.log(data);
     const newList = [...msgList, data];
     setMsgList(newList);
   });
 
-  socket.on("checkexpertfromserver", (data) => {
-    console.log(data);
-    setExpertOnline(data.status);
-    setExpertSocketId(data.socketId);
-  });
-
   const sendMessage = () => {
-    let obj = { message: text, sent: true, socketId: expertSocketId };
-    // console.log(obj);
+    let obj = { message: text, sent: true };
+
     // for sending the event on backend
-    socket.emit("sendmsg", obj);
+    socket.emit("sendstudent", obj);
 
     // to add newly sent message on screen
     const newList = [...msgList, obj];
@@ -83,40 +63,37 @@ const UserChat = () => {
   };
 
   return (
-    <div>
-      <div className="container">
-        <Typography variant="h3">Chat with your expert</Typography>
-        <hr />
-        <div className="card">
-          <div className="card-body">
-            <div className="row">
-              <div className="col-6">
-                <Typography variant="h4">
-                  Expert Name : {expert.fullname}
-                </Typography>
-              </div>
-              <div className="col-6">
-                <Typography variant="h4">
-                  Status : {expertOnline ? "Online" : "Offline"}
-                </Typography>
+    <div style={{ paddingTop: "2rem" }}>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-3">
+            <div className="card">
+              <div className="card-body">
+                <p className="text-muted">Loggedin as</p>
+                <h3>{currentExpert.name}</h3>
+                <h3>{currentExpert.name}</h3>
+                <h3>{currentExpert.name}</h3>
+                <h3>{currentExpert.name}</h3>
               </div>
             </div>
           </div>
-        </div>
-        <div className="card">
-          <div className="card-body">
-            <div className="msg-area">{displayMessages()}</div>
-            <div className="input-group">
-              <input
-                className="form-control"
-                placeholder="Type Your Message Here...."
-                onChange={(e) => setText(e.target.value)}
-                value={text}
-              />
-              <div className="input-group-append">
-                <button className="btn btn-success" onClick={sendMessage}>
-                  <i class="fa fa-paper-plane" aria-hidden="true"></i>{" "}
-                </button>
+          <div className="col-md-9">
+            <div className="card">
+              <div className="card-body">
+                <div className="msg-area">{displayMessages()}</div>
+                <div className="input-group">
+                  <input
+                    className="form-control"
+                    placeholder="Type Your Message Here...."
+                    onChange={(e) => setText(e.target.value)}
+                    value={text}
+                  />
+                  <div className="input-group-append">
+                    <button className="btn btn-success" onClick={sendMessage}>
+                      <i class="fa fa-paper-plane" aria-hidden="true"></i>{" "}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -126,4 +103,4 @@ const UserChat = () => {
   );
 };
 
-export default UserChat;
+export default ExpertChat;
