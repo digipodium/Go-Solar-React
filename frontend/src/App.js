@@ -28,6 +28,8 @@ import AddEquipment from "./components/seller/addEquipment";
 import ManageEquipment from "./components/seller/manageEquipment";
 import Resetpassword from "./components/main/resetPassword";
 import Expertsignup from "./components/main/expertsignup ";
+import Contactus from "./components/main/contactus";
+import EquipmentDetail from "./components/main/equipmentDetails";
 
 function App() {
   return (
@@ -68,6 +70,11 @@ function App() {
           <Route element={<Sellerlogin />} path="sellerlogin" />
           <Route element={<Resetpassword />} path="resetpassword" />
           <Route element={<Expertsignup />} path="expertsignup" />
+
+          <Route element={<Contactus/>} path="contactus" />
+
+          <Route element={<Contactus/>} path="/main/contactus" />
+
           {/* <Route element={<Equipmentdetails />} path="equipmentdetails" /> */}
         </Route>
         <Route element={<Seller />} path="seller">
@@ -82,9 +89,9 @@ function App() {
         <Route element={<User />} path="user">
           <Route element={<UserChat />} path="chat/:expertid" />
         </Route>
+        <Route element={<Home />} path="home" />
 
-        <Route element={<Navigate to="/main/home" />} path="/"></Route>
-        <Route element={<Home />} path="main/home" />
+        <Route element={<Navigate to="/home" />} path="/"></Route>
       </Routes>
     </BrowserRouter>
   );

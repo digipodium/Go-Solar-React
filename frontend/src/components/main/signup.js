@@ -95,7 +95,7 @@ const Signup = () => {
                           />
                         </div>
                       </div>
-                      
+                      <div className="row">
                       <div className="col-md-6">
                       <TextField
                         className="mt-3"
@@ -107,6 +107,7 @@ const Signup = () => {
                         onChange={handleChange}
                       />
                       </div>
+                      <div className="col-md-6">
                       <TextField
                         className="mt-3"
                         label="Age"
@@ -116,6 +117,9 @@ const Signup = () => {
                         value={values.age}
                         onChange={handleChange}
                       />
+                      </div>
+                      </div>
+                      
 
                       
 
@@ -143,36 +147,31 @@ const Signup = () => {
                       </button>
 
                       <div className="text-center">
-                        <p>or sign up with:</p>
+                       
                         <button
                           type="button"
                           className="btn btn-link btn-floating mx-1"
                         >
-                          <i className="fab fa-facebook-f"></i>
+                          <a href="https://www.fb.com" target="_blank"><i className="fab fa-facebook-f"></i></a>
+                          
+                        </button>
+                        
+                        <button
+                          type="button"
+                          className="btn btn-link btn-floating mx-1"
+                        >
+                         <a href="https://www.google.com" target="_blank"><i className="fab fa-google"></i></a>
                         </button>
 
+                        
                         <button
                           type="button"
                           className="btn btn-link btn-floating mx-1"
                         >
-                          <i className="fab fa-google"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-twitter"></i>
-                        </button>
-
-                        <button
-                          type="button"
-                          className="btn btn-link btn-floating mx-1"
-                        >
-                          <i className="fab fa-github"></i>
+                          <a href="https://www.github.com" target="_blank"><i className="fab fa-github"></i></a>
                         </button>
                       </div>
-                      <a href="/main/resetpassword"><u>Foregt password ?</u></a>
+                     
                     </form>
                   )}
                 </Formik>
