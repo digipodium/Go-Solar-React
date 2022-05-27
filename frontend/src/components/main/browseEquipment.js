@@ -12,11 +12,11 @@ const BrowseEquipment = () => {
   const [datalist, setDatalist] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = app_config.api_url;
+  const url = app_config.backend_url;
   const navigate = useNavigate();
 
   const fetchData = () => {
-    fetch(url + "equipment/getall").then((res) => {
+    fetch(url + "/equipment/getall").then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
           console.log(data);
@@ -47,40 +47,37 @@ const BrowseEquipment = () => {
           createdAt,
           _id,
         }) => (
-          
-          <div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
-          <div class='container cont' id='container'>
 
-  <div class='card-wrapper'>
-    <div class='arrow' id='previous'><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-    <div class='arrow' id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-    <div class='main-window' id='main-window'>
-
-      <div class='user-image'>
-      <NavLink className="ripple" to={"/main/pptviewer/" + _id}>
-                <img
-                  src={url + image}
-                  class="card-img-top"
-                  alt="Laptop"
-                />
+  <div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
+      
+  <div class="product">
+  <span class="product__price">
+  <p class="small">
+                     <a href="#!" class="text-muted">
+                       {price}
+                     </a>
+                </p>
+  </span>
+  
+  <NavLink className="ripple" to={"/main/pptviewer/" + _id}>
+         <img
+                   src={url + image}
+                   class="card-img-top product__image"
+                   alt="Laptop"
+                 />
                 
               </NavLink>
- 
-        {/* <div class='add-button'>+</div> */}
-        <p class="small">
-                    <a href="#!" class="text-muted">
-                      {createdAt}
-                    </a>
-                  </p>
-                  <h5 class="mb-0 username">{title}</h5>
-      </div>
-        
-      <Button onClick={e=>navigate("/main/equipmentDetail/" + _id)} variant="contained">Click For Full Details</Button>
-                
-      </div>
-      </div>
-      </div>
-      </div>
+
+  <h1 class="product__title">{title}</h1>
+  <hr />
+  {/* <p>The Nike Roshe One Print Men's Shoe offers breathability, lightweight cushioning and bold style with an injected unit midsole and colorful mesh upper. </p> */}
+  <a href="./main/equipmentDetails" class="product__btn btn">Buy Now</a>
+</div>
+</div>
+      
+      
+
+    
           
         )
       );
@@ -94,10 +91,11 @@ const BrowseEquipment = () => {
               
      
     <div style={{ background: "#eee", height: "200vh" }}>
-    <img class="banner" src=""></img>
+    <img class="banner" src="https://cdn.shopify.com/s/files/1/2980/5140/files/desktop_banner_-_3_5a730f81-fb4f-4a4f-9910-727963303dfa_1600x.png?v=1627145304"></img>
     <div class=" row ground">
                 <div class="col-md-5 mb-3">
                 <div class="form-outline form">
+                  
 
                 {/* <label for="state" > </label> */}
 
@@ -109,17 +107,29 @@ const BrowseEquipment = () => {
 </div>
 </div>
 </div>
-      
+<div class="wrapper">
+
+<div class="header">
+  <img class="solarimg" src="https://cdn.shopify.com/s/files/1/2980/5140/collections/loom_solar_banner_1200x.jpg?v=1641970493"></img>
+  
+  {/* <h1 class="header__title">Expanding Card Grid</h1>
+  <h2 class="header__subtitle">with Flexbox</h2> */}
+  
+
       <div className="container">
         <div className="row">{displayData()}</div>
       </div>
     </div>
-    </div>
+    </div>  </div>   
+      </div>
+
+
   );
 };
 
 
 const styles = {
+  
   header: {
     // background:
     //   "linear-gradient(to right, #0000009b, #000000ad), url(http://localhost:5000/images/browse_back.jpg)",

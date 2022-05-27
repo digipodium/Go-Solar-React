@@ -25,7 +25,7 @@ const EquipmentDetail = () => {
   const [rating, setRating] = useState(5);
 
   const fetchData = () => {
-    fetch(url + "equipment/getbyid/" + id).then((res) => {
+    fetch(url + "/equipment/getbyid/" + id).then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
           console.log(data);

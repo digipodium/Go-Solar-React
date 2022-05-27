@@ -23,7 +23,7 @@ const Sellersignup = () => {
     height: "100%",
   };
 
-  const url = app_config.api_url;
+  const url = app_config.backend_url;
 
   //   1. Create the form object
 
