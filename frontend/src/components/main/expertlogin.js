@@ -43,64 +43,71 @@ const Expertlogin = () => {
   };
 
   return (
-    <div className="container" style={styles.container}>
-    <div >
-      <div className="row align-items-center justify-content-center h-100">
-        <div className="col-md-4">
-          <div className="card">
-            <div className="card-header">
-              <h3 className="mb-0">Expert Login</h3>
+    <div style={styles.container}>
+      <div className="container">
+        <div>
+          <div className="row align-items-center justify-content-center h-100">
+            <div className="col-md-4">
+              <div className="card">
+                <div className="card-header">
+                  <h3 className="mb-0">Expert Login</h3>
+                </div>
+                <div className="card-body">
+                  <Formik initialValues={loginForm} onSubmit={loginSubmit}>
+                    {({ values, handleChange, handleSubmit }) => (
+                      <form onSubmit={handleSubmit}>
+                        <TextField
+                          // error
+                          className="w-100 mb-4"
+                          label="Email"
+                          variant="filled"
+                          // helperText="Invalid Email ID"
+                          id="email"
+                          value={values.email}
+                          onChange={handleChange}
+                        />
+                        <TextField
+                          className="w-100 mb-4"
+                          label="Password"
+                          variant="filled"
+                          type="password"
+                          helperText="Enter correct password"
+                          id="password"
+                          value={values.password}
+                          onChange={handleChange}
+                        />{" "}
+                        <a href="/main/resetpassword">
+                          <u>Forget password ?</u> <br></br>
+                        </a>
+                        <a href="/main/expertsignup">
+                          <u>signup</u>
+                        </a>
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          className="w-100"
+                          color="error"
+                        >
+                          Submit
+                        </Button>
+                      </form>
+                    )}
+                  </Formik>
+                </div>
+              </div>
             </div>
-            <div className="card-body">
-              <Formik initialValues={loginForm} onSubmit={loginSubmit}>
-                {({ values, handleChange, handleSubmit }) => (
-                  <form onSubmit={handleSubmit}>
-                    <TextField
-                      // error
-                      className="w-100 mb-4"
-                      label="Email"
-                      variant="filled"
-                      // helperText="Invalid Email ID"
-                      id="email"
-                      value={values.email}
-                      onChange={handleChange}
-                    />
-                    <TextField
-                      className="w-100 mb-4"
-                      label="Password"
-                      variant="filled"
-                      type="password"
-                      helperText="Enter correct password"
-                      id="password"
-                      value={values.password}
-                      onChange={handleChange}
-                    /> <a href="/main/resetpassword"><u>Forget password ?</u> <br></br></a><a href="/main/expertsignup"><u>signup</u></a>
-
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      className="w-100"
-                      color="error"
-                    >
-                      Submit
-                    </Button>
-                  </form>
-                )}
-              </Formik>
+            <div className="col-md-8">
+              <div style={{ height: "100%", padding: "5rem" }}>
+                <img
+                  className="img-fluid"
+                  alt=""
+                  src="https://minutes.co/wp-content/uploads/2019/04/shutterstock_323897318.png"
+                />
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="col-md-8">
-          <div style={{ height: "100%", padding: "5rem" }}>
-            <img
-              className="img-fluid"
-              alt=""
-              src="https://minutes.co/wp-content/uploads/2019/04/shutterstock_323897318.png"
-            />
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

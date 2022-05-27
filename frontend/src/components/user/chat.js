@@ -84,39 +84,43 @@ const UserChat = () => {
 
   return (
     <div>
-      <div className="container">
-        <Typography variant="h3">Chat with your expert</Typography>
-        <hr />
-        <div className="card">
-          <div className="card-body">
-            <div className="row">
-              <div className="col-6">
-                <Typography variant="h4">
-                  Expert Name : {expert.fullname}
-                </Typography>
-              </div>
-              <div className="col-6">
-                <Typography variant="h4">
-                  Status : {expertOnline ? "Online" : "Offline"}
-                </Typography>
+      <div className="container-fluid pt-5">
+        <div className="row">
+          <div className="col-md-3">
+            <div className="card">
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-6">
+                    <Typography variant="h4">
+                      Expert Name : {expert.fullname}
+                    </Typography>
+                  </div>
+                  <div className="col-6">
+                    <Typography variant="h4">
+                      Status : {expertOnline ? "Online" : "Offline"}
+                    </Typography>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="card">
-          <div className="card-body">
-            <div className="msg-area">{displayMessages()}</div>
-            <div className="input-group">
-              <input
-                className="form-control"
-                placeholder="Type Your Message Here...."
-                onChange={(e) => setText(e.target.value)}
-                value={text}
-              />
-              <div className="input-group-append">
-                <button className="btn btn-success" onClick={sendMessage}>
-                  <i class="fa fa-paper-plane" aria-hidden="true"></i>{" "}
-                </button>
+          <div className="col-md-9">
+            <div className="card">
+              <div className="card-body">
+                <div className="msg-area">{displayMessages()}</div>
+                <div className="input-group">
+                  <input
+                    className="form-control"
+                    placeholder="Type Your Message Here...."
+                    onChange={(e) => setText(e.target.value)}
+                    value={text}
+                  />
+                  <div className="input-group-append">
+                    <button className="btn btn-success" onClick={sendMessage}>
+                      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
