@@ -39,7 +39,7 @@ const BrowseEquipment = () => {
             <div class="product">
               <NavLink className="ripple" to={"/main/equipmentDetails/" + _id}>
                 <img
-                  src={url + "/uploads/" + image}
+                  src={url + "/images/" + image}
                   class="card-img-top product__image"
                   alt="Laptop"
                 />
@@ -49,7 +49,7 @@ const BrowseEquipment = () => {
               <h3>₹ {price}</h3>
               <hr />
               {/* <p>The Nike Roshe One Print Men's Shoe offers breathability, lightweight cushioning and bold style with an injected unit midsole and colorful mesh upper. </p> */}
-              <a href="./main/equipmentDetails" class="product__btn btn">
+              <a href="/main/equipmentDetails" class="product__btn btn">
                 Buy Now
               </a>
             </div>
