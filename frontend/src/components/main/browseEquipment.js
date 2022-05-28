@@ -42,7 +42,7 @@ const BrowseEquipment = () => {
     if (!loading) {
       return datalist.map(
         ({ title, description, image, features, price, seller, _id }) => (
-          <div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
+          <div key={_id} class="col-md-6 col-lg-3 mb-4 mb-lg-0 ">
             <Card>
               <CardMedia
                 component="img"
@@ -50,14 +50,28 @@ const BrowseEquipment = () => {
                 height={400}
               />
               <CardContent className="card-body">
-                <p className="text-muted h3">{title}</p>
+                <p className="text-muted h4">{title}</p>
                 <h2 className="float-end">₹ {price}</h2>
                 <br />
                 <hr />
                 <Button
                   variant="contained"
                   className="mt-5 w-100"
-                  onClick={(e) => navigate("/main/payment")}
+                  onClick={(e) => {
+                    sessionStorage.setItem(
+                      "product",
+                      JSON.stringify({
+                        title,
+                        description,
+                        image,
+                        features,
+                        price,
+                        seller,
+                        _id,
+                      })
+                    );
+                    navigate("/main/payment");
+                  }}
                 >
                   Buy Now
                 </Button>
@@ -85,13 +99,12 @@ const BrowseEquipment = () => {
             src="https://cdn.shopify.com/s/files/1/2980/5140/collections/loom_solar_banner_1200x.jpg?v=1641970493"
             alt=""
           />
-          <div className="row mt-5">{displayData()}</div>
+          <div className="container">
+            <div className="row mt-5">{displayData()}</div>
+          </div>
         </div>
         <div class="wrapper">
           <div class="header">
-            {/* <h1 class="header__title">Expanding Card Grid</h1>
-  <h2 class="header__subtitle">with Flexbox</h2> */}
-
             <div className="container"></div>
           </div>
         </div>{" "}
