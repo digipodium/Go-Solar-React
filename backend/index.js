@@ -17,36 +17,36 @@ const { Server } = require("socket.io");
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-    cors: {
-        origin: ["http://localhost:3000"],
-    },
+  cors: {
+    origin: ["http://localhost:3000"],
+  },
 });
 const connectedExperts = {};
 
 io.on("connection", (socket) => {
-    console.log("client connected ");
-    socket.on("addexpert", (id) => {
-        connectedExperts[id] = socket.id;
-        console.log(connectedExperts);
-    });
+  console.log("client connected ");
+  socket.on("addexpert", (id) => {
+    connectedExperts[id] = socket.id;
+    console.log(connectedExperts);
+  });
 
-    socket.on("checkexpert", (id) => {
-        socket.emit("checkexpertfromserver", {
-            status: "online",
-            socketId: connectedExperts[id],
-        });
+  socket.on("checkexpert", (id) => {
+    socket.emit("checkexpertfromserver", {
+      status: "online",
+      socketId: connectedExperts[id],
     });
+  });
 
-    socket.on("sendstudent", (data) => {
-        // console.log(data);
-        data.sent = false;
-        socket.broadcast.emit("recmsg", data);
-    });
-    socket.on("sendmsg", (data) => {
-        console.log(data);
-        data.sent = false;
-        socket.to(data.socketId).emit("recmsg", data);
-    });
+  socket.on("sendstudent", (data) => {
+    // console.log(data);
+    data.sent = false;
+    socket.broadcast.emit("recmsg", data);
+  });
+  socket.on("sendmsg", (data) => {
+    console.log(data);
+    data.sent = false;
+    socket.to(data.socketId).emit("recmsg", data);
+  });
 });
 
 // for reading json data
@@ -68,16 +68,27 @@ app.use("/util", utilRouter);
 app.use("/expert", expertRouter);
 app.use(express.static("./static"));
 app.get("/", (req, res) => {
-    res.send("you have got a response");
+  res.send("you have got a response");
+});
+
+const stripe_sk = "sk_test_4ypbMh4aR9gRNnUkQCwgOyCT00rSoAbXzZ";
+const stripe = require("stripe")(stripe_sk);
+app.post("/create-payment-intent", async (req, res) => {
+  const data = req.body;
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: data.amount,
+    currency: "inr",
+  });
+  res.status(200).json(paymentIntent);
 });
 
 app.get("/home", (req, res) => {
-    res.send("you have reached home");
+  res.send("you have reached home");
 });
 
 app.get("*", (req, res) => {
-    res.send("404");
+  res.send("404");
 });
 httpServer.listen(port, () => {
-    console.log("server started on 5000");
+  console.log("server started on 5000");
 });

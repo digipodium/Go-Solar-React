@@ -34,8 +34,11 @@ import Contactus from "./components/main/contactus";
 import EquipmentDetail from "./components/main/equipmentDetails";
 import ExpertAuthorisor from "./components/expertAuth";
 import SellerAuthorisor from "./components/sellerAuth";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
+  const stripe = loadStripe("pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1");
   return (
     <BrowserRouter>
       <Routes>
@@ -64,7 +67,14 @@ function App() {
         <Route element={<Main />} path="main">
           <Route element={<Signup />} path="signup" />
           <Route element={<Login />} path="login" />
-          <Route element={<Payment />} path="payment" />
+          <Route
+            element={
+              <Elements stripe={stripe}>
+                <Payment />
+              </Elements>
+            }
+            path="payment"
+          />
           {/* <Route element={<NewLogin />} path="newlogin" /> */}
           {/* <Route element={<NewSignup />} path="newsignup" /> */}
           <Route element={<BrowseEquipment />} path="browseEquipment" />
@@ -77,7 +87,7 @@ function App() {
           <Route element={<Resetpassword />} path="resetpassword" />
           <Route element={<Expertsignup />} path="expertsignup" />
           {/* <Route element={<Checkout/>} path="checkout" /> */}
-           
+
           <Route element={<Contactus />} path="contactus" />
 
           <Route element={<Contactus />} path="/main/contactus" />

@@ -152,9 +152,13 @@ const Login = () => {
 const styles = {
   container: {
     background:
-      " url(https://dm2304files.storage.live.com/y4mpK4hJkKU_OD0s62Dpv_s86978xkIrsOz17NKiQ_xMeJU2NAUezHGWGwtPLkAXj27dwcjtrxN949VhlQYJ0vEkRzbMVWNPGLsUwBfxXvnH0Tvj-vZV0NFSVTz5Wb3EGKL9Du8RzOxV2xsRECj6Y1w6vqP6QCyQEjVZZMLXuaSqcoYIW1ZxrkylTSSdFpEpPYZeYG6eZrSzyTVHFXxLZsHuQ/bg.jpg?psid=1&width=1195&height=815)",
+
+      "url(https://media.urbanistnetwork.com/saigoneer/article-images/2019/Oct/3/floatingsolar_SGNRb.jpg)",
+
+     
+
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "cover",
   },
 };
 
