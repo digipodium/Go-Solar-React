@@ -37,7 +37,7 @@ const EquipmentDetail = () => {
     });
   };
   const fetchReviews = (equipment_id) => {
-    fetch(url + "review/getbyitem/" + equipment_id).then((res) => {
+    fetch(url + "/review/getbyitem/" + equipment_id).then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
           console.log(data);
@@ -186,22 +186,30 @@ const EquipmentDetail = () => {
                 <img src={url + equipData.heroimage} class="w3" alt="Laptop" />
 
                 {/* <p>{equipData.features}</p> */}
-                <div class="data item content" id="product.usage.attr" data-role="content" aria-labelledby="tab-label-product.usage.attr" role="tabpanel" aria-hidden="false">
-                    
-<div class="product attribute product-attr-features">
-    <h3>{equipData.features}</h3>
-        <div class="value"><li></li>
- 
- <li></li>
- 
- <li></li>
- 
- <li></li>
- 
- <li></li> 
- 
- <li></li></div>
-</div>
+                <div
+                  class="data item content"
+                  id="product.usage.attr"
+                  data-role="content"
+                  aria-labelledby="tab-label-product.usage.attr"
+                  role="tabpanel"
+                  aria-hidden="false"
+                >
+                  <div class="product attribute product-attr-features">
+                    <h3>{equipData.features}</h3>
+                    <div class="value">
+                      <li></li>
+
+                      <li></li>
+
+                      <li></li>
+
+                      <li></li>
+
+                      <li></li>
+
+                      <li></li>
+                    </div>
+                  </div>
                 </div>
                 {/* <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> */}
                 <p class="small">
@@ -221,20 +229,12 @@ const EquipmentDetail = () => {
 
   return (
     <div style={{ background: "#eee" }}>
-      <img
-        class="banner"
-        src=""
-      ></img>
+      <img class="banner" src=""></img>
       <div className="container">
         <div className="row">{displayData()}</div>
       </div>
     </div>
-    
- 
-
-
   );
 };
 
 export default EquipmentDetail;
-
