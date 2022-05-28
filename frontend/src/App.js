@@ -30,6 +30,8 @@ import Resetpassword from "./components/main/resetPassword";
 import Expertsignup from "./components/main/expertsignup ";
 import Contactus from "./components/main/contactus";
 import EquipmentDetail from "./components/main/equipmentDetails";
+import ExpertAuthorisor from "./components/expertAuth";
+import SellerAuthorisor from "./components/sellerAuth";
 
 function App() {
   return (
@@ -71,22 +73,43 @@ function App() {
           <Route element={<Resetpassword />} path="resetpassword" />
           <Route element={<Expertsignup />} path="expertsignup" />
 
-          <Route element={<Contactus/>} path="contactus" />
+          <Route element={<Contactus />} path="contactus" />
 
-          <Route element={<Contactus/>} path="/main/contactus" />
+          <Route element={<Contactus />} path="/main/contactus" />
 
           {/* <Route element={<Equipmentdetails />} path="equipmentdetails" /> */}
         </Route>
-        <Route element={<Seller />} path="seller">
+        <Route
+          element={
+            <SellerAuthorisor>
+              <Seller />
+            </SellerAuthorisor>
+          }
+          path="seller"
+        >
           <Route element={<AddEquipment />} path="addequipment" />
           <Route element={<ManageEquipment />} path="manageequipment" />
         </Route>
 
-        <Route element={<Expert />} path="expert">
+        <Route
+          element={
+            <ExpertAuthorisor>
+              <Expert />
+            </ExpertAuthorisor>
+          }
+          path="expert"
+        >
           <Route element={<Expertchat />} path="expertchat" />
         </Route>
 
-        <Route element={<User />} path="user">
+        <Route
+          element={
+            <Authorisor>
+              <User />
+            </Authorisor>
+          }
+          path="user"
+        >
           <Route element={<UserChat />} path="chat/:expertid" />
         </Route>
         <Route element={<Home />} path="home" />

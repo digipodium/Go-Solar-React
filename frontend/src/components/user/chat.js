@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import app_config from "../../config";
@@ -7,10 +8,11 @@ const ExpertChat = () => {
   // backend url
   const url = app_config.backend_url;
 
-  const [currentExpert, setCurrentExpert] = useState(
-    JSON.parse(sessionStorage.getItem("expert"))
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
   );
-
+  const [loading, setLoading] = useState(true);
+  const [selExpert, setSelExpert] = useState(null);
   const [msgList, setMsgList] = useState([]);
 
   //   intialize socket.io-client
@@ -18,14 +20,28 @@ const ExpertChat = () => {
 
   const [text, setText] = useState("");
 
-  const online = () => {
-    socket.emit("addexpert", currentExpert._id);
+  const fetchExpert = () => {
+    fetch(url + "/expert/getall").then((res) => {
+      if (res.status === 200) {
+        res.json().then((data) => {
+          console.log(data);
+          setSelExpert(data[0]);
+          setLoading(false);
+          online(data);
+        });
+      }
+    });
+  };
+
+  const online = (data) => {
+    socket.emit("checkexpert", data._id);
   };
 
   useEffect(() => {
     //   connect with the backend
     socket.connect();
-    online();
+    fetchExpert();
+    // online();
   }, []);
 
   socket.on("recmsg", (data) => {
@@ -61,29 +77,25 @@ const ExpertChat = () => {
       </div>
     ));
   };
-  
+
+  const showExpert = () => {
+    if (!loading) {
+      return (
+        <div className="card">
+          <div className="card-body">
+            <h6>Expert Name : </h6>
+            <Typography variant="h4">{selExpert.name}</Typography>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <div>
       <div className="container-fluid pt-5">
         <div className="row">
-          <div className="col-md-3">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-6">
-                    <Typography variant="h4">
-                      Expert Name : {expert.fullname}
-                    </Typography>
-                  </div>
-                  <div className="col-6">
-                    <Typography variant="h4">
-                      Status : {expertOnline ? "Online" : "Offline"}
-                    </Typography>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="col-md-3">{showExpert()}</div>
           <div className="col-md-9">
             <div className="card ">
               <div className="card-body">
@@ -96,7 +108,10 @@ const ExpertChat = () => {
                     value={text}
                   />
                   <div className="input-group-append">
-                    <button className="btn btn-success " onClick={sendMessage}>
+                    <button
+                      className="btn btn-success h-100"
+                      onClick={sendMessage}
+                    >
                       <i class="fa fa-paper-plane" aria-hidden="true"></i>
                     </button>
                   </div>

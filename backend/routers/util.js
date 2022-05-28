@@ -49,19 +49,4 @@ router.post("/sendmail", (req, res) => {
   res.status(200).json({ message: "mail sent successfully" });
 });
 
-router.post("/", (req, res) => {
-  console.log(req.body);
-
-  new Model(req.body)
-    .save()
-    .then((data) => {
-      console.log("Email Sent successfully..");
-      res.status(200).json(data);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json(err);
-    });
-});
-
 module.exports = router;
