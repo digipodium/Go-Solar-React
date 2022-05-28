@@ -54,19 +54,19 @@ const Home = () => {
                           </li>
 
                           <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="/main/browseEquipment">
                               Panels
                             </a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="laptop.html">
+                            <a class="nav-link" href="/main/browseEquipment">
                               Products
                             </a>
                           </li>
 
                           <li class="nav-item d_none">
                             <Link class="nav-link" to="/main/contactus">
-                              contactus
+                              ContactUs
                             </Link>
                           </li>
                           {/* <li class="nav-item d_none">
