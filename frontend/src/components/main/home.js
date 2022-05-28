@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import app_config from "../../config";
+import "./home.css";
 
 const Home = () => {
   const url = app_config.backend_url;
@@ -11,10 +12,12 @@ const Home = () => {
         <div class="main-layout">
           {/* <!-- loader  --> */}
           {/* <div class="loader_bg">
-         <div class="loader"> <img src={url + "/images/loading.gif"} alt="#" /></div>
-         </div> */}
+            <div class="loader">
+              {" "}
+              <img src={url + "/images/loading.gif"} alt="#" />
+            </div>
+          </div> */}
           <header>
-            {/* <!-- header inner --> */}
             <div class="header">
               <div class="container-fluid">
                 <div class="row">
@@ -134,7 +137,7 @@ const Home = () => {
                           <div class="text_img">
                             <figure>
                               <img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMYL3aRoBx6A5XRjB7WYLznge7l0z9GD32Jg&usqp=CAU"
+                                src="https://www.build-review.com/wp-content/uploads/2021/02/solar-panels.jpg"
                                 alt="#"
                               />
                             </figure>
