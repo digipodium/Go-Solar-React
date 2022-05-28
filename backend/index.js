@@ -6,6 +6,7 @@ const chatRouter = require("./routers/chatRouter");
 const sellerRouter = require("./routers/sellerRouter");
 const expertRouter = require("./routers/expertRouter");
 const utilRouter = require("./routers/util");
+const orderRouter = require("./routers/orderRouter");
 const cors = require("cors");
 // const ProductRouter = require("./routers/ProductRouter")
 
@@ -64,6 +65,7 @@ app.use("/equipment", equipmentRouter);
 
 app.use("/seller", sellerRouter);
 app.use("/util", utilRouter);
+app.use("/order", orderRouter);
 
 app.use("/expert", expertRouter);
 app.use(express.static("./static"));
@@ -71,7 +73,7 @@ app.get("/", (req, res) => {
   res.send("you have got a response");
 });
 
-const stripe_sk = "sk_test_4ypbMh4aR9gRNnUkQCwgOyCT00rSoAbXzZ";
+const stripe_sk = "sk_test_51L4QZaSAo6VRyLQAjsRmBefkUrFzwm80tx1ytFx7ABjQ4g50mQEvyXLEvspl7aHS1gwsz7fFJ4RI2RlqeyeWaDU100uA5wdtSc";
 const stripe = require("stripe")(stripe_sk);
 app.post("/create-payment-intent", async (req, res) => {
   const data = req.body;
