@@ -152,9 +152,9 @@ const Login = () => {
 const styles = {
   container: {
     background:
-      " url(https://youmatter.world/app/uploads/sites/2/2019/01/sun-solar-energy-green-clean-renewable.jpg)",
+      " url(https://media.urbanistnetwork.com/saigoneer/article-images/2019/Oct/3/floatingsolar_SGNRb.jpg)",
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "cover",
   },
 };
 

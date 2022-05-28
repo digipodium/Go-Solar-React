@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer
         className="text-center text-white"
-        style={{ backgroundColor: "#caced1" }}
+        style={{ backgroundColor: "" }}
       >
         <div className="container p-4">
           <section className="">
