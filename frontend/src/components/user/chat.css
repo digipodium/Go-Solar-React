@@ -3,6 +3,30 @@
   overflow: auto;
 }
 
+
+  .card-body-chat{
+    color: aliceblue;
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png" );
+  }
+  .message-body {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    width: fit-content;
+    color: rgba(253, 250, 250, 0.959);
+    font-weight: 600;
+    max-width: 70%;
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.377);
+    transition-duration: 300ms;
+  }
+  
+  .message-body:hover {
+    /* transform: translateY(-5px); */
+  }
+  
+  .message-body p {
+    margin: 0;
+  }
+
 .message-body {
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -13,6 +37,7 @@
   box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.377);
   transition-duration: 300ms;
 }
+
 
 .message-body:hover {
   transform: translateY(-5px);
