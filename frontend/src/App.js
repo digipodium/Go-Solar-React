@@ -18,7 +18,7 @@ import Expertlogin from "./components/main/expertlogin";
 import Expertchat from "./components/expert/expertchat";
 import Expert from "./components/expert";
 import Home from "./components/main/home";
-import Checkout from "./components/main/checkout";
+// import Checkout from "./components/main/checkout";
 import Payment from "./components/main/payment";
 import Sellersignup from "./components/main/sellersignup";
 import Sellerlogin from "./components/main/sellerlogin";
@@ -76,7 +76,7 @@ function App() {
           <Route element={<Sellerlogin />} path="sellerlogin" />
           <Route element={<Resetpassword />} path="resetpassword" />
           <Route element={<Expertsignup />} path="expertsignup" />
-          <Route element={<Checkout/>} path="checkout" />
+          {/* <Route element={<Checkout/>} path="checkout" /> */}
            
           <Route element={<Contactus />} path="contactus" />
 
