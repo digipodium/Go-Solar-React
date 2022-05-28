@@ -22,13 +22,13 @@ const Footer = () => {
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                      <h3>About Us</h3>
                      <ul class="about_us">
-                        <li>dolor sit amet, consectetur<br/> magna aliqua. Ut enim ad <br/>minim veniam, <br/> quisdotempor incididunt r</li>
+                        <li>187, Pakari, Shohratgarh, SiddharthNagar, UP-272205, India</li>
                      </ul>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                      <h3>Contact Us</h3>
                      <ul class="conta">
-                        <li>dolor sit amet,<br/> consectetur <br/>magna aliqua.<br/> quisdotempor <br/>incididunt ut e </li>
+                        <li><a class = " link text-light" href="/main/contactus"> Click Here!!</a> </li>
                      </ul>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">

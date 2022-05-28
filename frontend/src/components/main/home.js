@@ -129,8 +129,8 @@ const Home = () => {
                               trusted solar panels and solar products with easy
                               implementation{" "}
                             </p>
-                            <a href="#">BROWSE </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/browseEquipment">BROWSE </a>{" "}
+                            <a href="/main/browseEquipment">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -160,7 +160,7 @@ const Home = () => {
                               Ipsum available, but the majority have suffered
                               alteration in some form, by injected humour, or{" "}
                             </p>
-                            <a href="#">Buy Now </a>{" "}
+                            <a href="/main/browseEquipment">Buy Now </a>{" "}
                             <a href="contact.html">Contact </a>
                           </div>
                         </div>
@@ -193,8 +193,8 @@ const Home = () => {
                               Ipsum available, but the majority have suffered
                               alteration in some form, by injected humour, or{" "}
                             </p>
-                            <a href="#">BROWSE </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/browseEquipment">BROWSE </a>{" "}
+                            <a href="/main/contactus">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -228,8 +228,8 @@ const Home = () => {
                               with secure tools that we provide. All of them are
                               fully vaccinated.
                             </p>
-                            <a href="#">Buy Now </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/browseEquipment">Buy Now </a>{" "}
+                            <a href="/main/contactus">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -262,8 +262,8 @@ const Home = () => {
                               according to your need. You can contact us for for
                               information{" "}
                             </p>
-                            <a href="#">Chat </a>{" "}
-                            <a href="contact.html">Email</a>
+                            <a href="/user/chat">Chat </a>{" "}
+                            <a href="/main/contactus">Email</a>
                           </div>
                         </div>
                         <div class="col-md-6">

@@ -41,20 +41,20 @@ const Contactus = () => {
                                  <a class="nav-link" href="about.html">About</a>
                               </li> */}
                               <li class="nav-item">
-                                 <a class="nav-link" href="computer.html">Computer</a>
+                                 <a class="nav-link" href="/main/browseEquipment">Panels</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="laptop.html">Laptop</a>
+                                 <a class="nav-link" href="/main/browseEquipment">Products</a>
                               </li>
-                              <li class="nav-item">
+                              {/* <li class="nav-item">
                                  <a class="nav-link" href="product.html">Products</a>
-                              </li>
+                              </li> */}
                               <li class="nav-item active">
                                  <a class="nav-link" href="/main/contactus">Contact Us</a>
                               </li>
-                              <li class="nav-item d_none">
+                              {/* <li class="nav-item d_none">
                                  <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                              </li>
+                              </li> */}
                               <li class="nav-item d_none">
                                  <a class="nav-link" href="/main/login">Login</a>
                               </li>
