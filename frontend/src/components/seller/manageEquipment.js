@@ -1,96 +1,65 @@
 import { useEffect, useState } from "react";
 import app_config from "../../config";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from "@mui/icons-material/Edit";
 //import "../../stylesheets/browseplatform.css";
 import Update from "./update";
+import { useNavigate } from "react-router-dom";
 
 const ManageEquipment = () => {
-  const url = app_config.api_url;
+  const navigate = useNavigate();
 
-  const [equipData, setEquipData] = useState([]);
+  const url = app_config.backend_url;
+
+  const [equipments, setEquipments] = useState([]);
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("seller"))
+  );
   const [loading, setLoading] = useState(true);
-  const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({});
 
   const fetchData = () => {
-    fetch(url + 'equipment/getall')
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setEquipData(data);
-        setLoading(false);
-      });
+    fetch(url + "/equipment/getbyseller/" + currentUser._id).then((res) => {
+      if (res.status === 200) {
+        res.json().then((data) => {
+          setEquipments(data);
+          setLoading(false);
+          console.log(data);
+        });
+      }
+    });
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const deleteData = (id) => {
-    fetch(url + "equipment/delete/" + id, { method: "DELETE" })
-    .then((res) => {
-      console.log(res.status);
-      fetchData();
-    });
-  };
-
-  const updateData = (form) => {
-    setShowForm(true);
-    setFormData(form);
-  };
-
-  const displayUpdateForm = () => {
-    if (showForm) {
-      return 
-     <Update formdata={formData}></Update>;
-    }
-  };
-
-  const displayOrg = () => {
+  const showData = () => {
     if (!loading) {
-      return equipData.map((equipment) => (
-        <tr>
-          <td>{equipment.title}</td>
-          <td>{equipment.description}</td>
-          <td>
-            <button
-              onClick={(e) => deleteData(equipment._id)}
-              className="btn btn-danger"
-            >
-              {/* <i class="fa fa-trash" aria-hidden="true"></i> */}
-              < DeleteForeverIcon color="dark" />
-            </button>
-          </td>
-          <td>
-            <button className="btn btn-primary" onClick={updateData}>
-              {/* <i class="fas fa-pen"></i> */}
-              < EditIcon color="dark" />
-            </button>
-          </td>
-        </tr>
+      return equipments.map((equipment) => (
+        <div className="col-md-3">
+          <div className="card">
+            <img
+              src="https://shg-prd.azureedge.net/-/media/shurgard/general/unit-pictures/01dot5-tb.jpg?extension=webp&w=126&h=108&hash=CBB96A06060A707BF07B4250584BB5C8"
+              alt=""
+            />
+            <div className="card-body">
+              <p className="text-muted">title</p>
+              <h5>{equipment.title}</h5>
+            </div>
+          </div>
+        </div>
       ));
     }
   };
 
   return (
-     <div>
-      <h1 className="text-center">Manage Organisation</h1>
-      <hr />
-      <table class="table align-middle mb-0 bg-white">
-  <thead class="bg-light">
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      {/* <th>Organisation Name</th> */}
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-  <tbody>{displayOrg()}</tbody>
-</table>
-      <div className="mt-5">{displayUpdateForm()}</div>
-     </div>
+    <div>
+      <div className="container">
+        <h1 className="mt-5">Manage Bookings</h1>
+        <hr />
+        <div className="row">{showData()}</div>
+      </div>
+    </div>
   );
 };
 

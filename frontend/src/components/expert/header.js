@@ -68,8 +68,8 @@ const Header = () => {
 
   const logout = () => {
     setAnchorElUser(null);
-    sessionStorage.removeItem("user");
-    navigate("/login");
+    sessionStorage.removeItem("expert");
+    navigate("/main/expertlogin");
   };
 
   const userMenu = [

@@ -23,22 +23,58 @@ router.post("/add", (req, res) => {
     });
 });
 
-router.get('/getall', (req, res) => {
+router.get("/getall", (req, res) => {
   Model.find({})
-  .then((data) => {
-    console.log('data fetched from user');
-    res.status(200).json(data);
-  }).catch((err) => {
-    console.error(err);
-    res.status(500).json(err);
-  });
-})
+    .then((data) => {
+      console.log("data fetched from user");
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
 
-router.post('/authentication' , (req ,res) => {
+router.get("/getbyseller/:id", (req, res) => {
+  Model.find({ seller: req.params.id })
+    .then((data) => {
+      console.log("data fetched from user");
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
+
+router.post("/authentication", (req, res) => {
   const formdata = req.body;
-  Model.findOne({email : formdata.email , password : formdata.password})
+  Model.findOne({ email: formdata.email, password: formdata.password })
     .then((data) => {
       console.log("data saved");
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
+router.get("/getbyitem/:id", (req, res) => {
+  Model.find({})
+    .then((data) => {
+      console.log("data fetched");
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/getbyid/:id", (req, res) => {
+  Model.findById(req.params.id)
+    .then((data) => {
+      console.log("fetched by id");
       res.status(200).json(data);
     })
     .catch((err) => {

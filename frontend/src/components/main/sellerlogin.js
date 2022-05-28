@@ -10,10 +10,10 @@ import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const url = app_config.api_url;
+  const url = app_config.backend_url;
 
   const loginForm = {
     email: "",
@@ -38,8 +38,8 @@ const Login = () => {
 
         res.json().then((data) => {
           sessionStorage.setItem("seller", JSON.stringify(data));
-            navigate("/seller/addequipment");
-            return;
+          navigate("/seller/addequipment");
+          return;
         });
       } else if (res.status === 400) {
         Swal.fire({
@@ -61,7 +61,8 @@ const Login = () => {
               style={{ borderRadius: "1rem" }}
             >
               <div className="card-body p-5 text-center">
-                <h3 className="mb-5">Login Form</h3>
+                <p className="text-center text-muted">GO SOLAR</p>
+                <h3 className="mb-5">Seller Login Form</h3>
 
                 <Formik initialValues={loginForm} onSubmit={loginSubmit}>
                   {({ values, handleChange, handleSubmit }) => (
@@ -99,7 +100,10 @@ const Login = () => {
                         <label className="form-check-label" for="form1Example3">
                           {" "}
                           Remember password{" "}
-                          <a href="/main/resetpassword"> <u>Forget password ?</u></a>
+                          <a href="/main/resetpassword">
+                            {" "}
+                            <u>Forget password ?</u>
+                          </a>
                         </label>
                       </div>
 
@@ -112,23 +116,11 @@ const Login = () => {
                     </form>
                   )}
                 </Formik>
+                <p className="mt-4">
+                  Not Registered Yet?{" "}
+                  <Link to="/main/sellersignup">Click Here</Link>
+                </p>
                 <hr className="my-4" />
-
-                <button
-                  class="btn btn-lg btn-block btn-primary"
-                  style={{ backgroundColor: "#dd4b39" }}
-                  type="submit"
-                >
-                  <i className="fab fa-google me-2"></i> Sign in with google
-                </button>
-                <button
-                  className="btn btn-lg btn-block btn-primary mb-2"
-                  style={{ backgroundCcolor: "#3b5998" }}
-                  type="submit"
-                >
-                  <i className="fab fa-facebook-f me-2"></i>Sign in with
-                  facebook
-                </button>
               </div>
             </div>
           </div>
@@ -141,7 +133,7 @@ const Login = () => {
 const styles = {
   container: {
     background:
-    " url(https://tse2.mm.bing.net/th?id=OIP.9UmdvGsGwTu2BDbpE3s-qAHaDf&pid=Api&P=0&w=337&h=158)",
+      " url(https://tse2.mm.bing.net/th?id=OIP.9UmdvGsGwTu2BDbpE3s-qAHaDf&pid=Api&P=0&w=337&h=158)",
     backgroundSize: "cover",
     backgroundPosition: "center",
   },

@@ -7,17 +7,17 @@ import "../../stylesheets/equipmentDetail.css";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
 
-const EquipmentDetail = () => {
+const PPTViewer = () => {
   const navigate = useNavigate();
 
   const { id } = useParams();
-  const [equipData, setEquipData] = useState(null);
+  const [equipmentData, setEquipmentData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const [reviewList, setReviewList] = useState([]);
   const [rLoading, setRLoading] = useState(true);
 
-  const url = app_config.api_url;
+  const url = app_config.backend_url;
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
@@ -25,11 +25,11 @@ const EquipmentDetail = () => {
   const [rating, setRating] = useState(5);
 
   const fetchData = () => {
-    fetch(url + "equipment/getbyid/" + id).then((res) => {
+    fetch(url + "/equipment/getbyid/" + id).then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
           console.log(data);
-          setEquipData(data);
+          setEquipmentData(data);
           fetchReviews(data._id);
           setLoading(false);
         });
@@ -37,7 +37,7 @@ const EquipmentDetail = () => {
     });
   };
   const fetchReviews = (equipment_id) => {
-    fetch(url + "review/getbyitem/" + equipment_id).then((res) => {
+    fetch(url + "/review/getbyitem/" + equipment_id).then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
           console.log(data);
@@ -83,13 +83,13 @@ const EquipmentDetail = () => {
   };
 
   const addReview = () => {
-    fetch(url + "review/add", {
+    fetch(url + "/review/add", {
       method: "POST",
       body: JSON.stringify({
         rating: rating,
         text: ratingText,
         user: currentUser._id,
-        org: equipData._id,
+        equipment: equipmentData._id,
         createdAt: new Date(),
       }),
       headers: {
@@ -98,7 +98,7 @@ const EquipmentDetail = () => {
     }).then((res) => {
       if (res.status === 200) {
         toast.success("Review Added");
-        fetchReviews(equipData._id);
+        fetchReviews(equipmentData._id);
       }
     });
   };
@@ -173,39 +173,22 @@ const EquipmentDetail = () => {
           <div class="w3-col l8 s12">
             <div class="w3-container w3-white w3-margin w3-padding-large">
               <div class="w3-center">
-                <h2>{equipData.title}</h2>
+                <h2>{equipmentData.title}</h2>
                 <p class="small">
-                  <h6 class="text-muted">{equipData.createdAt}</h6>
+                  <h6 class="text-muted">{equipmentData.createdAt}</h6>
                 </p>
-                {/* <p>{equipData.registeredaddress}</p> */}
+                <p>{equipmentData.registeredaddress}</p>
               </div>
 
               {/* <div class="w3-justify">
                 <img src="https://germini.info/wp-content/uploads/2016/12/JavaScript-if-else.jpg" alt="Girl Hat" class="w3-padding-12"/> */}
               <div className="w3-justify">
-                <img src={url + equipData.heroimage} class="w3" alt="Laptop" />
+                <img src={url + "/images/" + equipmentData.image} class="w3" alt="Laptop" />
 
-                {/* <p>{equipData.features}</p> */}
-                <div class="data item content" id="product.usage.attr" data-role="content" aria-labelledby="tab-label-product.usage.attr" role="tabpanel" aria-hidden="false">
-                    
-<div class="product attribute product-attr-features">
-    <h3>{equipData.features}</h3>
-        <div class="value"><li></li>
- 
- <li></li>
- 
- <li></li>
- 
- <li></li>
- 
- <li></li> 
- 
- <li></li></div>
-</div>
-                </div>
+                <p>{equipmentData.description}</p>
                 {/* <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> */}
                 <p class="small">
-                  <h6 class="text-muted">{equipData.description}</h6>
+                  <h6 class="text-muted">{equipmentData.detail}</h6>
                 </p>
                 {/* <p class="w3-left"><button class="w3-btn w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p> */}
                 {/* <p class="w3-right"><button class="w3-btn" onclick={e=>navigate("/main/review/" )} id="myBtn"><b>All Review  </b> <span class="w3-tag w3-white"></span></button></p> */}
@@ -223,7 +206,7 @@ const EquipmentDetail = () => {
     <div style={{ background: "#eee" }}>
       <img
         class="banner"
-        src=""
+        src="https://events.mygov.in/sites/all/themes/mygov/images/inner-banner.jpg"
       ></img>
       <div className="container">
         <div className="row">{displayData()}</div>
@@ -232,5 +215,4 @@ const EquipmentDetail = () => {
   );
 };
 
-export default EquipmentDetail;
-
+export default PPTViewer;

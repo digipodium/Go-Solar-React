@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import "../../stylesheets/ordering.css";
 
 const Product = () => {
 
 
-    const img1 = "https://cdn.shopify.com/s/files/1/2980/5140/products/frontback_1_130x.jpg?v=1632235013"
-    const img2 = "https://cdn.shopify.com/s/files/1/2980/5140/products/dimension_350f10ce-e361-4861-b132-6e968b3ad9de_130x.jpg?v=1632235034";
-    const img3 = "https://cdn.shopify.com/s/files/1/2980/5140/products/2percent_36e37c0d-54d3-4c1d-96f1-eb2716114121_130x.jpg?v=1632235058";
-    const img4 = "https://cdn.shopify.com/s/files/1/2980/5140/products/15_1bb5c6ee-8425-4300-8dc0-f92e1af730c6_600x.jpg?v=1634056657";
+    const img1 = "https://cdn.shopify.com/s/files/1/2980/5140/products/panel10_500x.jpg?v=1618827654"
+    const img2 = "https://cdn.shopify.com/s/files/1/2980/5140/products/04_500x.jpg?v=1610514082";
+    const img3 = "https://cdn.shopify.com/s/files/1/2980/5140/products/Technical10wp_700x.jpg?v=1618906199";
+    const img4 = "https://cdn.shopify.com/s/files/1/2980/5140/products/comparisonchart10_500x.jpg?v=1618827770";
 
     const [mainImg, setMainImg] = useState(img1);
 
@@ -15,7 +16,7 @@ const Product = () => {
         // ratings: 5903,
         // reviews: 476,
         // price: 82900,
-        imgurl: 'https://cdn.shopify.com/s/files/1/2980/5140/products/frontback_1_130x.jpg?v=1632235013'
+        imgurl: 'https://cdn.shopify.com/s/files/1/2980/5140/products/panel10_500x.jpg?v=1618827654'
     }
 
     useEffect(() => {
@@ -39,7 +40,7 @@ const Product = () => {
     return (
         <div>
 
-            <div className="container">
+            <div className="all">
                 <h1>Product Details Page</h1>
                 <div className="row">
                     <div className="col-md-5">
@@ -69,6 +70,13 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
+                    {/* <div class="wrapper">
+          <div class="header"> */}
+            {/* <img
+              class="solarimg"
+              src="https://cdn.shopify.com/s/files/1/2980/5140/collections/loom_solar_banner_1200x.jpg?v=1641970493"
+            ></img> */}
+
                     <div className="col-md-7">
                         {/* <h1>{productData.name}</h1> */}
                         {/* <h1>{productData['name']}</h1> */}
@@ -79,7 +87,6 @@ const Product = () => {
                         <p className="text-muted"><b>{productData.ratings} Ratings & {productData.reviews} Reviews</b></p>
                         <div class="value" itemprop="description"><p class="long-data"></p><ul><li>Poly crystalline Cells type Panel</li><li>Capacity - 330 W, 24V</li><li>Voltage: Voltage at Max Power (Vmax) - 38.03V, Open Circuit Voltage (Voc) - 45.53V</li><li>Current: Current at Max Power (imax) - 8.68A, Short Circuit Current (isc) - 9.22A</li><li>25 years performance warranty.</li><li>Compliance to IEC standards</li><li>Best in Class conversion efficiency</li><li>Anti-reflective coating and back surface (BSF) for more light absorption</li><li>Advanced EVA (ethyl vinyl acetate) encapsulation to give better protection to modules</li><li>High strength light-weight aluminum frame design for high torsion resistance against winds and snow loads</li><li>PID resistance Technology (Potential-Induced Degradation) for safety against substantial power loss due to stray currents triggered by certain climate conditions</li><li>Excellent Low light performance in low visibility in clouds, evening, and morning. 
 
- 
 
 <p></p>
 
@@ -88,12 +95,13 @@ const Product = () => {
 
 </li></ul></div>
                         {/* <h3>Quantity : {count}</h3> */}
-                        <h3>Quantity : {qty}</h3>
-                        <button className="btn btn-secondary" onClick={increment}> <i class="fa fa-chevron-up" aria-hidden="true"></i> </button>
+                        <h3 className="qua">Quantity : {qty}</h3>
+                        <button className="btn btn-secondary qua" onClick={increment}> <i class="fa fa-chevron-up" aria-hidden="true"></i> </button>
                     </div>
                 </div>
             </div>
         </div>
+ 
     )
 }
 

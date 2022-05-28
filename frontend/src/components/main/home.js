@@ -52,11 +52,7 @@ const Home = () => {
                               Home
                             </a>
                           </li>
-                          {/* <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            About
-                          </a>
-                        </li> */}
+
                           <li class="nav-item">
                             <a class="nav-link" href="computer.html">
                               Panels
@@ -67,11 +63,7 @@ const Home = () => {
                               Products
                             </a>
                           </li>
-                          {/* <li class="nav-item">
-                          <a class="nav-link" href="product.html">
-                            Products
-                          </a>
-                        </li> */}
+
                           <li class="nav-item d_none">
                             <Link class="nav-link" to="/main/contactus">
                               contactus
@@ -306,8 +298,7 @@ const Home = () => {
               </a>
             </div>
           </section>
-          {/* <!-- end banner -->
-    <!-- three_box --> */}
+
           <div class="three_box">
             <div class="container">
               <div class="row">
@@ -368,8 +359,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <!-- three_box -->
-    <!-- products --> */}
+
           <div class="products">
             <div class="container">
               <div class="row">
@@ -493,8 +483,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <!-- end products -->
-    <!-- laptop  section --> */}
+
           <div class="laptop">
             <div class="container">
               <div class="row">
@@ -518,8 +507,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* <!-- end laptop  section -->
-    <!-- customer --> */}
+
         <div class="customer">
           <div class="container">
             <div class="row">
@@ -645,8 +633,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <!-- end laptop  section -->
-    <!-- customer --> */}
       <div class="customer">
         <div class="container">
           <div class="row">
@@ -680,10 +666,19 @@ const Home = () => {
                           <div class="col-md-9 offset-md-3">
                             <div class="test_box">
                               <i>
+
                                 
 
                                 <img
-                                  src="https://tse1.mm.bing.net/th?id=OIP.U438qVYBTg2n_5oMr39VRgHaHa&pid=Api&P=0&w=160&h=160"
+                                  src="https://tse1.mm.bing.net/th?id=OIP.U438qVYBTg2n_5oMr39VRgHaHa&pid=Api&P=0&w=160&h=160"/>
+
+                                <img
+                                  src="https://tse1.mm.bing.net/th?id=OIP.avSasd3jjmU5_Lno5xmxrgHaJ4&pid=Api&P=0&w=116&h=155"
+                                  alt="#"/>
+
+                                <img
+                                  src="https://i.pinimg.com/originals/63/f7/e9/63f7e99d2bdb21c005ce2debca4c3a9e.jpg"
+
                                   style={{ height: "100px" }}
                                   alt="#"
                                 />
@@ -735,7 +730,11 @@ const Home = () => {
                                   alt="#"
                                 />
                               </i>
+
                               <h4>Anjali tiwari</h4>
+
+                              <h4>Angel Priya</h4>
+
                               <p>Admin service is very good!!</p>
                             </div>
                           </div>

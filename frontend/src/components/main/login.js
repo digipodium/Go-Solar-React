@@ -152,7 +152,11 @@ const Login = () => {
 const styles = {
   container: {
     background:
-      " url(https://media.urbanistnetwork.com/saigoneer/article-images/2019/Oct/3/floatingsolar_SGNRb.jpg)",
+
+      "url(https://media.urbanistnetwork.com/saigoneer/article-images/2019/Oct/3/floatingsolar_SGNRb.jpg)",
+
+     
+
     backgroundSize: "cover",
     backgroundPosition: "cover",
   },
