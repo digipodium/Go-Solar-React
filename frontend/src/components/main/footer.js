@@ -1,6 +1,6 @@
 import React from "react";
 import app_config from "../../config";
-
+import "../../stylesheets/footer.css";
 const Footer = () => {
   const url = app_config.backend_url;
 

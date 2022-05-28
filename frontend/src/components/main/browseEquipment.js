@@ -49,7 +49,7 @@ const BrowseEquipment = () => {
               <h3>₹ {price}</h3>
               <hr />
               {/* <p>The Nike Roshe One Print Men's Shoe offers breathability, lightweight cushioning and bold style with an injected unit midsole and colorful mesh upper. </p> */}
-              <a href="./main/equipmentDetails" class="product__btn btn">
+              <a href="/main/equipmentDetails" class="product__btn btn">
                 Buy Now
               </a>
             </div>

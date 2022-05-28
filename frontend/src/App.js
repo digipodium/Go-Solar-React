@@ -18,6 +18,8 @@ import Expertlogin from "./components/main/expertlogin";
 import Expertchat from "./components/expert/expertchat";
 import Expert from "./components/expert";
 import Home from "./components/main/home";
+// import Checkout from "./components/main/checkout";
+import Payment from "./components/main/payment";
 import Sellersignup from "./components/main/sellersignup";
 import Sellerlogin from "./components/main/sellerlogin";
 import AdminAuthorisor from "./components/adminAuth";
@@ -62,6 +64,7 @@ function App() {
         <Route element={<Main />} path="main">
           <Route element={<Signup />} path="signup" />
           <Route element={<Login />} path="login" />
+          <Route element={<Payment />} path="payment" />
           {/* <Route element={<NewLogin />} path="newlogin" /> */}
           {/* <Route element={<NewSignup />} path="newsignup" /> */}
           <Route element={<BrowseEquipment />} path="browseEquipment" />
@@ -73,7 +76,8 @@ function App() {
           <Route element={<Sellerlogin />} path="sellerlogin" />
           <Route element={<Resetpassword />} path="resetpassword" />
           <Route element={<Expertsignup />} path="expertsignup" />
-
+          {/* <Route element={<Checkout/>} path="checkout" /> */}
+           
           <Route element={<Contactus />} path="contactus" />
 
           <Route element={<Contactus />} path="/main/contactus" />
