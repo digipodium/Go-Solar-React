@@ -73,7 +73,8 @@ app.get("/", (req, res) => {
   res.send("you have got a response");
 });
 
-const stripe_sk = "sk_test_51L4QZaSAo6VRyLQAjsRmBefkUrFzwm80tx1ytFx7ABjQ4g50mQEvyXLEvspl7aHS1gwsz7fFJ4RI2RlqeyeWaDU100uA5wdtSc";
+const stripe_sk =
+  "sk_test_51L4QZaSAo6VRyLQAjsRmBefkUrFzwm80tx1ytFx7ABjQ4g50mQEvyXLEvspl7aHS1gwsz7fFJ4RI2RlqeyeWaDU100uA5wdtSc";
 const stripe = require("stripe")(stripe_sk);
 app.post("/create-payment-intent", async (req, res) => {
   const data = req.body;
