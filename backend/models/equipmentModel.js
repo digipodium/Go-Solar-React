@@ -4,7 +4,7 @@ const schema = new mongoose.Schema({
   title: String,
   description: String,
   image: String,
-  features: String,
+  features: Array,
   price: String,
   seller: { type: mongoose.Types.ObjectId, ref: "seller" },
   createdAt: Date,
