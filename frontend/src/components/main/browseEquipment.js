@@ -40,7 +40,7 @@ const BrowseEquipment = () => {
               <NavLink className="ripple" to={"/main/equipmentDetails/" + _id}>
                 <img
                   src={url + "/uploads/" + image}
-                  class="card-img-top product__image"
+                  class="card-img-top"
                   alt="Laptop"
                 />
               </NavLink>
@@ -65,10 +65,10 @@ const BrowseEquipment = () => {
     <div>
       <div style={{ background: "#eee", height: "300vh" }}>
         <img
-          class="banner"
+          class="img-fluid"
           src="https://cdn.shopify.com/s/files/1/2980/5140/files/desktop_banner_-_3_5a730f81-fb4f-4a4f-9910-727963303dfa_1600x.png?v=1627145304"
         ></img>
-        <div class=" row ground">
+        <div class="row ground">
           <div class="col-md-5 mb-3">
             <div class="form-outline form">
               {/* <label for="state" > </label> */}
