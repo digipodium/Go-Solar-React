@@ -25,7 +25,7 @@ const AddEquipment = () => {
   const userSubmit = (values) => {
     console.log(values);
       values.image = image;
-      values.file = EquipmentFile;
+      values.myfile = EquipmentFile;
   
       const reqOp = {
         method: "POST",
@@ -49,14 +49,14 @@ const AddEquipment = () => {
   };
   const uploadimage = (event) => {
     const formdata = new FormData();
-    formdata.append("file", event.target.files[0]);
+    formdata.append("myfile", event.target.files[0]);
 
     const reqOptions = {
       method: "POST",
       body: formdata,
     };
 
-    fetch(url + "util/addfile", reqOptions)
+    fetch(url + "/util/uploadfile", reqOptions)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -66,27 +66,28 @@ const AddEquipment = () => {
 
   const uploadfile = (event) => {
     const formdata = new FormData();
-    formdata.append("file", event.target.files[0]);
+    formdata.append("myfile", event.target.files[0]);
 
     const reqOptions = {
       method: "POST",
       body: formdata,
     };
 
-    fetch(url + "util/createfile", reqOptions)
+    fetch(url + "/util/createfile", reqOptions)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setEquipmentFile(event.target.files[0].name);
       });
-  };
 
+  };
+  navigate("/main/browseEquipment");
   
 
   return (
     <div>
       {/* <h1>Add Equipment</h1> */}
-      <div className="card">
+      <div className="card cardss">
         <div className="card-header">
           <h3 className="mb-0">Add Equipment</h3>
         </div>
@@ -121,7 +122,7 @@ const AddEquipment = () => {
                 />
                   <input
               
-              onChange={uploadimage}
+              onChange={uploadfile}
               type="file"
               fullwidth
               className="form-control mt-4 mx-0"
@@ -163,7 +164,8 @@ const AddEquipment = () => {
                
                <button type="submit" class="btn btn-success btn-lg ms-2"
                     >Submit
-                    <NavLink to="./main/browseEquipment"></NavLink></button>
+                    <NavLink to="./main/browseEquipment"></NavLink>
+                    </button>
                </div>
               </form>
             )}

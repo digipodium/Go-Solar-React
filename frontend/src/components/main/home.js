@@ -7,23 +7,11 @@ const Home = () => {
 
   return (
     <div>
-<<<<<<< HEAD
       
       <div class="main-layout" style={{
        
       }} >
-      {/* <!-- loader  --> */}
-      {/* <div class="loader_bg">
-=======
-      <div>
-        <div class="main-layout">
-          {/* <!-- loader  --> */}
-          {/* <div class="loader_bg">
->>>>>>> 55f26001c238a1770c1a0b03ffebcae979750477
-         <div class="loader"> <img src={url + "/images/loading.gif"} alt="#" /></div>
-         </div> */}
-          <header>
-            {/* <!-- header inner --> */}
+ <header>
             <div class="header">
               <div class="container-fluid">
                 <div class="row">
@@ -61,11 +49,7 @@ const Home = () => {
                               Home
                             </a>
                           </li>
-                          {/* <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            About
-                          </a>
-                        </li> */}
+
                           <li class="nav-item">
                             <a class="nav-link" href="computer.html">
                               Panels
@@ -76,11 +60,7 @@ const Home = () => {
                               Products
                             </a>
                           </li>
-                          {/* <li class="nav-item">
-                          <a class="nav-link" href="product.html">
-                            Products
-                          </a>
-                        </li> */}
+   
                           <li class="nav-item d_none">
                             <Link class="nav-link" to="/main/contactus">
                               contactus
@@ -315,8 +295,7 @@ const Home = () => {
               </a>
             </div>
           </section>
-          {/* <!-- end banner -->
-    <!-- three_box --> */}
+          
           <div class="three_box">
             <div class="container">
               <div class="row">
@@ -365,8 +344,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <!-- three_box -->
-    <!-- products --> */}
+         
           <div class="products">
             <div class="container">
               <div class="row">
@@ -490,8 +468,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <!-- end products -->
-    <!-- laptop  section --> */}
+        
           <div class="laptop">
             <div class="container">
               <div class="row">
@@ -515,8 +492,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* <!-- end laptop  section -->
-    <!-- customer --> */}
+      
         <div class="customer">
           <div class="container">
             <div class="row">
@@ -642,8 +618,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <!-- end laptop  section -->
-    <!-- customer --> */}
+      /*
+                                                          <!-- customer --> */
+                     ) }
+    
       <div class="customer">
         <div class="container">
           <div class="row">
@@ -767,10 +745,5 @@ const Home = () => {
         </div>
       
       </div>
-     
-      
-
-   
-  )
-}
+    
 export default Home;

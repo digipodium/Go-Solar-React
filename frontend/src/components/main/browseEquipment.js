@@ -25,6 +25,7 @@ const BrowseEquipment = () => {
         });
       }
     });
+    
   };
 
   const [filter, setFilter] = useState("");
@@ -48,37 +49,44 @@ const BrowseEquipment = () => {
           _id,
         }) => (
 
-  <div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
-      
-  <div class="product">
-  <span class="product__price">
-  <p class="small">
-                     <a href="#!" class="text-muted">
-                       {price}
-                     </a>
-                </p>
-  </span>
-  
-  <NavLink className="ripple" to={"/main/pptviewer/" + _id}>
-         <img
-                   src={url + image}
-                   class="card-img-top product__image"
-                   alt="Laptop"
-                 />
+          <div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
+             <div class="row">
+  <div class="col l4 m8 s12 offset-m2 offset-l4">
+    <div class="product-card">
+        <div class="card  z-depth-4">
+            <div class="card-image">
+                <a href="#" class="btn-floating btn-large price waves-effect waves-light brown darken-3">{price}</a>
+
+                <img src={url + "/images/microsoftteams-image_4_.png"} alt="#" class="user-img"/>
+                <span class="card-title"><span>{title}</span></span>
+            </div>
+            {/* <div class="card-action-buttons flaticon">
                 
-              </NavLink>
+                <a  href=""><img src="https://cdn-icons.flaticon.com/png/128/4208/premium/4208394.png?token=exp=1653700752~hmac=31b2b893c628753cdf7a52bed5022555"></img></a>
+                
+                <a  href=""><img src="https://cdn-icons.flaticon.com/png/128/2652/premium/2652171.png?token=exp=1653700917~hmac=e1bc614e347df67d7dbc80374f93d5e6"></img></a>
+                
+                
+            </div> */}
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        {/* <p>
+                            <strong>{description}</strong> <br />
 
-  <h1 class="product__title">{title}</h1>
-  <hr />
-  {/* <p>The Nike Roshe One Print Men's Shoe offers breathability, lightweight cushioning and bold style with an injected unit midsole and colorful mesh upper. </p> */}
-  <a href="./main/equipmentDetails" class="product__btn btn">Buy Now</a>
-</div>
-</div>
-      
-      
-
-    
-          
+                        </p> */}
+                    </div>
+                    
+                </div>
+      <Button onClick={e=>navigate("/main/equipmentDetails/" + _id)} variant="contained">Click For Full Details</Button>
+                
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+  
         )
       );
     }
@@ -90,7 +98,7 @@ const BrowseEquipment = () => {
     <div >
               
      
-    <div style={{ background: "#eee", height: "200vh" }}>
+    <div style={{ background: "#eee", height: "300vh" }}>
     <img class="banner" src="https://cdn.shopify.com/s/files/1/2980/5140/files/desktop_banner_-_3_5a730f81-fb4f-4a4f-9910-727963303dfa_1600x.png?v=1627145304"></img>
     <div class=" row ground">
                 <div class="col-md-5 mb-3">
