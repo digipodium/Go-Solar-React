@@ -69,11 +69,12 @@ const ExpertChat = () => {
           <div className="col-md-3">
             <div className="card">
               <div className="card-body">
-                <p className="text-muted">Loggedin as</p>
+                <p className="text-muted mb-0">Loggedin as</p>
                 <h3>{currentExpert.name}</h3>
-                <h3>{currentExpert.name}</h3>
-                <h3>{currentExpert.name}</h3>
-                <h3>{currentExpert.name}</h3>
+                <h5>{currentExpert.email}</h5>
+                <h4>{currentExpert.mainareaofexperience}</h4>
+                <p>Qualification</p>
+                <h4>{currentExpert.qualification}</h4>
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ import "../../stylesheets/newsignup.css"
 
 const Signup = () => {
 
-    const url = app_config.api_url;
+    const url = app_config.backend_url;
 
     const signupform = {
         name: '',

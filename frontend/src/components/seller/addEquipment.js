@@ -4,22 +4,31 @@ import { TextField, Button } from "@mui/material";
 import Swal from "sweetalert2";
 import app_config from "../../config";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import "../../stylesheets/addequip.css";
 
 const AddEquipment = () => {
-  const url = app_config.api_url;
+  const url = app_config.backend_url;
+  const [image, setImage] = useState("");
+  const [EquipmentFile, setEquipmentFile] = useState("");
+  const navigate = useNavigate();
+  const [currentSeller, setCurrentSeller] = useState(
+    JSON.parse(sessionStorage.getItem("seller"))
+  );
 
   const equipmentForm = {
     title: "",
     description: "",
     image: "",
     features: "",
-    price: "",
-    createdAt: "",
+    price: 0,
+    seller: currentSeller._id,
+    createdAt: new Date(),
   };
   const userSubmit = (values) => {
+    values.features = values.features.split(",");
     console.log(values);
-
+    values.image = image;
+    values.file = EquipmentFile;
 
     const reqOp = {
       method: "POST",
@@ -32,7 +41,7 @@ const AddEquipment = () => {
       .then((data) => {
         console.log(data);
 
-        if (data.message == "success") {
+        if (data.message === "success") {
           Swal.fire({
             icon: "success",
             title: "Added Successfully!!",
@@ -40,14 +49,27 @@ const AddEquipment = () => {
         }
       });
   };
+  const uploadimage = (event) => {
+    const formdata = new FormData();
+    formdata.append("myfile", event.target.files[0]);
 
+    const reqOptions = {
+      method: "POST",
+      body: formdata,
+    };
 
-  
+    fetch(url + "/util/uploadfile", reqOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setImage(event.target.files[0].name);
+      });
+  };
 
   return (
     <div>
       {/* <h1>Add Equipment</h1> */}
-      <div className="card">
+      <div className="card mycard">
         <div className="card-header">
           <h3 className="mb-0">Add Equipment</h3>
         </div>
@@ -79,7 +101,15 @@ const AddEquipment = () => {
                   // helperText={errors.email}
                   // error={Boolean(errors.email)}
                 />
-  <TextField
+                <input
+                  onChange={uploadimage}
+                  type="file"
+                  fullwidth
+                  className="form-control mt-4 mx-0"
+                  title="Select image"
+                  required
+                />
+                <TextField
                   className="mt-3 w-100"
                   label="Features"
                   variant="outlined"
@@ -89,15 +119,26 @@ const AddEquipment = () => {
                   // helperText={errors.email}
                   // error={Boolean(errors.email)}
                 />
-<div class="d-flex justify-content-end pt-3">
-               
-               <button type="submit" class="btn btn-success btn-lg ms-2"
-                    >Submit
-                    <NavLink to="../main/browseEquipment"></NavLink></button>
-               </div>
+                <TextField
+                  className="mt-3 w-100"
+                  label="Price"
+                  variant="outlined"
+                  id="price"
+                  value={values.price}
+                  onChange={handleChange}
+                  // helperText={errors.email}
+                  // error={Boolean(errors.email)}
+                />
+
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="submit" class="btn btn-success btn-lg ms-2">
+                    Submit
+                  </button>
+                </div>
               </form>
             )}
           </Formik>
+          <NavLink to="/main/browseEquipment">Show Equipments</NavLink>
         </div>
       </div>
     </div>

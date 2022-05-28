@@ -31,6 +31,10 @@ const pages = [
     name: "Seller Login",
     link: "/main/sellerlogin",
   },
+  {
+    name: "Explore Solar Solutions",
+    link: "/main/browseEquipment",
+  },
 ];
 
 const guestUser = [

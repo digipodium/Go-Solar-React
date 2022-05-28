@@ -31,6 +31,14 @@ const pages = [
     name: "Seller Login",
     link: "/main/sellerlogin",
   },
+  {
+    name: "Manage Equipments",
+    link: "/seller/manageequipment",
+  },
+  {
+    name: "Add New Equipment",
+    link: "/seller/addequipment",
+  },
 ];
 
 const guestUser = [
@@ -68,8 +76,8 @@ const Header = () => {
 
   const logout = () => {
     setAnchorElUser(null);
-    sessionStorage.removeItem("expert");
-    navigate("/main/expertlogin");
+    sessionStorage.removeItem("user");
+    navigate("./login");
   };
 
   const userMenu = [
@@ -111,7 +119,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ background: "#4842a2" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
