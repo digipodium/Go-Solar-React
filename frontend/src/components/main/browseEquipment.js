@@ -63,7 +63,7 @@ const BrowseEquipment = () => {
 
   return (
     <div>
-      <div style={{ background: "#eee", height: "200vh" }}>
+      <div style={{ background: "#eee", height: "300vh" }}>
         <img
           class="banner"
           src="https://cdn.shopify.com/s/files/1/2980/5140/files/desktop_banner_-_3_5a730f81-fb4f-4a4f-9910-727963303dfa_1600x.png?v=1627145304"
@@ -81,10 +81,10 @@ const BrowseEquipment = () => {
         </div>
         <div class="wrapper">
           <div class="header">
-            {/* <img
+            <img
               class="solarimg"
               src="https://cdn.shopify.com/s/files/1/2980/5140/collections/loom_solar_banner_1200x.jpg?v=1641970493"
-            alt=""/> */}
+            ></img>
 
             {/* <h1 class="header__title">Expanding Card Grid</h1>
   <h2 class="header__subtitle">with Flexbox</h2> */}

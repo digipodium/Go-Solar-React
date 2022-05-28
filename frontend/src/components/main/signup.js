@@ -54,7 +54,7 @@ const Signup = () => {
   return (
     <section className="">
       <div
-        className="px-4 py-5 px-md-5 text-center text-lg-start"
+        className="px-4 py-6 px-md-5 text-center text-lg-start"
         style={{ backgroundColor: "hsl(0, 0%, 96%)" }}
       />
       <div className="container">

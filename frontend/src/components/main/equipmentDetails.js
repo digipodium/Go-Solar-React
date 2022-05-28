@@ -17,7 +17,7 @@ const EquipmentDetail = () => {
   const [reviewList, setReviewList] = useState([]);
   const [rLoading, setRLoading] = useState(true);
 
-  const url = app_config.api_url;
+  const url = app_config.backend_url;
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
@@ -83,7 +83,7 @@ const EquipmentDetail = () => {
   };
 
   const addReview = () => {
-    fetch(url + "review/add", {
+    fetch(url + "/review/add", {
       method: "POST",
       body: JSON.stringify({
         rating: rating,
@@ -183,7 +183,7 @@ const EquipmentDetail = () => {
               {/* <div class="w3-justify">
                 <img src="https://germini.info/wp-content/uploads/2016/12/JavaScript-if-else.jpg" alt="Girl Hat" class="w3-padding-12"/> */}
               <div className="w3-justify">
-                <img src={url + equipData.heroimage} class="w3" alt="Laptop" />
+                <img src={url + equipData.image} class="w3" alt="Laptop" />
 
                 {/* <p>{equipData.features}</p> */}
                 <div

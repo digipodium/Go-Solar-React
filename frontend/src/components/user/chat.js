@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import app_config from "../../config";
+import { Typography } from "@mui/material";
 import "./chat.css";
 
 const ExpertChat = () => {
@@ -19,6 +20,7 @@ const ExpertChat = () => {
   const [socket, setSocket] = useState(io(url, { autoConnect: false }));
 
   const [text, setText] = useState("");
+  const [expert, expertOnline] = useState("");
 
   const fetchExpert = () => {
     fetch(url + "/expert/getall").then((res) => {

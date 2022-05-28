@@ -4,7 +4,7 @@ const { SMTPClient } = require("emailjs");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./static/uploads");
+    cb(null, "./static/images");
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname);
