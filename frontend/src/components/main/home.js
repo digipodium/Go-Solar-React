@@ -7,19 +7,10 @@ const Home = () => {
 
   return (
     <div>
-<<<<<<< HEAD
-      
-      <div class="main-layout" style={{
-       
-      }} >
-      {/* <!-- loader  --> */}
-      {/* <div class="loader_bg">
-=======
       <div>
         <div class="main-layout">
           {/* <!-- loader  --> */}
           {/* <div class="loader_bg">
->>>>>>> 55f26001c238a1770c1a0b03ffebcae979750477
          <div class="loader"> <img src={url + "/images/loading.gif"} alt="#" /></div>
          </div> */}
           <header>
@@ -767,10 +758,11 @@ const Home = () => {
         </div>
       
       </div>
+      </div>
      
       
 
    
-  )
-}
+  );
+};
 export default Home;
