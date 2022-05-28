@@ -2,10 +2,9 @@ import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import app_config from "../../config";
-import { Typography } from "@mui/material";
 import "./chat.css";
 
-const ExpertChat = () => {
+const Chat = () => {
   // backend url
   const url = app_config.backend_url;
 
@@ -127,4 +126,4 @@ const ExpertChat = () => {
   );
 };
 
-export default ExpertChat;
+export default Chat;

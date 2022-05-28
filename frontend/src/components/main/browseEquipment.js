@@ -37,7 +37,7 @@ const BrowseEquipment = () => {
         ({ title, description, image, features, price, seller, _id }) => (
           <div key={_id} class="col-md-12 col-lg-4 mb-4 mb-lg-0 ">
             <div class="product">
-              <NavLink className="ripple" to={"/main/pptviewer/" + _id}>
+              <NavLink className="ripple" to={"/main/equipmentDetails/" + _id}>
                 <img
                   src={url + "/uploads/" + image}
                   class="card-img-top product__image"
