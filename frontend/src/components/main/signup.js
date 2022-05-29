@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import app_config from "../../config";
 import Swal from "sweetalert2";
 
+
 const Signup = () => {
   const url = app_config.backend_url;
 
@@ -145,6 +146,7 @@ const Signup = () => {
                       >
                         Sign up
                       </button>
+                      <a href="/main/login">Login Here</a>
 
                       <div className="text-center">
                        

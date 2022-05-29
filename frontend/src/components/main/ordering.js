@@ -70,19 +70,20 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <div class="wrapper">
-          <div class="header"> */}
+                    
+        
             {/* <img
               class="solarimg"
               src="https://cdn.shopify.com/s/files/1/2980/5140/collections/loom_solar_banner_1200x.jpg?v=1641970493"
             ></img> */}
-
+<div class="card card-bg">
                     <div className="col-md-7">
                         {/* <h1>{productData.name}</h1> */}
                         {/* <h1>{productData['name']}</h1> */}
                         <div class="page-title-wrapper product">
-    <h1 class="page-title">
-        <span class="base" data-ui-id="page-title-wrapper" itemprop="name">Solar Panel 330W / 24V Poly</span>    </h1>
+                            
+    <h2 class="page-title">
+        <span class="base" data-ui-id="page-title-wrapper" itemprop="name">Solar Panel 330W / 24V Poly</span>    </h2>
     </div>
                         <p className="text-muted"><b>{productData.ratings} Ratings & {productData.reviews} Reviews</b></p>
                         <div class="value" itemprop="description"><p class="long-data"></p><ul><li>Poly crystalline Cells type Panel</li><li>Capacity - 330 W, 24V</li><li>Voltage: Voltage at Max Power (Vmax) - 38.03V, Open Circuit Voltage (Voc) - 45.53V</li><li>Current: Current at Max Power (imax) - 8.68A, Short Circuit Current (isc) - 9.22A</li><li>25 years performance warranty.</li><li>Compliance to IEC standards</li><li>Best in Class conversion efficiency</li><li>Anti-reflective coating and back surface (BSF) for more light absorption</li><li>Advanced EVA (ethyl vinyl acetate) encapsulation to give better protection to modules</li><li>High strength light-weight aluminum frame design for high torsion resistance against winds and snow loads</li><li>PID resistance Technology (Potential-Induced Degradation) for safety against substantial power loss due to stray currents triggered by certain climate conditions</li><li>Excellent Low light performance in low visibility in clouds, evening, and morning. 
@@ -98,9 +99,76 @@ const Product = () => {
                         <h3 className="qua">Quantity : {qty}</h3>
                         <button className="btn btn-secondary qua" onClick={increment}> <i class="fa fa-chevron-up" aria-hidden="true"></i> </button>
                     </div>
+                    <h3>Description</h3>
+                    <div class="table-wrapper"><table width="0">
+<tbody>
+<tr>
+<td width="213">
+<p>Output Power</p>
+</td>
+<td width="329">
+<p>10 Watts</p>
+</td>
+</tr>
+<tr>
+<td width="213">
+<p>Operating Voltage</p>
+</td>
+<td width="329">
+<p>12 Volt</p>
+</td>
+</tr>
+<tr>
+<td width="213">
+<p>Panel Technology</p>
+</td>
+<td width="329">
+<p>Poly Crystalline</p>
+</td>
+</tr>
+<tr>
+<td width="213">
+<p>Manufacturer warranty</p>
+</td>
+<td width="329">
+<p>5 years on Manufacturing defects</p>
+</td>
+</tr>
+<tr>
+<td width="213">
+<p>Performance Warranty</p>
+</td>
+<td width="329">
+<p>25 Years</p>
+</td>
+</tr>
+<tr>
+<td width="213" rowspan="3">
+<p>Additional&nbsp;Features</p>
+</td>
+<td width="329">
+<p>A+ Grade, anti PID Poly Crystalline cells</p>
+</td>
+</tr>
+<tr>
+<td width="329">
+<p>Cell Conversion efficiency &gt; 16%</p>
+</td>
+</tr>
+<tr>
+<td width="329">
+<p>Compliance to IEC standards</p>
+</td>
+</tr>
+</tbody>
+</table></div>
                 </div>
             </div>
+            
         </div>
+        
+        
+         </div>
  
     )
 }

@@ -12,7 +12,7 @@ const Payment = () => {
         setQty(qty + 1);
     }
     return (
-        <div>
+        <div class="cardds">
         <div class="card card-c" >
   <div class="card-header">
     Price Details

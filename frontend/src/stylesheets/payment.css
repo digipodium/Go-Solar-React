@@ -1,6 +1,22 @@
-.card {
+/* .card {
     width: 50%;
     margin-top: 30px;
+    margin-left: 50px;
+} */
+
+.cardds {
+    margin-top: 30px;
+}
+
+.card-bb {
+    width: 50%;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.card-a {
+    width: 50%;
+    margin-top: 40px;
     margin-left: 50px;
 }
 
@@ -18,7 +34,7 @@
 
 .card-b {
     margin-left: 20%;
-    margin-top: -130px;
+    margin-top: -140px;
 }
 
 .zab8Yh .nZz3kj ._1uc2IE {
