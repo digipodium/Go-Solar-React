@@ -148,7 +148,7 @@ const Sellersignup = () => {
 const styles = {
   container: {
     background:
-      "linear-gradient(to right, #0000009b, #000000ad), url(https://cdn.shopify.com/s/files/1/2980/5140/files/desktop_banner_-_3_5a730f81-fb4f-4a4f-9910-727963303dfa_1600x.png?v=1627145304)",
+      "linear-gradient(to right, #0000009b, #000000ad), url(http://localhost:5000/images/banner.jpg)",
     height: "74vh",
   },
 };

@@ -76,12 +76,14 @@ const Expertlogin = () => {
                           value={values.password}
                           onChange={handleChange}
                         />{" "}
-                        <a href="/main/resetpassword">
-                          <u>Forget password ?</u> <br></br>
+                        <a class = "l-link" href="/main/resetpassword">
+                          Forget password ? <br></br>
                         </a>
-                        <a href="/main/expertsignup">
-                          <u>signup</u>
+                        <a class = "l-link"  href="/main/expertsignup">
+                          SignUp
                         </a>
+                        <br></br>
+                        <br></br>
                         <Button
                           type="submit"
                           variant="contained"
