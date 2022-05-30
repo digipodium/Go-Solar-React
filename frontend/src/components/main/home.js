@@ -428,7 +428,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>internet</h3>
+                          <h3>Hill Lights</h3>
                         </div>
                       </div>
                       <div class="col-md-4 margin_bottom1">
@@ -439,7 +439,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Hardisk</h3>
+                          <h3>Bike Light</h3>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -450,7 +450,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Rams</h3>
+                          <h3>Hot Jar</h3>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -461,7 +461,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Bettery</h3>
+                          <h3>Lighted Wrist</h3>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -472,7 +472,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Drive</h3>
+                          <h3>Security Sensored light</h3>
                         </div>
                       </div>
                       <div class="col-md-12">
