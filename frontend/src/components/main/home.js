@@ -263,13 +263,13 @@ const Home = () => {
                               information{" "}
                             </p>
                             <a href="/user/chat">Chat </a>{" "}
-                            <a href="tel: 7860164608">Phone</a>
+                            <a href="tel:7619949327">Phone</a>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="text_img">
                             <figure>
-                              <img
+                              <img 
                                 src="https://www.solarreviews.com/content/images/blog/post/focus_images/37_types%20of%20solar%20panels.png"
                                 height="278"
                                 width="696"
