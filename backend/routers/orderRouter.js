@@ -71,6 +71,18 @@ router.get("/getbyitem/:id", (req, res) => {
     });
 });
 
+router.get("/getbyuser/:id", (req, res) => {
+  Model.find({orderedBy : req.params.id}).populate('product')
+    .then((data) => {
+      console.log("data fetched");
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get("/getbyid/:id", (req, res) => {
   Model.findById(req.params.id)
     .then((data) => {

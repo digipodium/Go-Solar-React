@@ -49,11 +49,11 @@ const Payment = () => {
   };
 
   const checkoutSubmit = () => {
-    fetch(url + "/booking/add/", {
+    fetch(url + "/order/add/", {
       method: "POST",
       body: JSON.stringify({
-        location: product._id,
-        user: currentUser._id,
+        product: product._id,
+        orderedBy: currentUser._id,
         createdAt: new Date(),
       }),
       headers: {
@@ -68,7 +68,7 @@ const Payment = () => {
             title: "Success",
             text: "Location Booked Successfully",
           });
-          navigate("/user/managebooking");
+          navigate("/user/manageorder");
         });
       }
     });

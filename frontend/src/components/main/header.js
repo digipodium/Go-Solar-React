@@ -80,7 +80,7 @@ const Header = () => {
     {
       name: "Profile",
       icon: <AccountCircle />,
-      link: "/profile",
+      link: "/user/profile",
     },
     {
       name: "Chat with Expert",
