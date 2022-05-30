@@ -129,8 +129,8 @@ const Footer = () => {
                   <img src={url + "/images/logo3.png"} alt="logo" />
                      <ul class="social_icon">
                         <li><a href="https://www.facebook.com/go0solar" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                        <li><a href="tel:9554840841" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
                         <li><a href="https://www.instagram.com/loc_chik" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                      </ul>
                   </div>

@@ -130,7 +130,7 @@ const Home = () => {
                               implementation{" "}
                             </p>
                             <a href="/main/browseEquipment">BROWSE </a>{" "}
-                            <a href="/main/browseEquipment">Contact </a>
+                            <a href="/main/contactus">Contact </a>{" "}
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -161,7 +161,7 @@ const Home = () => {
                               There are lots of newly launched solar panels are wating for you, just give it a shot!!{" "}
                             </p>
                             <a href="/main/browseEquipment">Buy Now </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/contactus">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -263,7 +263,7 @@ const Home = () => {
                               information{" "}
                             </p>
                             <a href="/user/chat">Chat </a>{" "}
-                            <a href="/main/contactus">Email</a>
+                            <a href="tel: 7860164608">Phone</a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -495,7 +495,7 @@ const Home = () => {
                     <p>Every solar panel  and Products</p>
                     <h2>Up to 40% off !</h2>
                     <h3 class= "text-light m-4">On your first purchase</h3>
-                    <a class="read_more" href="/main/browseEqiupment">
+                    <a class="read_more" href="/main/browseEquipment">
                       Shop Now
                     </a>
                   </div>

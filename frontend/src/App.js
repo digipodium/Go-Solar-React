@@ -36,6 +36,7 @@ import ExpertAuthorisor from "./components/expertAuth";
 import SellerAuthorisor from "./components/sellerAuth";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import form from "./form";
 
 function App() {
   const stripe = loadStripe("pk_test_51L4QZaSAo6VRyLQAvmwkd2hcY5qjlpFHL61Fu1aJTdoxjmfDAVg0CMwpqQbj3sJEHflEEwm4lFElImsZYGgTIq1O00Af6cPz8O");
