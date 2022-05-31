@@ -38,7 +38,6 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import ManageOrder from "./components/user/manageOrder";
 
-
 function App() {
   const stripe = loadStripe("pk_test_51L4QZaSAo6VRyLQAvmwkd2hcY5qjlpFHL61Fu1aJTdoxjmfDAVg0CMwpqQbj3sJEHflEEwm4lFElImsZYGgTIq1O00Af6cPz8O");
   return (
@@ -83,6 +82,7 @@ function App() {
           <Route element={<BrowseEquipment />} path="browseEquipment" />
           <Route element={<EquipmentDetail />} path="equipmentDetails/:id" />
           <Route element={<Home />} path="home" />
+          <Route element={<Payment />} path="payment" />
           <Route element={<Ordering />} path="ordering" />
           <Route element={<Expertlogin />} path="expertlogin" />
           <Route element={<Sellersignup />} path="sellersignup" />

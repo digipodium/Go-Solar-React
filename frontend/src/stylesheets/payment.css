@@ -60,3 +60,8 @@
 .strong {
     margin-left: 6rem;
 }
+
+.card-title {
+    font-size: 24px;
+    margin-top: 16px;
+}

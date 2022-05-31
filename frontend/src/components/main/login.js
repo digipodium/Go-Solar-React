@@ -43,7 +43,7 @@ const Login = () => {
             return;
           } else {
             sessionStorage.setItem("user", JSON.stringify(data));
-            navigate("/user/chat");
+            navigate("/main/browseEquipment");
             return;
           }
         });

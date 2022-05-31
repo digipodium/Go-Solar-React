@@ -95,7 +95,7 @@ const Header = () => {
     {
       name: "Logout",
       icon: <AccountCircle />,
-      link: "/seller/sellerlogin",
+      link: "/home",
       click: logout,
     },
   ];
