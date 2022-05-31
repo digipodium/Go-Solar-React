@@ -67,7 +67,7 @@ const Login = () => {
               style={{ borderRadius: "1rem" }}
             >
               <div className="card-body p-5 text-center">
-                <h3 className="mb-5">Login Form</h3>
+                <h3 className="mb-5">Login Here</h3>
 
                 <Formik initialValues={loginForm} onSubmit={loginSubmit}>
                   {({ values, handleChange, handleSubmit }) => (
@@ -85,7 +85,7 @@ const Login = () => {
                       </div>
                       <div className="form-outline mb-4">
                         <TextField
-                          className="w-100"
+                          className="w-100" type={"password"}
                           id="password"
                           value={values.password}
                           onChange={handleChange}
@@ -104,9 +104,6 @@ const Login = () => {
                         <label className="form-check-label" for="form1Example3">
                           {" "}
                           Remember password{" "}
-                          <a href="/main/resetpassword">
-                            <u>Forget password</u>
-                          </a>
                         </label>
                       </div>
                       <button
@@ -115,31 +112,38 @@ const Login = () => {
                       >
                         Login
                       </button>
+                      <br></br>
                       OR
                       <br></br>
-                      <a href="/main/signup">
-                        <u>sign up</u>
-                      </a>
+                      <a class = "l-link" href="/main/signup">
+                        Sign Up
+                      </a> 
+                      <hr className="my-4" />
+                      <a class = "l-link" href="/main/resetpassword">
+                     Forget password
+                   </a>
                     </form>
+                     
                   )}
                 </Formik>
-                <hr className="my-4" />
+               
 
-                <button
+
+                {/* <button
                   class="btn btn-lg btn-block btn-primary"
                   style={{ backgroundColor: "#dd4b39" }}
                   type="submit"
                 >
                   <i className="fab fa-google me-2"></i> Sign in with google
-                </button>
-                <button
+                </button> */}
+                {/* <button
                   className="btn btn-lg btn-block btn-primary mb-2"
                   style={{ backgroundCcolor: "#3b5998" }}
                   type="submit"
                 >
                   <i className="fab fa-facebook-f me-2"></i>Sign in with
                   facebook
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -153,7 +157,7 @@ const styles = {
   container: {
     background:
 
-      "url(https://media.urbanistnetwork.com/saigoneer/article-images/2019/Oct/3/floatingsolar_SGNRb.jpg)",
+      "url(http://localhost:5000/images/banner.jpg)",
 
      
 

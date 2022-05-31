@@ -48,40 +48,49 @@ const Expertlogin = () => {
         <div>
           <div className="row align-items-center justify-content-center h-100">
             <div className="col-md-4">
+              <div className="expert-card">
               <div className="card">
                 <div className="card-header">
-                  <h3 className="mb-0">Expert Login</h3>
+                  <h1 className="mb-2">Expert Login</h1>
                 </div>
                 <div className="card-body">
                   <Formik initialValues={loginForm} onSubmit={loginSubmit}>
                     {({ values, handleChange, handleSubmit }) => (
                       <form onSubmit={handleSubmit}>
-                        <TextField
-                          // error
-                          className="w-100 mb-4"
-                          label="Email"
-                          variant="filled"
-                          // helperText="Invalid Email ID"
-                          id="email"
-                          value={values.email}
-                          onChange={handleChange}
-                        />
-                        <TextField
-                          className="w-100 mb-4"
-                          label="Password"
-                          variant="filled"
-                          type="password"
-                          helperText="Enter correct password"
-                          id="password"
-                          value={values.password}
-                          onChange={handleChange}
-                        />{" "}
-                        <a href="/main/resetpassword">
-                          <u>Forget password ?</u> <br></br>
+                        <div class="form-outline">
+                          <div class="form-outline">
+                            <input
+                              type="email"
+                              id="typeEmail"
+                              class="form-control"
+                            />
+                            <label class="form-label" for="typeEmail">
+                              Email 
+                            </label>
+                          </div>
+                        </div>
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="typeText"
+                            class="form-control"
+                          />
+                          <label class="form-label" for="typeText" type ={"password"}>
+                            password
+                          </label>
+                        </div>
+                        <a class="l-link" href="/main/resetpassword"/>
+
+                        
+                        <a class = "l-link" href="/main/resetpassword">
+
+                          Forget password ? <br></br>
                         </a>
-                        <a href="/main/expertsignup">
-                          <u>signup</u>
+                        <a class="l-link" href="/main/expertsignup">
+                          SignUp
                         </a>
+                        <br></br>
+                        <br></br>
                         <Button
                           type="submit"
                           variant="contained"
@@ -95,6 +104,7 @@ const Expertlogin = () => {
                   </Formik>
                 </div>
               </div>
+            </div>
             </div>
             <div className="col-md-8">
               <div style={{ height: "100%", padding: "5rem" }}>

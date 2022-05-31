@@ -24,9 +24,9 @@ const Home = () => {
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                     <div class="full">
                       <div class="center-desk">
-                        <div class="logo">
+                        <div class="logo d-3">
                           <a href="/home">
-                            <img src={url + "/images/logo3.png"} alt="#" />
+                            <img src={url + "/images/logo3.png"} alt="logo" />
                           </a>
                         </div>
                       </div>
@@ -130,15 +130,17 @@ const Home = () => {
                               implementation{" "}
                             </p>
                             <a href="/main/browseEquipment">BROWSE </a>{" "}
-                            <a href="/main/browseEquipment">Contact </a>
+                            <a href="/main/contactus">Contact </a>{" "}
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="text_img">
                             <figure>
                               <img
-                                src="https://www.build-review.com/wp-content/uploads/2021/02/solar-panels.jpg"
+                                src="https://www.nexamp.com/wp-content/uploads/2021/03/Brick-Church-Solar-1-18-of-35-1.jpg"
                                 alt="#"
+                                height="278"
+                                width="696"
                               />
                             </figure>
                           </div>
@@ -156,19 +158,17 @@ const Home = () => {
                             <span>A MORE ADVANCE</span>
                             <h1>SOLAR PANELS ARE HERE</h1>
                             <p>
-                              There are many variations of passages of Lorem
-                              Ipsum available, but the majority have suffered
-                              alteration in some form, by injected humour, or{" "}
+                              There are lots of newly launched solar panels are wating for you, just give it a shot!!{" "}
                             </p>
                             <a href="/main/browseEquipment">Buy Now </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/contactus">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="text_img">
                             <figure>
                               <img
-                                src="images/2.jpg"
+                                src="https://www.popsci.com/uploads/2021/09/30/The-Best-Solar-Panels-of-2021.jpg?auto=webp"
                                 height="278"
                                 width="696"
                                 alt="#"
@@ -201,7 +201,7 @@ const Home = () => {
                           <div class="text_img">
                             <figure>
                               <img
-                                src="images/intro_solar_system.png"
+                                src="https://3.imimg.com/data3/TY/HL/MY-1540554/solar-products-500x500.jpg"
                                 height="278"
                                 width="696"
                                 d37
@@ -236,7 +236,7 @@ const Home = () => {
                           <div class="text_img">
                             <figure>
                               <img
-                                src="images/solar-panel-on-a-roof-of-a-house-concept-of-sustainable-resources-illustration-design-vector.jpg"
+                                src="https://www.gannett-cdn.com/-mm-/64a133e3e6f411ffa20f76542681fdfd11ff3ceb/c=0-244-4669-2870/local/-/media/2020/10/11/FortSmith/ghows-AR-201019980-b48b53b4.jpg"
                                 height="278"
                                 width="696"
                                 alt="#"
@@ -263,14 +263,14 @@ const Home = () => {
                               information{" "}
                             </p>
                             <a href="/user/chat">Chat </a>{" "}
-                            <a href="/main/contactus">Email</a>
+                            <a href="tel:7619949327">Phone</a>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="text_img">
                             <figure>
-                              <img
-                                src="images/Solar-Companies-in-Ranchi.jpg"
+                              <img 
+                                src="https://www.solarreviews.com/content/images/blog/post/focus_images/37_types%20of%20solar%20panels.png"
                                 height="278"
                                 width="696"
                                 alt="#"
@@ -428,7 +428,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>internet</h3>
+                          <h3>Hill Lights</h3>
                         </div>
                       </div>
                       <div class="col-md-4 margin_bottom1">
@@ -439,7 +439,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Hardisk</h3>
+                          <h3>Bike Light</h3>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -450,7 +450,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Rams</h3>
+                          <h3>Hot Jar</h3>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -461,7 +461,7 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Bettery</h3>
+                          <h3>Lighted Wrist</h3>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -472,11 +472,11 @@ const Home = () => {
                               alt="#"
                             />
                           </figure>
-                          <h3>Drive</h3>
+                          <h3>Security Sensored light</h3>
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <a class="read_more" href="#">
+                        <a class="read_more" href="/main/browseEquipment">
                           See More
                         </a>
                       </div>
@@ -494,7 +494,8 @@ const Home = () => {
                   <div class="titlepage">
                     <p>Every solar panel  and Products</p>
                     <h2>Up to 40% off !</h2>
-                    <a class="read_more" href="#">
+                    <h3 class= "text-light m-4">On your first purchase</h3>
+                    <a class="read_more" href="/main/browseEquipment">
                       Shop Now
                     </a>
                   </div>
@@ -502,7 +503,7 @@ const Home = () => {
                 <div class="col-md-6">
                   <div class="laptop_box">
                     <figure>
-                      <img src="images/pc.png" alt="#" />
+                      <img src="https://www.solarreviews.com/content/images/blog/typesofsolarpanels.jpg" alt="#" />
                     </figure>
                   </div>
                 </div>
@@ -670,15 +671,6 @@ const Home = () => {
                             <div class="test_box">
                               <i>
 
-                                
-
-                                <img
-                                  src="https://tse1.mm.bing.net/th?id=OIP.U438qVYBTg2n_5oMr39VRgHaHa&pid=Api&P=0&w=160&h=160"/>
-
-                                <img
-                                  src="https://tse1.mm.bing.net/th?id=OIP.avSasd3jjmU5_Lno5xmxrgHaJ4&pid=Api&P=0&w=116&h=155"
-                                  alt="#"/>
-
                                 <img
                                   src="https://i.pinimg.com/originals/63/f7/e9/63f7e99d2bdb21c005ce2debca4c3a9e.jpg"
 
@@ -733,9 +725,6 @@ const Home = () => {
                                   alt="#"
                                 />
                               </i>
-
-                              <h4>Anjali tiwari</h4>
-
                               <h4>Angel Priya</h4>
 
                               <p>Admin service is very good!!</p>

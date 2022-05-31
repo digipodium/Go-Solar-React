@@ -126,12 +126,12 @@ const Footer = () => {
             <div class="container">
                <div class="row">
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <img src={url + "/images/logo3.png"} alt="#" />
+                  <img src={url + "/images/logo3.png"} alt="logo" />
                      <ul class="social_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/go0solar" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                        <li><a href="tel:9554840841" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/loc_chik" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                      </ul>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
@@ -150,7 +150,7 @@ const Footer = () => {
                      <form class="bottom_form">
                         <h3>Newsletter</h3>
                         <input class="enter" placeholder="Enter your email" type="text" name="Enter your email"/>
-                        <button class="sub_btn">subscribe</button>
+                        <button class="sub_btn">Subscribe</button>
                      </form>
                   </div>
                </div>

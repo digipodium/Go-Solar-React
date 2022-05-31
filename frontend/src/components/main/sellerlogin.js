@@ -62,7 +62,7 @@ const Login = () => {
             >
               <div className="card-body p-5 text-center">
                 <p className="text-center text-muted">GO SOLAR</p>
-                <h3 className="mb-5">Seller Login Form</h3>
+                <h3 className="mb-5">Seller Login Here</h3>
 
                 <Formik initialValues={loginForm} onSubmit={loginSubmit}>
                   {({ values, handleChange, handleSubmit }) => (
@@ -79,7 +79,7 @@ const Login = () => {
                         />
                       </div>
                       <div className="form-outline mb-4">
-                        <TextField
+                        <TextField type={"password"}
                           className="w-100"
                           id="password"
                           value={values.password}
@@ -100,10 +100,7 @@ const Login = () => {
                         <label className="form-check-label" for="form1Example3">
                           {" "}
                           Remember password{" "}
-                          <a href="/main/resetpassword">
-                            {" "}
-                            <u>Forget password ?</u>
-                          </a>
+                        
                         </label>
                       </div>
 
@@ -121,6 +118,10 @@ const Login = () => {
                   <Link to="/main/sellersignup">Click Here</Link>
                 </p>
                 <hr className="my-4" />
+                <a class= "l-link" href="/main/resetpassword">
+                            {" "}
+                            Forget password ?
+                          </a>
               </div>
             </div>
           </div>
@@ -133,7 +134,7 @@ const Login = () => {
 const styles = {
   container: {
     background:
-      " url(https://tse2.mm.bing.net/th?id=OIP.9UmdvGsGwTu2BDbpE3s-qAHaDf&pid=Api&P=0&w=337&h=158)",
+      " url(https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000)",
     backgroundSize: "cover",
     backgroundPosition: "center",
   },

@@ -36,6 +36,8 @@ import ExpertAuthorisor from "./components/expertAuth";
 import SellerAuthorisor from "./components/sellerAuth";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import ManageOrder from "./components/user/manageOrder";
+
 
 function App() {
   const stripe = loadStripe("pk_test_51L4QZaSAo6VRyLQAvmwkd2hcY5qjlpFHL61Fu1aJTdoxjmfDAVg0CMwpqQbj3sJEHflEEwm4lFElImsZYGgTIq1O00Af6cPz8O");
@@ -63,6 +65,7 @@ function App() {
           path="user"
         >
           <Route element={<Chat />} path="chat" />
+          <Route element={<ManageOrder />} path="manageorder" />
         </Route>
         <Route element={<Main />} path="main">
           <Route element={<Signup />} path="signup" />

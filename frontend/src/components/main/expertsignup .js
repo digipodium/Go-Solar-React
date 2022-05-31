@@ -55,13 +55,13 @@ const Signup = () => {
     <section className="">
       <div
         className="px-4 py-5 px-md-5 text-center text-lg-start"
-        style={{ backgroundColor: "hsl(0, 0%, 96%)" }}
+        style={{ backgroundColor: "hsl(0, 1%, 99%)" }}
       />
       <div className="container">
         <div className="row gx-lg-5 align-items-center">
           <div className="col-lg-6 mb-5 mb-lg-0">
             <h1 className="my-5 display-3 fw-bold ls-tight">
-              <span className="text-primary">Signup Form</span>
+              <span className="text-primary">Signup Here</span>
             </h1>
           </div>
 
@@ -122,7 +122,7 @@ const Signup = () => {
                       
 
                       
-
+                      <br></br>
                       <div className="form-check d-flex justify-content-center mb-4">
                         <input
                           className="form-check-input me-2"
@@ -131,6 +131,7 @@ const Signup = () => {
                           id="form2Example33"
                           checked
                         />
+                        
                         <label
                           className="form-check-label"
                           for="form2Example33"
@@ -143,14 +144,14 @@ const Signup = () => {
                         type="submit"
                         className="btn btn-primary btn-block mb-4"
                       >
-                        Sign up
+                        Sign Up
                       </button>
 
                       <div className="text-center">
                        
                         <button
                           type="button"
-                          className="btn btn-link btn-floating mx-1"
+                          className="btn btn-link btn-floating mx-1 btn-lg"
                         >
                           <a href="https://www.fb.com" target="_blank"><i className="fab fa-facebook-f"></i></a>
                           
@@ -158,7 +159,7 @@ const Signup = () => {
                         
                         <button
                           type="button"
-                          className="btn btn-link btn-floating mx-1"
+                          className="btn btn-link btn-floating mx-1 btn-lg"
                         >
                          <a href="https://www.google.com" target="_blank"><i className="fab fa-google"></i></a>
                         </button>
@@ -166,7 +167,7 @@ const Signup = () => {
                         
                         <button
                           type="button"
-                          className="btn btn-link btn-floating mx-1"
+                          className="btn btn-link btn-floating mx-1 btn-lg"
                         >
                           <a href="https://www.github.com" target="_blank"><i className="fab fa-github"></i></a>
                         </button>
