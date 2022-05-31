@@ -85,7 +85,7 @@ const Login = () => {
                       </div>
                       <div className="form-outline mb-4">
                         <TextField
-                          className="w-100"
+                          className="w-100" type={"password"}
                           id="password"
                           value={values.password}
                           onChange={handleChange}

@@ -79,7 +79,7 @@ const Login = () => {
                         />
                       </div>
                       <div className="form-outline mb-4">
-                        <TextField
+                        <TextField type={"password"}
                           className="w-100"
                           id="password"
                           value={values.password}

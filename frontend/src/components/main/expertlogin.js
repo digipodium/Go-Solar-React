@@ -75,11 +75,15 @@ const Expertlogin = () => {
                             id="typeText"
                             class="form-control"
                           />
-                          <label class="form-label" for="typeText">
+                          <label class="form-label" for="typeText" type ={"password"}>
                             password
                           </label>
                         </div>
-                        <a class="l-link" href="/main/resetpassword">
+                        <a class="l-link" href="/main/resetpassword"/>
+
+                        
+                        <a class = "l-link" href="/main/resetpassword">
+
                           Forget password ? <br></br>
                         </a>
                         <a class="l-link" href="/main/expertsignup">
