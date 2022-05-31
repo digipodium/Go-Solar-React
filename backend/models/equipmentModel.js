@@ -4,8 +4,8 @@ const schema = new mongoose.Schema({
   title: String,
   description: String,
   image: String,
-  features: String,
-  price: String,
+  features: Array,
+  price: Number,
   seller: { type: mongoose.Types.ObjectId, ref: "seller" },
   createdAt: Date,
 });

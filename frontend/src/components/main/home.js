@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import app_config from "../../config";
+import "./home.css";
 
 const Home = () => {
   const url = app_config.backend_url;
@@ -11,10 +12,12 @@ const Home = () => {
         <div class="main-layout">
           {/* <!-- loader  --> */}
           {/* <div class="loader_bg">
-         <div class="loader"> <img src={url + "/images/loading.gif"} alt="#" /></div>
-         </div> */}
+            <div class="loader">
+              {" "}
+              <img src={url + "/images/loading.gif"} alt="#" />
+            </div>
+          </div> */}
           <header>
-            {/* <!-- header inner --> */}
             <div class="header">
               <div class="container-fluid">
                 <div class="row">
@@ -54,19 +57,19 @@ const Home = () => {
                           </li>
 
                           <li class="nav-item">
-                            <a class="nav-link" href="computer.html">
+                            <a class="nav-link" href="/main/browseEquipment">
                               Panels
                             </a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="laptop.html">
+                            <a class="nav-link" href="/main/browseEquipment">
                               Products
                             </a>
                           </li>
 
                           <li class="nav-item d_none">
                             <Link class="nav-link" to="/main/contactus">
-                              contactus
+                              ContactUs
                             </Link>
                           </li>
                           {/* <li class="nav-item d_none">
@@ -126,15 +129,15 @@ const Home = () => {
                               trusted solar panels and solar products with easy
                               implementation{" "}
                             </p>
-                            <a href="#">BROWSE </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/browseEquipment">BROWSE </a>{" "}
+                            <a href="/main/browseEquipment">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="text_img">
                             <figure>
                               <img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMYL3aRoBx6A5XRjB7WYLznge7l0z9GD32Jg&usqp=CAU"
+                                src="https://www.build-review.com/wp-content/uploads/2021/02/solar-panels.jpg"
                                 alt="#"
                               />
                             </figure>
@@ -157,7 +160,7 @@ const Home = () => {
                               Ipsum available, but the majority have suffered
                               alteration in some form, by injected humour, or{" "}
                             </p>
-                            <a href="#">Buy Now </a>{" "}
+                            <a href="/main/browseEquipment">Buy Now </a>{" "}
                             <a href="contact.html">Contact </a>
                           </div>
                         </div>
@@ -190,8 +193,8 @@ const Home = () => {
                               Ipsum available, but the majority have suffered
                               alteration in some form, by injected humour, or{" "}
                             </p>
-                            <a href="#">BROWSE </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/browseEquipment">BROWSE </a>{" "}
+                            <a href="/main/contactus">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -225,8 +228,8 @@ const Home = () => {
                               with secure tools that we provide. All of them are
                               fully vaccinated.
                             </p>
-                            <a href="#">Buy Now </a>{" "}
-                            <a href="contact.html">Contact </a>
+                            <a href="/main/browseEquipment">Buy Now </a>{" "}
+                            <a href="/main/contactus">Contact </a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -259,8 +262,8 @@ const Home = () => {
                               according to your need. You can contact us for for
                               information{" "}
                             </p>
-                            <a href="#">Chat </a>{" "}
-                            <a href="contact.html">Email</a>
+                            <a href="/user/chat">Chat </a>{" "}
+                            <a href="/main/contactus">Email</a>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -305,42 +308,54 @@ const Home = () => {
                 <div class="col-md-4">
                   <div class="box_text">
                     <i>
-                      <img src="images/thr.png" alt="#" />
+                      <img
+                        src="https://tse1.mm.bing.net/th?id=OIP.2ptMiQziapYmRaMDYSLu4gHaF6&pid=Api&P=0&w=214&h=171"
+                        alt="#"
+                      />
                     </i>
-                    <h3>SOLAR PRODUCTS</h3>
+                    <h3>Solar Attic Fans</h3>
                     <p>
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable.{" "}
+                      All over the world, close to 40% of total residential
+                      power usage can be attributed to heating and cooling.Your
+                      home and its indoor air quality,Where homes have air
+                      conditioning installed, Millionsun can save hundreds of
+                      dollars each year by improving the efficiency of your air
+                      conditioning system.
                     </p>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="box_text">
                     <i>
-                      <img src="images/thr1.png" alt="#" />
+                      <img
+                        src="https://tse1.mm.bing.net/th?id=OIP.52Zc-QdbbimcluC8w7u9DgHaHa&pid=Api&P=0&w=179&h=179"
+                        alt="#"
+                      />
                     </i>
-                    <h3>SOLAR PRODUCTS</h3>
+                    <h3>Solar Lamp</h3>
                     <p>
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable.{" "}
+                      Millionsun integrated solar street light include high
+                      lumen LED lamp, LiFePO4 lithium battery, high efficiency
+                      sunpower microcrystal solar panel and a smart controller
+                      with PIR motion sensor.
                     </p>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="box_text">
                     <i>
-                      <img src="images/thr2.png" alt="#" />
+                      <img
+                        src="https://3.imimg.com/data3/TY/HL/MY-1540554/solar-products-500x500.jpg"
+                        alt="#"
+                      />
                     </i>
-                    <h3>OTHER SERVICES</h3>
+                    <h3>Othere products</h3>
                     <p>
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable.{" "}
+                      We are the largest manufacturer of custom infrared
+                      electric heaters for the OEM market. With over 60 years of
+                      innovation behind us, we deliver the most well-built and
+                      effective infrared heating solutions available on the
+                      market.
                     </p>
                   </div>
                 </div>
@@ -477,7 +492,7 @@ const Home = () => {
               <div class="row">
                 <div class="col-md-6">
                   <div class="titlepage">
-                    <p>Every Computer and laptop</p>
+                    <p>Every solar panel  and Products</p>
                     <h2>Up to 40% off !</h2>
                     <a class="read_more" href="#">
                       Shop Now
@@ -530,12 +545,12 @@ const Home = () => {
                               <div class="test_box">
                                 <i>
                                   <img
-                                    src="https://i.pinimg.com/originals/63/f7/e9/63f7e99d2bdb21c005ce2debca4c3a9e.jpg"
+                                    src="https://tse1.mm.bing.net/th?id=OIP.uxxRIHNTQNINY0C02K-QJgHaHa&pid=Api&P=0&w=160&h=160"
                                     style={{ height: "100px" }}
                                     alt="#"
                                   />
                                 </i>
-                                <h4>Neha Dixit</h4>
+                                <h4>Akash tiwari</h4>
                                 <p>
                                   This was my first expireance with this site
                                   and it was awesome! The imlementetion team's
@@ -556,12 +571,12 @@ const Home = () => {
                               <div class="test_box">
                                 <i>
                                   <img
-                                    src="https://1.bp.blogspot.com/-56qaqnSjSUs/XmDjV_YRBJI/AAAAAAAAPO0/QEKgs_qAvN8rIMgHvWoVq3sKc_v_A11gwCLcBGAsYHQ/s1600/Cute%2BGirl%2BDP%2BImages%2B%252818%2529.jpg"
+                                    src="https://tse1.mm.bing.net/th?id=OIP.uxxRIHNTQNINY0C02K-QJgHaHa&pid=Api&P=0&w=160&h=160"
                                     style={{ height: "100px" }}
                                     alt="#"
                                   />
                                 </i>
-                                <h4>Suman Chauhan</h4>
+                                <h4>Adam mark</h4>
                                 <p>Delivery service is awesome!!</p>
                               </div>
                             </div>
@@ -577,12 +592,12 @@ const Home = () => {
                               <div class="test_box">
                                 <i>
                                   <img
-                                    src="https://www.whatsappimages.in/wp-content/uploads/2022/01/Free-Girl-DP-Wallpaper-Pics-Download.jpg"
+                                    src="https://tse1.mm.bing.net/th?id=OIP.U438qVYBTg2n_5oMr39VRgHaHa&pid=Api&P=0&w=160&h=160"
                                     style={{ height: "100px" }}
                                     alt="#"
                                   />
                                 </i>
-                                <h4>Angel Priya</h4>
+                                <h4>Suman dixit </h4>
                                 <p>Admin service is very good!!</p>
                               </div>
                             </div>
@@ -625,8 +640,8 @@ const Home = () => {
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <div class="titlepage">
-                <h2>Customer Review</h2>
+              <div class="titlepage">-
+                
               </div>
             </div>
           </div>
@@ -654,13 +669,19 @@ const Home = () => {
                           <div class="col-md-9 offset-md-3">
                             <div class="test_box">
                               <i>
+
+                                
+
+                                <img
+                                  src="https://tse1.mm.bing.net/th?id=OIP.U438qVYBTg2n_5oMr39VRgHaHa&pid=Api&P=0&w=160&h=160"/>
+
                                 <img
                                   src="https://tse1.mm.bing.net/th?id=OIP.avSasd3jjmU5_Lno5xmxrgHaJ4&pid=Api&P=0&w=116&h=155"
-                                  alt="#"
-                                />
+                                  alt="#"/>
 
                                 <img
                                   src="https://i.pinimg.com/originals/63/f7/e9/63f7e99d2bdb21c005ce2debca4c3a9e.jpg"
+
                                   style={{ height: "100px" }}
                                   alt="#"
                                 />
@@ -712,7 +733,11 @@ const Home = () => {
                                   alt="#"
                                 />
                               </i>
+
+                              <h4>Anjali tiwari</h4>
+
                               <h4>Angel Priya</h4>
+
                               <p>Admin service is very good!!</p>
                             </div>
                           </div>

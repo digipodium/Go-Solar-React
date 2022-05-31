@@ -99,7 +99,7 @@ const Chat = () => {
           <div className="col-md-3">{showExpert()}</div>
           <div className="col-md-9">
             <div className="card ">
-              <div className="card-body">
+              <div className="card-body-chat">
                 <div className="msg-area">{displayMessages()}</div>
                 <div className="input-group">
                   <input

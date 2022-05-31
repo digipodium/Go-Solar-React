@@ -25,6 +25,7 @@ const AddEquipment = () => {
     createdAt: new Date(),
   };
   const userSubmit = (values) => {
+    values.features = values.features.split(",");
     console.log(values);
     values.image = image;
     values.file = EquipmentFile;
