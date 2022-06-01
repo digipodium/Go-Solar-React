@@ -35,7 +35,8 @@ const AddEquipment = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
     };
-
+    navigate("/main/browseEquipment");
+    
     fetch(url + "/equipment/add", reqOp)
       .then((res) => res.json())
       .then((data) => {
@@ -49,6 +50,8 @@ const AddEquipment = () => {
         }
       });
   };
+
+
   const uploadimage = (event) => {
     const formdata = new FormData();
     formdata.append("myfile", event.target.files[0]);
@@ -65,6 +68,7 @@ const AddEquipment = () => {
         setImage(event.target.files[0].name);
       });
   };
+  
 
   return (
     <div>

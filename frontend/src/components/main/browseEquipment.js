@@ -46,7 +46,7 @@ const BrowseEquipment = () => {
             <Card>
               <CardMedia
                 component="img"
-                image={url + "/uploads/" + image}
+                image={url + "/images/" + image}
                 height={400}
               />
               <CardContent className="card-body">

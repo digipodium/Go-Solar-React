@@ -41,7 +41,7 @@ const Payment = () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: (product.price + inst_charge) * 100 }),
+      body: JSON.stringify({ amount: (product.price + del_charge) * 100 }),
     };
     return fetch(url + "/create-payment-intent", requestOptions).then(
       (response) => response.json()
@@ -172,7 +172,7 @@ Rs. 1,050</strong></li>
   );
 
   const url = app_config.backend_url;
-  const inst_charge = 1200;
+  const del_charge = 0;
 
   const increment = () => {
     console.log("clicked!!");
@@ -225,8 +225,8 @@ Rs. 1,050</strong></li>
                 Price(1 item)<strong class="strong">Rs. {product.price}</strong>
               </li>
               <li class="list-group-item">
-                Installation Charges
-                <strong class="strong">Rs. {inst_charge}</strong>
+                Delivery Charges
+                <strong class="strong">Rs. {del_charge}</strong>
               </li>
               <li class="list-group-item">
                 Total Payable<strong class="strong">Rs. {product.price}</strong>
@@ -244,7 +244,7 @@ Rs. 1,050</strong></li>
                 >
                   {isPaymentLoading
                     ? "Loading..."
-                    : `Pay ₹${product.price + inst_charge}/-`}
+                    : `Pay ₹${product.price + del_charge}/-`}
                 </Button>
               </form>
             </div>
