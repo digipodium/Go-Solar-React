@@ -95,7 +95,7 @@ const Header = () => {
     {
       name: "Logout",
       icon: <AccountCircle />,
-      link: "/home",
+      link: "/main/home",
       click: logout,
     },
   ];

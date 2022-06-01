@@ -209,7 +209,7 @@ Rs. 1,050</strong></li>
 
           <div class="card mt-5">
             <div class="card-header">Order Summary</div>
-            <img class="imggg" src={url + "/uploads/" + product.image} alt="" />
+            <img class="imggg" src={url + "/images/" + product.image} alt="" />
             <div class="card-body card-b">
               <h5 class="card-title">{product.title}</h5>
               <p class="card-text">Rs. {product.price}</p>

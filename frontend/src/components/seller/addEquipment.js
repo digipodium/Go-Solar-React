@@ -14,6 +14,7 @@ const AddEquipment = () => {
   const [currentSeller, setCurrentSeller] = useState(
     JSON.parse(sessionStorage.getItem("seller"))
   );
+  // navigate("/main/browseEquipment");
 
   const equipmentForm = {
     title: "",
@@ -35,8 +36,8 @@ const AddEquipment = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
     };
-    navigate("/main/browseEquipment");
-    
+
+
     fetch(url + "/equipment/add", reqOp)
       .then((res) => res.json())
       .then((data) => {
