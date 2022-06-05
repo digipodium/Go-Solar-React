@@ -1,10 +1,11 @@
 import "../../stylesheets/payment.css";
 import { useEffect, useState } from "react";
-import { Button, TextField } from "@mui/material";
+import { Avatar, Button, Rating, TextField } from "@mui/material";
 import app_config from "../../config";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Payment = () => {
   const CARD_OPTIONS = {
@@ -36,6 +37,78 @@ const Payment = () => {
   const elements = useElements({});
   const [isPaymentLoading, setPaymentLoading] = useState(false);
   const navigate = useNavigate();
+
+  const [reviewList, setReviewList] = useState([]);
+  const [rLoading, setRLoading] = useState(true);
+  const [rating, setRating] = useState(3);
+  const [ratingText, setRatingText] = useState("");
+
+  const fetchReviews = (org_id) => {
+    fetch(url + "/review/getbyitem/" + org_id).then((res) => {
+      if (res.status === 200) {
+        res.json().then((data) => {
+          console.log(data);
+          setReviewList(data);
+          setRLoading(false);
+        });
+      }
+    });
+  };
+
+  const showRating = () => {
+    if (currentUser !== null) {
+      return (
+        <div class="review">
+          <h4 className="text-muted">Review</h4>
+          <hr />
+          <Rating
+            name="simple-controlled"
+            value={rating}
+            onChange={(event, newValue) => {
+              setRating(newValue);
+            }}
+          />
+
+          <TextField
+            label="Write Something .."
+            fullWidth
+            className="mt-2"
+            multiline
+            rows={3}
+            value={ratingText}
+            onChange={(e) => setRatingText(e.target.value)}
+          />
+          <button
+            className="btn btn-primary mt-1 float-end "
+            onClick={addReview}
+          >
+            Submit Review
+          </button>
+        </div>
+      );
+    }
+  };
+
+  const addReview = () => {
+    fetch(url + "/review/add", {
+      method: "POST",
+      body: JSON.stringify({
+        rating: rating,
+        text: ratingText,
+        user: currentUser._id,
+        product: product._id,
+        createdAt: new Date(),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
+      if (res.status === 200) {
+        toast.success("Review Added");
+        fetchReviews(product._id);
+      }
+    });
+  };
 
   const getIntent = () => {
     const requestOptions = {
@@ -110,53 +183,60 @@ const Payment = () => {
       }
     }
     return (
-        <div class="cardds">
-        <div class="card card-c" >
-  <div class="card-header">
-    Price Details
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Price(1 item)<strong class="strong">	
-Rs. 1,050</strong></li>
-    <li class="list-group-item">Delivery Charges<strong class="strong">	
-Free</strong></li>
-    <li class="list-group-item">Total Payable<strong class="strong">	
-Rs. 1,050</strong></li>
-  </ul>
-</div>
+      <div class="cardds">
+        <div class="card card-c">
+          <div class="card-header">Price Details</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Price(1 item)<strong class="strong">Rs. 1,050</strong>
+            </li>
+            <li class="list-group-item">
+              Delivery Charges<strong class="strong">Free</strong>
+            </li>
+            <li class="list-group-item">
+              Total Payable<strong class="strong">Rs. 1,050</strong>
+            </li>
+          </ul>
+        </div>
         <div></div>
-           
-<div class="card card-a">
-  <div class="card-header">
-  Delivery Address
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Janhavi Srivastava</h5>
-    <p class="card-text">Vishal Khand, Gomti Nagar, Lucknow (up)226010</p>
-    <a href="#" class="btn btn-primary button">Delivery Here</a>
-    <a href=""class="edit">Edit</a>
-  </div>
-</div>
 
+        <div class="card card-a">
+          <div class="card-header">Delivery Address</div>
+          <div class="card-body">
+            <h5 class="card-title">Janhavi Srivastava</h5>
+            <p class="card-text">
+              Vishal Khand, Gomti Nagar, Lucknow (up)226010
+            </p>
+            <a href="#" class="btn btn-primary button">
+              Delivery Here
+            </a>
+            <a href="" class="edit">
+              Edit
+            </a>
+          </div>
+        </div>
 
-<div class="card card-bb">
-  <div class="card-header">
-    Order Summary
-  </div>
-  <img class="imggg"src="https://cdn.shopify.com/s/files/1/2980/5140/products/panel10_700x.jpg?v=1618827654"></img>
-  <div class="card-body card-b">
-      
-    <h5 class="card-title">Loom Solar Panel 10 watt - 12 volt for Mobile Charging</h5>
-    <p class="card-text">Rs. 1,050</p>
-    <h3 className="quantity">Quantity : {qty}</h3>
-                        <button className="btn btn-primary quantity" onClick={increment}> <i class="fa fa-chevron-up" aria-hidden="true"></i> </button>
-    {/* <a href="#" class="btn btn-primary"></a> */}
-  </div>
-</div>
-</div>
-
-
-    )
+        <div class="card card-bb">
+          <div class="card-header">Order Summary</div>
+          <img
+            class="imggg"
+            src="https://cdn.shopify.com/s/files/1/2980/5140/products/panel10_700x.jpg?v=1618827654"
+          ></img>
+          <div class="card-body card-b">
+            <h5 class="card-title">
+              Loom Solar Panel 10 watt - 12 volt for Mobile Charging
+            </h5>
+            <p class="card-text">Rs. 1,050</p>
+            <h3 className="quantity">Quantity : {qty}</h3>
+            <button className="btn btn-primary quantity" onClick={increment}>
+              {" "}
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>{" "}
+            </button>
+            {/* <a href="#" class="btn btn-primary"></a> */}
+          </div>
+        </div>
+      </div>
+    );
   };
 
   let count = 1;
@@ -180,6 +260,24 @@ Rs. 1,050</strong></li>
     count++;
     setQty(qty + 1);
   };
+
+  const displayRatings = () => {
+    if (!rLoading) {
+      return reviewList.map(({ createdAt, rating, user, text }) => (
+        <div className="card">
+          <div className="card-body">
+            <Avatar alt="User" />
+            <span>
+              <b>{user.fullname}</b>
+            </span>
+            <Rating name="simple-controlled" value={rating} />
+            <h5 className="text-dark">{text}</h5>
+          </div>
+        </div>
+      ));
+    }
+  };
+
   return (
     <div className="container pt-5">
       <div className="row">
@@ -214,6 +312,9 @@ Rs. 1,050</strong></li>
               <h5 class="card-title">{product.title}</h5>
               <p class="card-text">Rs. {product.price}</p>
               <h3 className="quantity">Quantity : {qty}</h3>
+              <hr className="mt-4 mb-4" />
+              {displayRatings()}
+              {showRating()}
             </div>
           </div>
         </div>

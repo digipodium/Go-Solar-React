@@ -7,6 +7,8 @@ const sellerRouter = require("./routers/sellerRouter");
 const expertRouter = require("./routers/expertRouter");
 const utilRouter = require("./routers/util");
 const orderRouter = require("./routers/orderRouter");
+const reviewRouter = require("./routers/reviewRouter");
+const feedbackRouter = require("./routers/feedbackRouter");
 const cors = require("cors");
 // const ProductRouter = require("./routers/ProductRouter")
 
@@ -68,6 +70,8 @@ app.use("/util", utilRouter);
 app.use("/order", orderRouter);
 
 app.use("/expert", expertRouter);
+app.use("/review", reviewRouter);
+app.use("/feedback", feedbackRouter);
 app.use(express.static("./static"));
 app.get("/", (req, res) => {
   res.send("you have got a response");

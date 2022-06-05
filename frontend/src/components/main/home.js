@@ -1,10 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import app_config from "../../config";
 import "./home.css";
+import { TextField } from "@mui/material";
+import Swal from "sweetalert2";
 
 const Home = () => {
   const url = app_config.backend_url;
+  const [ratingText, setRatingText] = useState("");
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
+  );
+
+  const fetchFeedbacks = () => {
+    fetch(url + "/feedback/getall").then((res) => {
+      if (res.status === 200) {
+        res.json().then((data) => {
+          console.log(data);
+          setFeedbacks(data);
+          setLoading(false);
+        });
+      }
+    });
+  };
+
+  const addFeedback = () => {
+    if (currentUser === null) {
+      Swal.fire({
+        icon: "error",
+        title: "You need to login",
+      });
+      return;
+    }
+    fetch(url + "/feedback/add", {
+      method: "POST",
+      body: JSON.stringify({
+        user: currentUser._id,
+        text: ratingText,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
+      console.log(res.status);
+      Swal.fire({
+        icon: "success",
+        title: "Feedback Sucessfully Added!!",
+      });
+    });
+  };
+
+  useEffect(() => {
+    fetchFeedbacks();
+  }, []);
 
   return (
     <div>
@@ -158,7 +209,8 @@ const Home = () => {
                             <span>A MORE ADVANCE</span>
                             <h1>SOLAR PANELS ARE HERE</h1>
                             <p>
-                              There are lots of newly launched solar panels are wating for you, just give it a shot!!{" "}
+                              There are lots of newly launched solar panels are
+                              wating for you, just give it a shot!!{" "}
                             </p>
                             <a href="/main/browseEquipment">Buy Now </a>{" "}
                             <a href="/main/contactus">Contact </a>
@@ -204,7 +256,6 @@ const Home = () => {
                                 src="https://3.imimg.com/data3/TY/HL/MY-1540554/solar-products-500x500.jpg"
                                 height="278"
                                 width="696"
-                                d37
                                 alt="#"
                               />
                             </figure>
@@ -269,7 +320,7 @@ const Home = () => {
                         <div class="col-md-6">
                           <div class="text_img">
                             <figure>
-                              <img 
+                              <img
                                 src="https://www.solarreviews.com/content/images/blog/post/focus_images/37_types%20of%20solar%20panels.png"
                                 height="278"
                                 width="696"
@@ -492,9 +543,9 @@ const Home = () => {
               <div class="row">
                 <div class="col-md-6">
                   <div class="titlepage">
-                    <p>Every solar panel  and Products</p>
+                    <p>Every solar panel and Products</p>
                     <h2>Up to 40% off !</h2>
-                    <h3 class= "text-light m-4">On your first purchase</h3>
+                    <h3 class="text-light m-4">On your first purchase</h3>
                     <a class="read_more" href="/main/browseEquipment">
                       Shop Now
                     </a>
@@ -503,7 +554,10 @@ const Home = () => {
                 <div class="col-md-6">
                   <div class="laptop_box">
                     <figure>
-                      <img src="https://www.solarreviews.com/content/images/blog/typesofsolarpanels.jpg" alt="#" />
+                      <img
+                        src="https://www.solarreviews.com/content/images/blog/typesofsolarpanels.jpg"
+                        alt="#"
+                      />
                     </figure>
                   </div>
                 </div>
@@ -641,9 +695,7 @@ const Home = () => {
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <div class="titlepage">-
-                
-              </div>
+              <div class="titlepage">-</div>
             </div>
           </div>
           <div class="row">
@@ -670,10 +722,8 @@ const Home = () => {
                           <div class="col-md-9 offset-md-3">
                             <div class="test_box">
                               <i>
-
                                 <img
                                   src="https://i.pinimg.com/originals/63/f7/e9/63f7e99d2bdb21c005ce2debca4c3a9e.jpg"
-
                                   style={{ height: "100px" }}
                                   alt="#"
                                 />
@@ -764,6 +814,29 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <section style={{ background: "url(" + url + "/images/banner.jpg)" }}>
+        <div className="container p-5">
+          <div className="card">
+            <div className="card-body">
+              <p className="h2 text-center">Add Your Feedback</p>
+              <hr className="mb-5" />
+              <TextField
+                fullWidth
+                label="Write your Feedback..."
+                multiline
+                rows={5}
+              />
+              <button
+                className="btn btn-primary mt-4 float-end"
+                onClick={addFeedback}
+              >
+                Submit Feedback
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
