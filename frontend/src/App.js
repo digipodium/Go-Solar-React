@@ -37,103 +37,108 @@ import SellerAuthorisor from "./components/sellerAuth";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import ManageOrder from "./components/user/manageOrder";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const stripe = loadStripe("pk_test_51L4QZaSAo6VRyLQAvmwkd2hcY5qjlpFHL61Fu1aJTdoxjmfDAVg0CMwpqQbj3sJEHflEEwm4lFElImsZYGgTIq1O00Af6cPz8O");
+  const stripe = loadStripe(
+    "pk_test_51L4QZaSAo6VRyLQAvmwkd2hcY5qjlpFHL61Fu1aJTdoxjmfDAVg0CMwpqQbj3sJEHflEEwm4lFElImsZYGgTIq1O00Af6cPz8O"
+  );
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          element={
-            <AdminAuthorisor>
-              <Admin />
-            </AdminAuthorisor>
-          }
-          path="admin"
-        >
-          <Route element={<AdminProfile />} path="profile" />
-          <Route element={<AddExpert />} path="addexpert" />
-        </Route>
-
-        <Route
-          element={
-            <Authorisor>
-              <User />
-            </Authorisor>
-          }
-          path="user"
-        >
-          <Route element={<Chat />} path="chat" />
-          <Route element={<ManageOrder />} path="manageorder" />
-        </Route>
-        <Route element={<Main />} path="main">
-          <Route element={<Signup />} path="signup" />
-          <Route element={<Login />} path="login" />
+      <AnimatePresence>
+        <Routes>
           <Route
             element={
-              <Elements stripe={stripe}>
-                <Payment />
-              </Elements>
+              <AdminAuthorisor>
+                <Admin />
+              </AdminAuthorisor>
             }
-            path="payment"
-          />
-          {/* <Route element={<NewLogin />} path="newlogin" /> */}
-          {/* <Route element={<NewSignup />} path="newsignup" /> */}
-          <Route element={<BrowseEquipment />} path="browseEquipment" />
-          <Route element={<EquipmentDetail />} path="equipmentDetails/:id" />
+            path="admin"
+          >
+            <Route element={<AdminProfile />} path="profile" />
+            <Route element={<AddExpert />} path="addexpert" />
+          </Route>
+
+          <Route
+            element={
+              <Authorisor>
+                <User />
+              </Authorisor>
+            }
+            path="user"
+          >
+            <Route element={<Chat />} path="chat" />
+            <Route element={<ManageOrder />} path="manageorder" />
+          </Route>
+          <Route element={<Main />} path="main">
+            <Route element={<Signup />} path="signup" />
+            <Route element={<Login />} path="login" />
+            <Route
+              element={
+                <Elements stripe={stripe}>
+                  <Payment />
+                </Elements>
+              }
+              path="payment"
+            />
+            {/* <Route element={<NewLogin />} path="newlogin" /> */}
+            {/* <Route element={<NewSignup />} path="newsignup" /> */}
+            <Route element={<BrowseEquipment />} path="browseEquipment" />
+            <Route element={<EquipmentDetail />} path="equipmentDetails/:id" />
+            <Route element={<Home />} path="home" />
+            <Route element={<Payment />} path="payment" />
+            <Route element={<Ordering />} path="ordering" />
+            <Route element={<Expertlogin />} path="expertlogin" />
+            <Route element={<Sellersignup />} path="sellersignup" />
+            <Route element={<Sellerlogin />} path="sellerlogin" />
+            <Route element={<Resetpassword />} path="resetpassword" />
+            <Route element={<Expertsignup />} path="expertsignup" />
+            {/* <Route element={<Checkout/>} path="checkout" /> */}
+
+            <Route element={<Contactus />} path="contactus" />
+
+            <Route element={<Contactus />} path="/main/contactus" />
+
+            {/* <Route element={<Equipmentdetails />} path="equipmentdetails" /> */}
+          </Route>
+          <Route
+            element={
+              <SellerAuthorisor>
+                <Seller />
+              </SellerAuthorisor>
+            }
+            path="seller"
+          >
+            <Route element={<AddEquipment />} path="addequipment" />
+            <Route element={<ManageEquipment />} path="manageequipment" />
+          </Route>
+
+          <Route
+            element={
+              <ExpertAuthorisor>
+                <Expert />
+              </ExpertAuthorisor>
+            }
+            path="expert"
+          >
+            <Route element={<Expertchat />} path="expertchat" />
+          </Route>
+
+          <Route
+            element={
+              <Authorisor>
+                <User />
+              </Authorisor>
+            }
+            path="user"
+          >
+            <Route element={<UserChat />} path="chat/:expertid" />
+          </Route>
           <Route element={<Home />} path="home" />
-          <Route element={<Payment />} path="payment" />
-          <Route element={<Ordering />} path="ordering" />
-          <Route element={<Expertlogin />} path="expertlogin" />
-          <Route element={<Sellersignup />} path="sellersignup" />
-          <Route element={<Sellerlogin />} path="sellerlogin" />
-          <Route element={<Resetpassword />} path="resetpassword" />
-          <Route element={<Expertsignup />} path="expertsignup" />
-          {/* <Route element={<Checkout/>} path="checkout" /> */}
 
-          <Route element={<Contactus />} path="contactus" />
-
-          <Route element={<Contactus />} path="/main/contactus" />
-
-          {/* <Route element={<Equipmentdetails />} path="equipmentdetails" /> */}
-        </Route>
-        <Route
-          element={
-            <SellerAuthorisor>
-              <Seller />
-            </SellerAuthorisor>
-          }
-          path="seller"
-        >
-          <Route element={<AddEquipment />} path="addequipment" />
-          <Route element={<ManageEquipment />} path="manageequipment" />
-        </Route>
-
-        <Route
-          element={
-            <ExpertAuthorisor>
-              <Expert />
-            </ExpertAuthorisor>
-          }
-          path="expert"
-        >
-          <Route element={<Expertchat />} path="expertchat" />
-        </Route>
-
-        <Route
-          element={
-            <Authorisor>
-              <User />
-            </Authorisor>
-          }
-          path="user"
-        >
-          <Route element={<UserChat />} path="chat/:expertid" />
-        </Route>
-        <Route element={<Home />} path="home" />
-
-        <Route element={<Navigate to="/home" />} path="/"></Route>
-      </Routes>
+          <Route element={<Navigate to="/home" />} path="/"></Route>
+        </Routes>
+      </AnimatePresence>
     </BrowserRouter>
   );
 }

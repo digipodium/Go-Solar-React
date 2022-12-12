@@ -61,7 +61,9 @@ const Expertlogin = () => {
                           <div class="form-outline">
                             <input
                               type="email"
-                              id="typeEmail"
+                              id="email"
+                              value={values.email}
+                              onChange={handleChange}
                               class="form-control"
                             />
                             <label class="form-label" for="typeEmail">
@@ -72,7 +74,9 @@ const Expertlogin = () => {
                         <div class="form-outline">
                           <input
                             type="text"
-                            id="typeText"
+                            id="password"
+                              value={values.password}
+                              onChange={handleChange}
                             class="form-control"
                           />
                           <label class="form-label" for="typeText" type ={"password"}>

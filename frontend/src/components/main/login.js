@@ -9,6 +9,7 @@ import {
 import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
+import {motion} from 'framer-motion';
 
 import { useNavigate } from "react-router-dom";
 
@@ -58,6 +59,12 @@ const Login = () => {
   };
 
   return (
+    <motion.div
+      initial={{ opacity: 0, x: 300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0.5, x: -300 }}
+      transition={{ type: "keyframes" }}>
+
     <section className="vh-100" style={styles.container}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
@@ -85,7 +92,8 @@ const Login = () => {
                       </div>
                       <div className="form-outline mb-4">
                         <TextField
-                          className="w-100" type={"password"}
+                          className="w-100"
+                          type={"password"}
                           id="password"
                           value={values.password}
                           onChange={handleChange}
@@ -115,19 +123,16 @@ const Login = () => {
                       <br></br>
                       OR
                       <br></br>
-                      <a class = "l-link" href="/main/signup">
+                      <a class="l-link" href="/main/signup">
                         Sign Up
-                      </a> 
+                      </a>
                       <hr className="my-4" />
-                      <a class = "l-link" href="/main/resetpassword">
-                     Forget password
-                   </a>
+                      <a class="l-link" href="/main/resetpassword">
+                        Forget password
+                      </a>
                     </form>
-                     
                   )}
                 </Formik>
-               
-
 
                 {/* <button
                   class="btn btn-lg btn-block btn-primary"
@@ -150,16 +155,13 @@ const Login = () => {
         </div>
       </div>
     </section>
+      </motion.div>
   );
 };
 
 const styles = {
   container: {
-    background:
-
-      "url(http://localhost:5000/images/banner.jpg)",
-
-     
+    background: "url(http://localhost:5000/images/banner.jpg)",
 
     backgroundSize: "cover",
     backgroundPosition: "cover",

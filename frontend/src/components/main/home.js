@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import app_config from "../../config";
 import "./home.css";
 import { TextField } from "@mui/material";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
+import { TweenMax, TimelineMax, Power3, Power4 } from "gsap";
 
 const Home = () => {
   const url = app_config.backend_url;
   const [ratingText, setRatingText] = useState("");
   const [feedbacks, setFeedbacks] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  let screen = useRef(null);
+  let body = useRef(null);
+  
 
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
@@ -55,19 +61,44 @@ const Home = () => {
 
   useEffect(() => {
     fetchFeedbacks();
+    var tl = new TimelineMax();
+    tl.to(screen, {
+      duration: 1.2,
+      height: "100%",
+      ease: Power3.easeInOut,
+    });
+    tl.to(screen, {
+      duration: 1,
+      top: "100%",
+      ease: Power3.easeInOut,
+      delay: 0.3,
+    });
+    tl.set(screen, { left: "-100%" });
+    TweenMax.to(body, .3, {css: {
+      opacity: "1",
+      pointerEvents: "auto",
+      ease: Power4.easeInOut
+    }}).delay(2);
+    return () => {
+      TweenMax.to(body, 1, {css: {
+        opacity: "0",
+        pointerEvents: 'none'
+      }});
+  }
   }, []);
 
   return (
-    <div>
-      <div>
+    <motion.div
+      // initial={{ opacity: 0, x: 300 }}
+      // animate={{ opacity: 1, x: 0 }}
+      // exit={{ opacity: 0.5, x: -300 }}
+      // transition={{ type: "keyframes" }}
+    >
+      <div className="load-container">
+        <div className="load-screen1" ref={(el) => (screen = el)}></div>
+      </div>
+      <div data-barba="container">
         <div class="main-layout">
-          {/* <!-- loader  --> */}
-          {/* <div class="loader_bg">
-            <div class="loader">
-              {" "}
-              <img src={url + "/images/loading.gif"} alt="#" />
-            </div>
-          </div> */}
           <header>
             <div class="header">
               <div class="container-fluid">
@@ -84,7 +115,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                    <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                    <nav class="navigation navbar-expand-md navbar-dark ">
                       <button
                         class="navbar-toggler"
                         type="button"
@@ -101,10 +132,15 @@ const Home = () => {
                         id="navbarsExample04"
                       >
                         <ul class="navbar-nav mr-auto">
-                          <li class="nav-item active">
-                            <a class="nav-link" href="/home">
+                          <li class="nav-item">
+                            <NavLink className="nav-link" to="/home">
                               Home
-                            </a>
+                            </NavLink>
+                          </li>
+                          <li class="nav-item">
+                            <NavLink className="nav-link" to="/main/signup">
+                              SignUp
+                            </NavLink>
                           </li>
 
                           <li class="nav-item">
@@ -837,7 +873,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 export default Home;

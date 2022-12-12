@@ -42,17 +42,17 @@ const BrowseEquipment = () => {
     if (!loading) {
       return datalist.map(
         ({ title, description, image, features, price, seller, _id }) => (
-          <div key={_id} class="col-md-6 col-lg-3 mb-4 mb-lg-0 ">
+          <div key={_id} class="col-md-6 col-lg-3 mt-4 mb-4 mb-lg-0 ">
             <Card>
               <CardMedia
                 component="img"
                 image={url + "/images/" + image}
-                height={400}
+                height="400"
               />
               <CardContent className="card-body">
                 <p className="text-muted h4">{title}</p>
                 <h2 className="float-end">₹ {price}</h2>
-                <br />
+                
                 <hr />
                 <Button
                   variant="contained"
@@ -86,7 +86,7 @@ const BrowseEquipment = () => {
   const applyfilter = () => {};
 
   return (
-    <div>
+    <div style={{background : '#eee'}}>
       <div>
         <img
           class="w-100"
